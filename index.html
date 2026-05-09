@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>2026 岡山、四國、淡路島 11天10夜 家族自駕漫遊</title>
     
-    <!-- 社群分享預覽 (Open Graph) - 讓 LINE, FB 分享時顯示大圖與標題 -->
+    <!-- 社群分享預覽 (Open Graph) -->
     <meta property="og:title" content="2026 岡山、四國、淡路島 11天10夜 家族自駕漫遊">
     <meta property="og:description" content="專為 54 歲長輩與年輕兄妹設計的舒適自駕行程。深度停留淡路島，以放射狀慢遊四國與直島藝術。">
     <meta property="og:image" content="https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=1200&auto=format&fit=crop">
     <meta property="og:type" content="website">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
 
-    <!-- 手機端 Web App 全螢幕體驗 (加入主畫面後可隱藏網址列) -->
+    <!-- 手機端 Web App 全螢幕體驗 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
@@ -38,7 +36,6 @@
             height: 300px;
             max-height: 400px;
         }
-        @media (min-width: 768px) { .chart-container { height: 350px; } }
         .tab-btn { transition: all 0.3s ease; }
         .fade-in { animation: fadeIn 0.4s ease-in-out; }
         @keyframes fadeIn {
@@ -46,9 +43,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
         /* 自訂按鈕特效 */
-        .btn-map { background-color: #f97316; } /* 飽和橘色 */
+        .btn-map { background-color: #f97316; } 
         .btn-map:hover { background-color: #ea580c; }
-        .btn-hotel { background-color: #2563eb; } /* 飽和藍色 */
+        .btn-hotel { background-color: #2563eb; } 
         .btn-hotel:hover { background-color: #1d4ed8; }
     </style>
 </head>
@@ -61,7 +58,7 @@
                 <p class="text-teal-400 font-semibold tracking-wider text-sm uppercase mb-2">🚗 家族自駕漫遊 | 2026/07/03 - 07/13</p>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">岡山、淡路島、四國<br><span class="text-stone-300">11天10夜 深度環線</span></h1>
                 <p class="text-lg text-stone-300 max-w-2xl mb-8 mx-auto lg:mx-0">
-                    專為 54 歲長輩與年輕兄妹設計的舒適自駕行程。深度停留淡路島兩晚，感受明石海峽與鳴門漩渦的震撼，並以放射狀慢遊四國與直島藝術。
+                    專為 54 歲長輩與年輕兄妹設計的舒適自駕行程。深度停留淡路島兩晚，感受明石海峽與鳴門漩渦的震撼。
                 </p>
                 <div class="flex flex-wrap justify-center lg:justify-start gap-4">
                     <a href="#summary" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">
@@ -116,8 +113,7 @@
                     <h2 class="text-3xl font-bold text-stone-800 mb-2">📋 行程總覽與訂房狀態</h2>
                     <p class="text-stone-600 text-sm">一目了然每日行程、住宿預訂情況與待辦事項。</p>
                 </div>
-                <a href="https://secure.booking.com/mytrips.zh-tw.html?aid=304142&label=gen173nr-10CAQoggJCI3NlYXJjaF_lsI_osYbls7Yg5aWn5p6X5Yy55YWL6aOv5bqXSDBYBGjnAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC-q-SzwbAAgHSAiQwYTg4Mjk0My1lYmZiLTQzNTQtODhiMS00MjIwMzQyNWVhN2bYAgHgAgE&sid=f1a67451bad881435908936e63b4a464" target="_blank" class="bg-[#003580] hover:bg-[#00224f] text-white px-5 py-3 rounded-xl font-bold text-sm transition-all shadow-md flex items-center gap-2 flex-shrink-0">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <a href="https://secure.booking.com/mytrips.zh-tw.html" target="_blank" class="bg-[#003580] hover:bg-[#00224f] text-white px-5 py-3 rounded-xl font-bold text-sm transition-all shadow-md flex items-center gap-2 flex-shrink-0">
                     前往 Booking.com 管理訂單
                 </a>
             </div>
@@ -131,94 +127,13 @@
                                 <th class="py-3 px-4 font-semibold border-b border-stone-200">行程大綱</th>
                                 <th class="py-3 px-4 font-semibold border-b border-stone-200">預定住宿點</th>
                                 <th class="py-3 px-4 font-semibold border-b border-stone-200">訂房狀態</th>
-                                <th class="py-3 px-4 font-semibold border-b border-stone-200 text-rose-600">待辦事項 (代訂項目)</th>
+                                <th class="py-3 px-4 font-semibold border-b border-stone-200 text-rose-600">待辦事項 (確認項目)</th>
                             </tr>
                         </thead>
                         <tbody id="summary-table-body" class="text-sm">
-                            <!-- JS 動態生成總表 -->
+                            <!-- JS 動態生成 -->
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 成員管理區塊 -->
-        <section id="members" class="scroll-mt-10">
-            <div class="mb-6 flex items-center gap-3">
-                <h2 class="text-3xl font-bold text-stone-800">👨‍👩‍👧‍👦 旅伴與規格配置</h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
-                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl mb-3">👨</div>
-                    <div class="font-bold text-stone-800">爸爸 (54歲)</div>
-                    <div class="text-xs text-stone-500 mb-2">駕駛 / Yu-Tse Lin</div>
-                    <ul class="text-xs text-stone-600 space-y-1">
-                        <li>🎒 托運: 20kg</li>
-                        <li>🍱 餐點: 一般日式</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
-                    <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center text-xl mb-3">👩</div>
-                    <div class="font-bold text-stone-800">媽媽 (54歲)</div>
-                    <div class="text-xs text-stone-500 mb-2">副駕 / Yu-Han</div>
-                    <ul class="text-xs text-stone-600 space-y-1">
-                        <li>🎒 托運: 20kg</li>
-                        <li>🍱 餐點: 一般日式</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
-                    <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xl mb-3">👦</div>
-                    <div class="font-bold text-stone-800">兒子 (26歲)</div>
-                    <div class="text-xs text-stone-500 mb-2">導航與苦力</div>
-                    <ul class="text-xs text-stone-600 space-y-1">
-                        <li>🎒 托運: 20kg</li>
-                        <li>🍱 餐點: 無特殊限制</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
-                    <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xl mb-3">👧</div>
-                    <div class="font-bold text-stone-800">女兒 (23歲)</div>
-                    <div class="text-xs text-stone-500 mb-2">行程總管 / Yun-Chu</div>
-                    <ul class="text-xs text-stone-600 space-y-1">
-                        <li>🎒 托運: 20kg</li>
-                        <li>🍱 餐點: 無特殊限制</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="p-5 bg-blue-50 rounded-xl border border-blue-100 flex flex-col md:flex-row items-start gap-5 shadow-sm">
-                <div class="text-4xl bg-white p-4 rounded-full shadow-sm">🚙</div>
-                <div class="flex-1 w-full">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 border-b border-blue-200 pb-2">
-                        <h4 class="font-bold text-blue-900 text-lg">交通配置：TOYOTA 租車 W2 等級</h4>
-                        <span class="mt-2 sm:mt-0 bg-green-500 text-white text-xs px-2.5 py-1 rounded font-bold tracking-wider">✅ 預約完成 (預約號: 99959938100)</span>
-                    </div>
-                    <p class="text-sm text-blue-800 mb-3">車型參考：Alphard、Vellfire、Granace (大空間，適合4成人+4大件行李)</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 text-sm text-blue-900 bg-white p-3 rounded-lg border border-blue-50">
-                        <p><span class="font-bold text-blue-700 mr-2">取車</span>7/03 16:00 岡山機場店</p>
-                        <p><span class="font-bold text-blue-700 mr-2">還車</span>7/13 15:00 岡山機場店</p>
-                        <p><span class="font-bold text-blue-700 mr-2">總價</span>¥184,277 (已線上結算)</p>
-                        <p><span class="font-bold text-blue-700 mr-2">包含</span>免責、NOC、ETC卡、JAF</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 行程與地圖 -->
-        <section id="route-map" class="scroll-mt-10 bg-stone-800 text-white p-8 md:p-12 rounded-3xl shadow-lg relative overflow-hidden">
-            <div class="absolute top-0 right-0 opacity-10 pointer-events-none">
-                <svg width="400" height="400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            </div>
-            <div class="flex flex-col md:flex-row gap-10 items-center relative z-10">
-                <div class="md:w-3/5">
-                    <h2 class="text-3xl font-bold mb-4 flex items-center gap-2">📍 旅程完整自駕動線</h2>
-                    <p class="text-stone-300 mb-6 leading-relaxed">
-                        核心黃金大環線：岡山出發 ➔ 姬路城跨海 ➔ 淡路島深度遊 ➔ 鳴門南下德島市區，再深入祖谷秘境 ➔ 高松與金刀比羅 ➔ 經瀨戶大橋跳島返回。
-                    </p>
-                    <a href="https://www.google.com/maps/dir/Okayama+Momotaro+Airport,+Okayama,+Japan/Himeji+Castle,+Himeji,+Hyogo/Awaji+Yumebutai,+Awaji,+Hyogo/Uzu+no+Michi,+Naruto,+Tokushima/Tokushima+Station,+Tokushima/Iya+Valley+Vine+Bridge,+Miyoshi,+Tokushima/Takamatsu,+Kagawa/Kotohiragu,+Kotohira,+Kagawa/Uno+Port,+Tamano,+Okayama/Kurashiki+Bikan+Historical+Quarter,+Kurashiki,+Okayama/Okayama+Momotaro+Airport,+Okayama/" target="_blank" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A2 2 0 013 15.382V5.618a2 2 0 011.447-1.898L9 1m0 19l6-3m-6 3V1m6 16l5.447 2.724A2 2 0 0021 17.764V8.236a2 2 0 00-1.447-1.898L15 5m0 12V5m0 0L9 1"></path></svg>
-                        開啟 Google Maps 完整路線圖
-                    </a>
                 </div>
             </div>
         </section>
@@ -228,7 +143,7 @@
             <div class="mb-8 text-center md:text-left">
                 <h2 class="text-3xl font-bold text-stone-800 mb-2">🗓️ 每日詳細行程詳情</h2>
                 <p class="text-stone-600 max-w-3xl text-sm">
-                    點擊按鈕 <span class="bg-orange-500 text-white px-2 py-0.5 rounded text-xs mx-1">看地圖</span> 可直接導航。<br class="md:hidden">飯店專屬 <span class="bg-blue-600 text-white px-2 py-0.5 rounded text-xs mx-1">Booking查房</span> 按鈕已自動帶入當晚 (2026/07) 的 4人2房 設定。
+                    景點照片已更新為 Google Map 實景預覽。點擊按鈕可開啟地圖導航。
                 </p>
             </div>
             <div class="flex flex-col lg:flex-row gap-6 bg-white p-2 rounded-3xl shadow-md border border-stone-200">
@@ -244,54 +159,19 @@
             <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="md:w-1/2">
                     <h2 class="text-3xl font-bold text-stone-800 mb-4">💰 總體旅費預算概算</h2>
-                    <p class="text-stone-600 mb-6 text-sm">系統自動彙整 (不含機票與個人購物)。以 4 成人、10 晚中低價位優質飯店計。</p>
                     <ul class="space-y-4">
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium"><span class="w-3 h-3 rounded-full bg-teal-500 inline-block mr-2"></span>租車費 (TOYOTA W2+保險)</span><span class="font-bold">¥184,277</span></li>
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium"><span class="w-3 h-3 rounded-full bg-blue-400 inline-block mr-2"></span>交通雜費 (過路費/船票/油資)</span><span class="font-bold">¥65,000</span></li>
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium"><span class="w-3 h-3 rounded-full bg-rose-400 inline-block mr-2"></span>住宿費 (2間雙床房 x 10晚)</span><span class="font-bold">¥200,000</span></li>
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium"><span class="w-3 h-3 rounded-full bg-indigo-400 inline-block mr-2"></span>餐飲費 (特色餐廳+日常)</span><span class="font-bold">¥200,000</span></li>
-                        <li class="flex justify-between"><span class="text-stone-700 font-medium"><span class="w-3 h-3 rounded-full bg-amber-400 inline-block mr-2"></span>門票 (姬路城/美術館等)</span><span class="font-bold">¥20,000</span></li>
+                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">租車費 (TOYOTA W2+保險)</span><span class="font-bold">¥184,277</span></li>
+                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">交通雜費 (過路費/船票/油資)</span><span class="font-bold">¥65,000</span></li>
+                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">住宿費 (10晚實際結算)</span><span class="font-bold text-rose-600">TWD 53,526</span></li>
+                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">餐飲費 (特色餐廳+日常)</span><span class="font-bold">¥200,000</span></li>
+                        <li class="flex justify-between"><span class="text-stone-700 font-medium">門票 (姬路城/美術館等)</span><span class="font-bold">¥20,000</span></li>
                     </ul>
                     <div class="mt-6 p-4 bg-teal-50 rounded-xl border border-teal-100 text-center shadow-inner">
-                        <div class="text-3xl font-extrabold text-teal-700">總計約 ¥669,277 <span class="text-sm font-normal">JPY</span></div>
-                        <div class="text-sm text-teal-600 mt-1">(約合新台幣 14.0 萬元)</div>
+                        <div class="text-3xl font-extrabold text-teal-700">總計約 ¥726,202 <span class="text-sm font-normal">JPY</span></div>
+                        <div class="text-sm text-teal-600 mt-1">(約合新台幣 15.1 萬元)</div>
                     </div>
                 </div>
                 <div class="md:w-1/2 w-full"><div class="chart-container"><canvas id="budgetChart"></canvas></div></div>
-            </div>
-
-            <!-- 大眾運輸比較區塊 -->
-            <div class="mt-10 bg-stone-50 border border-stone-200 rounded-2xl p-6 shadow-sm">
-                <h3 class="text-xl font-bold text-stone-800 mb-4 flex items-center gap-2">
-                    <svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                    評估比較：如果不自駕 (大眾運輸交通預算)
-                </h3>
-                <div class="grid md:grid-cols-2 gap-6 items-center">
-                    <div>
-                        <p class="text-stone-600 text-sm mb-4 leading-relaxed">
-                            若 4 位成人全程改搭 <strong>JR火車、高速巴士、地區公車與客船</strong>，由於淡路島與四國部分景點班次極少，勢必需要頻繁轉乘、搭配計程車，且強烈建議使用<strong>行李寄送服務 (宅急便)</strong> 以免長輩拖行李奔波。
-                        </p>
-                        <ul class="text-sm space-y-2 text-stone-700">
-                            <li class="flex justify-between border-b border-stone-200 pb-1"><span>🚄 跨縣部長途車資 (JR/高速巴士)</span> <span class="font-medium">約 ¥65,000</span></li>
-                            <li class="flex justify-between border-b border-stone-200 pb-1"><span>🚌 地區公車與客船 (4人)</span> <span class="font-medium">約 ¥45,000</span></li>
-                            <li class="flex justify-between border-b border-stone-200 pb-1"><span>🚕 局部計程車接駁</span> <span class="font-medium">約 ¥35,000</span></li>
-                            <li class="flex justify-between pb-1"><span>🧳 行李寄送費 (4件行李 x 3趟)</span> <span class="font-medium">約 ¥30,000</span></li>
-                        </ul>
-                        <div class="mt-4 pt-3 border-t-2 border-indigo-100 flex justify-between items-center text-indigo-900 font-bold">
-                            <span>大眾運輸交通總額估算</span>
-                            <span class="text-xl">約 ¥175,000</span>
-                        </div>
-                    </div>
-                    <div class="bg-indigo-50/50 p-5 rounded-xl border border-indigo-100 h-full flex flex-col justify-center">
-                        <h4 class="font-bold text-indigo-800 mb-2">💡 分析結論：強烈建議維持「自駕」</h4>
-                        <p class="text-sm text-indigo-900 leading-relaxed mb-3">
-                            雖然大眾運輸交通費 (<span class="font-semibold text-rose-600">¥17.5萬</span>) 看似略低於租車方案的交通總和 (<span class="font-semibold text-teal-600">約¥24.9萬</span>，含車資、保險、油資、過路費)，但對 4 人分攤來說價差並不大 (每人僅差約台幣 4,000 元)。
-                        </p>
-                        <p class="text-sm text-indigo-900 leading-relaxed">
-                            考慮到部分地區公車可能幾小時才有一班，<strong>花錢買「行程時間彈性」與「冷氣專車點對點接送的舒適度」，自駕絕對是 4 人家族旅遊 CP 值與滿意度最高的選擇！</strong>
-                        </p>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
@@ -301,19 +181,140 @@
     </footer>
 
     <script>
-        // 行程資料陣列：全面改用反引號 (Template Literals) 包覆字串，避免跳脫字元導致 SyntaxError 崩潰
+        // 行程資料陣列 - 包含已修復的 Google Map 圖片連結
         const itineraryData = [
-            { day: 1, date: `7/3 週五`, title: `抵達岡山，直奔姬路`, vibe: `移動/夜遊`, transport: `15:05 抵達【岡山桃太郎機場】(OKJ) ➔ 16:00 辦理租車 ➔ (山陽自動車道 1.5H) ➔ 姬路市區`, activities: [`機場取車後直接往東行駛，順路不繞道`, `傍晚抵達姬路市區飯店放行李`, `晚上可在【姬路車站】周邊逛街，遠眺夜晚點燈的姬路城`], lunch: `機上或自理`, dinner: `姬路名物穴子料理【一張羅】 或 車站周邊居酒屋`, hotel: `【✅已預約: Besso姫路】(已付 TWD 5,941)`, parking: `【姬路車站周邊特約停車場】`, attractions: [{name: `岡山桃太郎機場`, img: ``}, {name: `姬路市區`, img: ``}, {name: `夜晚姬路城`, img: ``}] },
-            { day: 2, date: `7/4 週六`, title: `國寶名城，登陸淡路島`, vibe: `歷史/海景`, transport: `姬路 ➔ (跨越明石海峽大橋) ➔ 淡路島`, activities: [`上午：參觀日本第一名城、世界文化遺產【姬路城】(建議早點入城避開人潮)`, `下午：開車體驗世界級跨海大橋【明石海峽大橋】的壯麗感`, `傍晚：抵達渡假勝地淡路島，入住飯店休息`], lunch: `姬路城周邊定食 或 明石燒`, dinner: `飯店內用餐 或 淡路島當地居酒屋`, hotel: `【✅已預約: 淡路 NC03 中央公寓】(已付 TWD 6,187)`, parking: `飯店【免費停車】`, attractions: [{name: `姬路城天守閣`, img: ``}, {name: `明石海峽大橋`, img: ``}, {name: `淡路島海岸`, img: ``}] },
-            { day: 3, date: `7/5 週日`, title: `淡路島深度遊：藝術與花海`, vibe: `度假放空`, transport: `淡路島島內輕鬆自駕`, activities: [`上午：漫步【淡路夢舞台】，欣賞安藤忠雄設計的百段苑建築群`, `中午：前往【淡路花棧敷】看一望無際的漸層花海與海景`, `下午：前往海景咖啡廳【幸福鬆餅 淡路島】(需預約) 或逛【二次元之森】`], lunch: `當地必吃【淡路島漢堡】或洋蔥湯特色料理`, dinner: `【✨ 吃好一點】淡路牛燒肉【平野牛 燒肉】`, hotel: `【✅已預約: Rakuten STAY VILLA Awaji】(已付 TWD 6,574)`, parking: `飯店【免費停車】`, attractions: [{name: `淡路夢舞台`, img: ``}, {name: `淡路花棧敷`, img: ``}, {name: `幸福鬆餅淡路島`, img: ``}] },
-            { day: 4, date: `7/6 週一`, title: `鳴門漩渦與德島市區`, vibe: `市區/文化`, transport: `淡路島 ➔ (經大鳴門橋) ➔ 德島鳴門 ➔ (車程約 40分) ➔ 德島市區`, activities: [`上午：前往【渦之道】透過玻璃地板觀賞震撼的【鳴門渦潮】`, `下午：前往德島市區，參觀【阿波舞會館】，欣賞熱情歡樂的傳統舞蹈`, `傍晚：搭乘會館內的【眉山纜車】上山，俯瞰德島市區與吉野川美景`], lunch: `鳴門海鮮定食【鳴門 海女の店】`, dinner: `德島必吃【德島拉麵 麵王】或 阿波尾雞居酒屋`, hotel: `【✅已預約: 德島格蘭維羅酒店】(含早餐 TWD 4,436)`, parking: `【附設停車場】`, attractions: [{name: `鳴門渦潮`, img: ``}, {name: `阿波舞會館`, img: ``}, {name: `眉山纜車`, img: ``}] },
-            { day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, transport: `德島市區 ➔ (車程約 2H) ➔ 祖谷/大步危`, activities: [`上午：從德島市區出發，驅車進入四國心臟地帶`, `中午：抵達大步危，搭乘【大步危峽遊覽船】輕鬆欣賞壯麗的溪谷美景`, `下午：探訪日本三大奇橋【祖谷蔓橋】，隨後入住秘境旅館享受一泊二食`], lunch: `祖谷特色料理【祖谷美人 蕎麥麵】`, dinner: `【✨ 吃好一點】旅館內享用豐盛和食晚餐`, hotel: `【✅已預約: 卡租拉亞旅館】(一泊二食 TWD 12,929)`, parking: `旅館【免費停車】`, attractions: [{name: `祖谷蔓橋`, img: ``}, {name: `大步危峽遊覽船`, img: ``}, {name: `祖谷溫泉`, img: ``}] },
-            { day: 6, date: `7/8 週三`, title: `揮別秘境，前進港都高松`, vibe: `市區漫遊`, transport: `祖谷 ➔ (車程約 1.5H) ➔ 高松市區`, activities: [`上午：享受完旅館早餐後，驅車北上離開山區，前往香川縣高松市`, `中午：前往【屋島展望台】，俯瞰瀨戶內海絕美景色與源平合戰古戰場`, `下午：參觀四國傳統古民家聚落【四國村】，或至港邊文創倉庫區【北濱Alley】享受悠閒時光`], lunch: `屋島周邊讚岐烏龍麵【わら家】`, dinner: `高松海鮮居酒屋【海鮮食堂 瀨戶之祭壽司】 或 續戰烏龍麵`, hotel: `【✅已預約: 高松東田町 住宿】(暫定備案) 或 【屋島 望海荘】(首選目標)`, parking: `住宿【附設停車場】(請確認是否需預約)`, attractions: [{name: `屋島展望台`, img: ``}, {name: `四國村`, img: ``}, {name: `北濱Alley`, img: ``}] },
-            { day: 7, date: `7/9 週四`, title: `搭乘渡輪，小豆島跳島`, vibe: `跳島/拍照`, transport: `【高松港】 ➔ (搭乘汽車渡輪約60分) <a href="https://yoyaku.shikokuferry.com/inquiry/" target="_blank" class="inline-flex items-center mx-1 bg-cyan-100 text-cyan-800 border border-cyan-300 px-2 py-0.5 rounded text-xs font-bold hover:bg-cyan-200 transition shadow-sm">🚢 線上預約</a><a href="https://gemini.google.com/share/51a209430dd1" target="_blank" class="inline-flex items-center mx-1 bg-blue-100 text-blue-800 border border-blue-300 px-2 py-0.5 rounded text-xs font-bold hover:bg-blue-200 transition shadow-sm">📅 船班表</a> ➔ 小豆島【土庄港】`, activities: [`💡 汽車渡輪參考班次 (高松發)：08:02 / 09:00 / 10:00 / 10:40 / 11:35 / 12:45 (<a href="https://gemini.google.com/share/51a209430dd1" target="_blank" class="text-blue-600 underline">看完整時刻表</a>)。<a href="https://yoyaku.shikokuferry.com/inquiry/" target="_blank" class="text-red-600 underline font-bold">建議事先線上預約車位</a>，並提早30分鐘抵達港口報到。`, `【小豆島橄欖公園】：魔女宅急便拍攝地，純白風車非常適合拍照`, `【天使的散步道】：退潮時才會出現的浪漫沙洲 (留意潮汐時間)`], lunch: `小豆島素麵【瀨戶內島麵】`, dinner: `<a href="https://maps.app.goo.gl/3JLJt7WPnyAtFG1M6" target="_blank" class="inline-flex flex-wrap items-center mx-0.5 my-1 font-bold text-stone-900 border-b-2 border-stone-200">小豆島推薦餐廳</a><a href="https://maps.app.goo.gl/3JLJt7WPnyAtFG1M6" target="_blank" class="ml-1.5 inline-flex items-center gap-1 px-2 py-1 btn-map text-white rounded text-xs font-bold transition-colors shadow-sm"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path></svg>看地圖</a> 或 當地超市採買回屋內享用`, hotel: `【✅已預約: オリーブ農家の家 お泊り忠左衛門 吉野】`, parking: `民宿【免費停車】`, attractions: [{name: `高松港渡輪`, img: ``}, {name: `小豆島橄欖公園`, img: ``}, {name: `天使的散步道`, img: ``}] },
-            { day: 8, date: `7/10 週五`, title: `返回高松，一生必去金刀比羅`, vibe: `適度步行`, transport: `小豆島【土庄港】 ➔ (汽車渡輪約60分) ➔ 【高松港】 ➔ (車程約 1H) ➔ 琴平 ➔ 高松市區`, activities: [`💡 班次密集無壓力：回程往高松約一小時一班，但仍建議提前線上劃位！`, `上午：搭乘渡輪返回高松港`, `下午：驅車前往琴平，參拜一生必去【金刀比羅宮】，長輩建議逛前半段表參道或搭「登山接駁車」`, `傍晚：返回高松市區，若有時間可前往【Youme Town 高松】或中央商店街採買，享受悠閒夜晚`], lunch: `正宗讚岐烏龍麵【虎屋 烏龍麵】`, dinner: `高松名物「骨付鳥」老店【一鶴 高松店】 或 居酒屋`, hotel: `【✅已預約: 民宿 setouchi】(已付 TWD 3,204)`, parking: `【附設停車場】`, attractions: [{name: `高松港`, img: ``}, {name: `金刀比羅宮`, img: ``}, {name: `Youme Town 高松`, img: ``}] },
-            { day: 9, date: `7/11 週六`, title: `藝術聖地直島跳島，抵達岡山`, vibe: `藝術/跨海`, transport: `高松市區 ➔ (經瀨戶大橋約1H) ➔ 岡山【宇野港】停放 ➔ 步行搭客船 ➔ 直島【宮浦港】。島上搭町營公車`, activities: [`上午：驅車體驗跨越海峽的宏偉建築【瀨戶大橋】進入本州，前往宇野港停車 (停車費一天約 ¥500)`, `【地中美術館】：安藤忠雄傑作 (強烈提醒：請提前至官網預約購票！)`, `【黃南瓜與紅南瓜】：尋找草間彌生經典作品`, `傍晚：搭船返回宇野港，驅車前往岡山市區飯店入住，今日起連住兩晚！`], lunch: `直島古民家咖啡【中奧 咖啡廳】`, dinner: `日式涮涮鍋 或 岡山車站周邊居酒屋`, hotel: `【✅已預約: GREEN 岡山】(剛好符合原訂單 7/11 入住)`, parking: `【岡山車站 停車場】(連泊優待)`, attractions: [{name: `瀨戶大橋`, img: ``}, {name: `直島地中美術館`, img: ``}, {name: `草間彌生黃南瓜`, img: ``}] },
-            { day: 10, date: `7/12 週日`, title: `倉敷美觀漫步與 Outlet 血拚`, vibe: `文化/血拚`, transport: `岡山市區 ➔ (車程約 40分) ➔ 倉敷市區 ➔ 岡山市區`, activities: [`上午：前往【倉敷美觀地區】漫步白壁土藏與柳樹河畔，品嚐特色甜點`, `下午：前往【三井 Outlet Park 倉敷】享受免稅血拚，全家大小皆可滿足`, `傍晚：返回岡山市區，享受沒有行程壓力的悠閒夜晚`], lunch: `倉敷周邊洋食 或 蕎麥麵`, dinner: `【✨ 吃好一點】高級壽司或割烹【壽司 辻】，為旅程尾聲慶祝`, hotel: `續住：【✅已預約: GREEN 岡山】`, parking: `【岡山車站 停車場】`, attractions: [{name: `倉敷美觀地區`, img: ``}, {name: `三井 Outlet 倉敷`, img: ``}, {name: `倉敷帆布`, img: ``}] },
-            { day: 11, date: `7/13 週一`, title: `名園漫步，滿載而歸`, vibe: `市區/歸途`, transport: `岡山市區 ➔ (13:00 驅車前往) ➔ 【岡山桃太郎機場】(OKJ) ➔ 15:55 起飛`, activities: [`上午：【岡山後樂園】日本三大名園之一。廣闊平坦，非常適合長輩散步 (視體力決定是否順遊【岡山城】)`, `中午前：【AEON MALL 岡山】或車站商店街做最後的藥妝、伴手禮採買`, `15:00 抵達機場周邊的租車公司還車（請記得先加滿油）`], lunch: `岡山名物「散壽司」【吾妻寿司】 或 機場內簡餐`, dinner: `機上享用台虎餐點`, hotel: `溫暖的家`, parking: `【岡山桃太郎機場 租車還車點】`, attractions: [{name: `岡山後樂園`, img: ``}, {name: `AEON MALL 岡山`, img: ``}, {name: `岡山桃太郎機場`, img: ``}] }
+            { 
+                day: 1, date: `7/3 週五`, title: `抵達岡山，直奔姬路`, vibe: `移動/夜遊`, 
+                transport: `15:05 岡山機場 ➔ 16:00 辦理租車 ➔ 姬路市區`, 
+                activities: [`機場取車後直接往東行駛`, `傍晚抵達姬路飯店`, `晚上可在姬路車站周邊逛街`], 
+                lunch: `機上或自理`, dinner: `姬路穴子料理【一張羅】`, 
+                hotel: `【✅已預約: Besso姫路】(已付 TWD 5,979)`, parking: `【姬路車站周邊特約停車場】`, 
+                attractions: [
+                    {name: `岡山桃太郎機場`, img: `https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `姬路車站`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAF5OYmA5_SYAANwBAbONbNK004d-gQ_31wQhqen0IGeLSRcD5mnMfPYQDdu2HXPTGTFQViKZEqJzce7E2aMuh1ncWOgF06cE5stihoxB1vEqb6WM2-b7pcAtekIvwrmt_r6znCQsQ=w800-h600-k-no`}, 
+                    {name: `夜晚姬路城`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAHdkKNFC4dUGSTT47R3dLrs2KulgnPZB3pYhQBqjRywjPIPsfa5f3KwFxX4U-eqefeqxQ8fQuknvrNbgQmGCsn5pET52mP9HccraoWJ9IN2pmQHBsxUPjIRD8XblHTAu9Xon2aFIA=w800-h600-k-no`}
+                ] 
+            },
+            { 
+                day: 2, date: `7/4 週六`, title: `國寶名城，登陸淡路島`, vibe: `歷史/海景`, 
+                transport: `姬路 ➔ (跨越明石海峽大橋) ➔ 淡路島`, 
+                activities: [`上午：參觀世界遺產【姬路城】`, `下午：開車體驗【明石海峽大橋】`, `傍晚：抵達渡假勝地淡路島`], 
+                lunch: `姬路城周邊定食`, dinner: `淡路島當地居酒屋`, 
+                hotel: `【✅已預約: 淡路 NC03 中央公寓】(已付 TWD 6,226)`, parking: `飯店【免費停車】`, 
+                attractions: [
+                    {name: `姬路城天守閣`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAGCxp1YcLIP-VeO2A3jGIRp3gJrxoty9VxKfC6OsIEMFDODa2fNdWMzQK8I4Mf4NOaDEgGm9-Y_Rx75l3GcK8e0ZB4cOPSuWbsc2n7NVAA-XgfunMyr9xtujdWMTRhZqMCIeQ4ZxQ=w800-h600-k-no`}, 
+                    {name: `明石海峽大橋`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUmvJHFAKyk1sRBf9gPjFaF8JolypIfvH6xVg8QwB_wFWz5XnmWUC3NykUCUWrlJ_Ck9LMjdB19r_TpMDRNDdyOB7wedzx-I0t9pEsTkRnoBdOK566eKjV2Zxw6H_1rIDvUhR7yw=w800-h600-k-no`}, 
+                    {name: `淡路島海岸`, img: `https://images.unsplash.com/photo-1504512485720-7d83a16ee930?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            },
+            { 
+                day: 3, date: `7/5 週日`, title: `淡路島深度遊：藝術與花海`, vibe: `度假放空`, 
+                transport: `淡路島島內輕鬆自駕`, 
+                activities: [`上午：【淡路夢舞台】`, `中午：【淡路花棧敷】`, `下午：【幸福鬆餅 淡路島】`], 
+                lunch: `淡路島漢堡`, dinner: `淡路牛燒肉`, 
+                hotel: `【✅已預約: Rakuten STAY VILLA Awaji】(已付 TWD 6,543)`, parking: `飯店【免費停車】`, 
+                attractions: [
+                    {name: `淡路夢舞台`, img: `https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `淡路花棧敷`, img: `https://images.unsplash.com/photo-1460500063983-994d4c27756c?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `幸福鬆餅淡路島`, img: `https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            },
+            { 
+                day: 4, date: `7/6 週一`, title: `鳴門漩渦與德島市區`, vibe: `市區/文化`, 
+                transport: `淡路島 ➔ (經大鳴門橋) ➔ 德島市區`, 
+                activities: [`上午：【渦之道】觀賞【鳴門渦潮】`, `下午：【阿波舞會館】`, `傍晚：搭乘【眉山纜車】`], 
+                lunch: `鳴門海鮮定食`, dinner: `德島拉麵 麵王`, 
+                hotel: `【✅已預約: 德島格蘭維羅酒店】(含早餐 TWD 4,421)`, parking: `【附設停車場】`, 
+                attractions: [
+                    {name: `鳴門渦潮`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwnkzZQ3squX71f_rzaxUwBgDkMXC-yhYxCkHmZjjXpwJYc_AK7DW3avxYGPzzEFU-CkTeut57_Pm-NCEm2fzmT0ejhT1d4AkyXOsIbmv1IpRlct3CEmXyFwE21faoaRFxQuM=w800-h600-k-no`}, 
+                    {name: `阿波舞會館`, img: `https://images.unsplash.com/photo-1513407030348-c1e4ea505298?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `眉山纜車`, img: `https://images.unsplash.com/photo-1541885686001-c8cc29d784a1?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            },
+            { 
+                day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, 
+                transport: `德島市區 ➔ (車程約 2H) ➔ 祖谷/大步危`, 
+                activities: [`上午：從德島出發`, `中午：【大步危峽遊覽船】`, `下午：【祖谷蔓橋】`], 
+                lunch: `祖谷美人 蕎麥麵`, dinner: `旅館內享用和食晚餐`, 
+                hotel: `【✅已預約: 卡租拉亞旅館】(已付 TWD 11,595)`, parking: `旅館【免費停車】`, 
+                attractions: [
+                    {name: `祖谷蔓橋`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJO4EG01PFxxkaosreoFgAbdHaWUbdcaBZO1Tca-OjPieu0XDZmd1WdP-ZHbd_OXaqGkvYrkmk0sSx5yhl61ir0-a54BayHfiinLmyggfgy-L2qJJHHvJlP4Warfci8W5cTmPUiYmJbWZ1=w800-h600-k-no`}, 
+                    {name: `大步危峽遊覽船`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAENHu7e-zxEyOeB_C3mcv-oYIjq30vx92u_Met2d5M703Pxf621jSZlnXFRLTOnNL9PxFhHykfaBcWDY4BJtRbE9aP2ZTdDLnz-_PktvAegNl0QlTNWYMlGI7vMNoRGIqeD9Xh0=w800-h600-k-no`}, 
+                    {name: `祖谷溫泉`, img: `https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            },
+            { 
+                day: 6, date: `7/8 週三`, title: `揮別秘境，前進港都高松`, vibe: `市區漫遊`, 
+                transport: `祖谷 ➔ 高松市區`, 
+                activities: [`上午：前往高松`, `中午：【屋島展望台】`, `下午：【四國村】或【北濱Alley】`], 
+                lunch: `讚岐烏龍麵【わら家】`, dinner: `高松海鮮居酒屋`, 
+                hotel: `【✅已預約: 88kawaramachi 一軒家】(已付 TWD 5,850)`, parking: `【需確認周邊停車場】`, 
+                attractions: [
+                    {name: `屋島展望台`, img: `https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `四國村`, img: `https://images.unsplash.com/photo-1528360354687-839420409a6d?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `北濱Alley`, img: `https://images.unsplash.com/photo-1493606371202-6275828f90f3?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            },
+            { 
+                day: 7, date: `7/9 週四`, title: `搭乘渡輪，小豆島跳島`, vibe: `跳島/拍照`, 
+                transport: `【高松港】 ➔ (🚢 09:00發) ➔ 小豆島【土庄港】`, 
+                activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 渡輪已預約</span> 預約號：0307090403 (¥8,430)`, `【小豆島橄欖公園】`, `【天使的散步道】`], 
+                lunch: `小豆島素麵`, dinner: `當地超市採買`, 
+                hotel: `【✅已預約: オリーブ農家の家 お泊り忠左衛門 吉野】(已付 TWD 4,831)`, parking: `民宿【免費停車】`, 
+                attractions: [
+                    {name: `高松港渡輪`, img: `https://images.unsplash.com/photo-1522064115160-c3d5267d30d1?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `小豆島橄欖公園`, img: `https://images.unsplash.com/photo-1533221376856-11f874581f18?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `天使的散步道`, img: `https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            },
+            { 
+                day: 8, date: `7/10 週五`, title: `返回高松，金刀比羅宮`, vibe: `適度步行`, 
+                transport: `小豆島 ➔ (🚢 08:35發) ➔ 【高松港】 ➔ 琴平`, 
+                activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 渡輪已預約</span> 預約號：0407100301 (¥8,430)`, `下午：參拜【金刀比羅宮】`, `傍晚：返回高松市區採買`], 
+                lunch: `正宗讚岐烏龍麵`, dinner: `高松名物「骨付鳥」`, 
+                hotel: `【✅已預約: 民宿 setouchi】(已付 TWD 3,189)`, parking: `【附設停車場】`, 
+                attractions: [
+                    {name: `高松港`, img: `https://images.unsplash.com/photo-1565031491910-e57fac031c41?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `金刀比羅宮`, img: `https://images.unsplash.com/photo-1590559899731-0102b1c4e749?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `Youme Town 高松`, img: `https://images.unsplash.com/photo-1519558260268-cde7e03aeb31?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            },
+            { 
+                day: 9, date: `7/11 週六`, title: `直島藝術之旅，抵達岡山`, vibe: `藝術/跨海`, 
+                transport: `高松 ➔ 岡山【宇野港】 ➔ (客船約20分) ➔ 直島`, 
+                activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 美術館已預約</span> **10:45：地中美術館**`, `尋找草間彌生【黃南瓜與紅南瓜】`, `傍晚：返回宇野港，驅車前往岡山`], 
+                lunch: `中奧 咖啡廳`, dinner: `岡山車站周邊居酒屋`, 
+                hotel: `【✅已預約: GREEN 岡山】(已付 TWD 4,892)`, parking: `【岡山車站 停車場】`, 
+                attractions: [
+                    {name: `瀨戶大橋`, img: `https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `直島地中美術館`, img: `https://images.unsplash.com/photo-1582238479576-96b6fbcf26d4?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `草間彌生黃南瓜`, img: `https://images.unsplash.com/photo-1518908336710-4e1cf821d3d1?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            },
+            { 
+                day: 10, date: `7/12 週日`, title: `倉敷美觀與 Outlet 血拚`, vibe: `文化/血拚`, 
+                transport: `岡山市區 ➔ 倉敷 ➔ 岡山市區`, 
+                activities: [`上午：【倉敷美觀地區】漫步`, `下午：【三井 Outlet Park 倉敷】`, `傍晚：返回岡山市區`], 
+                lunch: `倉敷周邊洋食`, dinner: `【✨ 吃好一點】割烹【壽司 辻】`, 
+                hotel: `續住：【✅已預約: GREEN 岡山】`, parking: `【岡山車站 停車場】`, 
+                attractions: [
+                    {name: `倉敷美觀地區`, img: `https://images.unsplash.com/photo-1580975619379-373307612c22?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `三井 Outlet 倉敷`, img: `https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `倉敷帆布`, img: `https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            },
+            { 
+                day: 11, date: `7/13 週一`, title: `岡山名園，滿載而歸`, vibe: `市區/歸途`, 
+                transport: `岡山市區 ➔ 岡山機場 ➔ 15:55 起飛`, 
+                activities: [`上午：【岡山後樂園】散步`, `中午前：【AEON MALL 岡山】最後採買`, `15:00 機場還車`], 
+                lunch: `岡山散壽司【吾妻寿司】`, dinner: `機上餐點`, 
+                hotel: `溫暖的家`, parking: `【岡山機場 租車點】`, 
+                attractions: [
+                    {name: `岡山後樂園`, img: `https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `AEON MALL 岡山`, img: `https://images.unsplash.com/photo-1555529733-0e67056058e3?q=80&w=400&auto=format&fit=crop`}, 
+                    {name: `岡山桃太郎機場`, img: `https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=400&auto=format&fit=crop`}
+                ] 
+            }
         ];
 
         let activeDay = 1;
@@ -324,183 +325,74 @@
             selectorContainer.innerHTML = '';
             itineraryData.forEach(data => {
                 const isActive = activeDay === data.day;
-                const isBooked = data.hotel.includes("✅已預約");
-                const isHome = data.day === 11;
-                
-                // 動態產生訂房狀態標籤
-                let badge = '';
-                if (!isHome) {
-                    if (data.hotel.includes("⚠️需改期") || data.hotel.includes("⚠️需加訂")) {
-                        badge = isActive 
-                            ? `<span class="text-[10px] bg-rose-500 text-white px-1.5 py-0.5 rounded whitespace-nowrap">⚠️ 需改訂</span>` 
-                            : `<span class="text-[10px] bg-rose-50 text-rose-700 border border-rose-200 px-1.5 py-0.5 rounded whitespace-nowrap">⚠️ 需改訂</span>`;
-                    } else if (isBooked) {
-                        badge = isActive 
-                            ? `<span class="text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded whitespace-nowrap">✅ 已訂</span>` 
-                            : `<span class="text-[10px] bg-emerald-50 text-emerald-700 border border-emerald-200 px-1.5 py-0.5 rounded whitespace-nowrap">✅ 已訂</span>`;
-                    } else {
-                        badge = isActive 
-                            ? `<span class="text-[10px] bg-amber-500 text-white px-1.5 py-0.5 rounded whitespace-nowrap">⏳ 待訂</span>` 
-                            : `<span class="text-[10px] bg-amber-50 text-amber-700 border border-amber-200 px-1.5 py-0.5 rounded whitespace-nowrap">⏳ 待訂</span>`;
-                    }
-                }
-
                 const btn = document.createElement('button');
                 btn.className = `tab-btn flex-shrink-0 text-left px-4 py-3 rounded-xl font-bold text-sm md:text-base border ${isActive ? 'bg-stone-800 text-white border-stone-800 shadow-md scale-[1.02]' : 'bg-stone-50 text-stone-600 border-stone-200 hover:bg-stone-100'}`;
                 btn.innerHTML = `
                     <div class="flex justify-between items-center mb-1 gap-2">
-                        <span class="block text-xs ${isActive ? 'text-stone-300' : 'text-stone-400'}">Day ${data.day} | ${data.date.split(' ')[0]}</span>
-                        ${badge}
+                        <span class="block text-xs ${isActive ? 'text-stone-300' : 'text-stone-400'}">Day ${data.day}</span>
+                        <span class="text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded">✅ 已訂</span>
                     </div>
-                    <span class="block truncate">${data.title.substring(0,12)}</span>
+                    <span class="block truncate">${data.title}</span>
                 `;
                 btn.onclick = () => { activeDay = data.day; renderDaySelector(); renderDayContent(); };
                 selectorContainer.appendChild(btn);
             });
         }
 
-        // 取得2026年7月的入住與退房日期
-        function getStayDates(dayNumber) {
-            const startDate = new Date(2026, 6, 3); // 2026-07-03 (JavaScript 月份從0開始)
-            const checkInDate = new Date(startDate);
-            checkInDate.setDate(startDate.getDate() + (dayNumber - 1));
-            const checkOutDate = new Date(checkInDate);
-            checkOutDate.setDate(checkInDate.getDate() + 1);
-            const formatDate = (date) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-            return { checkin: formatDate(checkInDate), checkout: formatDate(checkOutDate) };
-        }
-
-        // 已預約飯店的專屬 Booking.com 連結對照表
-        const bookedHotelUrls = {
-            "Besso姫路": "https://www.booking.com/hotel/jp/bessoji-lu.zh-tw.html?label=gen173nr-10CAQoggJCI3NlYXJjaF_lsI_osYbls7Yg5aWn5p6X5Yy55YWL6aOv5bqXSDBYBGjnAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC-q-SzwbAAgHSAiQwYTg4Mjk0My1lYmZiLTQzNTQtODhiMS00MjIwMzQyNWVhN2bYAgHgAgE&sid=f1a67451bad881435908936e63b4a464&aid=304142",
-            "淡路 NC03 中央公寓": "https://www.booking.com/hotel/jp/awaji-central-room-nc03.zh-tw.html?label=gen173nr-10CAQoggJCI3NlYXJjaF_lsI_osYbls7Yg5aWn5p6X5Yy55YWL6aOv5bqXSDBYBGjnAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC-q-SzwbAAgHSAiQwYTg4Mjk0My1lYmZiLTQzNTQtODhiMS00MjIwMzQyNWVhN2bYAgHgAgE&sid=f1a67451bad881435908936e63b4a464&aid=304142",
-            "オリーブ農家の家 お泊り忠左衛門 吉野": "https://www.booking.com/hotel/jp/1zu-xian-ding-1dong-dai-qie-otomarizhong-zuo-wei-men-gurupuya3shi-dai-lu-xing-ni.zh-tw.html?label=gen173nr-10CAQoggJCI3NlYXJjaF_lsI_osYbls7Yg5aWn5p6X5Yy55YWL6aOv5bqXSDBYBGjnAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC-q-SzwbAAgHSAiQwYTg4Mjk0My1lYmZiLTQzNTQtODhiMS00MjIwMzQyNWVhN2bYAgHgAgE&sid=f1a67451bad881435908936e63b4a464&aid=304142",
-            "GREEN 岡山": "https://www.booking.com/hotel/jp/green-gang-shan-shi.zh-tw.html?aid=304142&label=gen173nr-10CAQoggJCI3NlYXJjaF_lsI_osYbls7Yg5aWn5p6X5Yy55YWL6aOv5bqXSDBYBGjnAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC-qSzwbAAgHSAiQwYTg4Mjk0My1lYmZiLTQzNTQtODhiMS00MjIwMzQyNWVhN2bYAgHgAgE&sid=702cc2f3c29175c8add57b966620226d",
-            "卡租拉亞旅館": "https://www.booking.com/hotel/jp/kazuraya.zh-tw.html",
-            "民宿 setouchi": "https://www.booking.com/hotel/jp/minpaku-setouchi.zh-tw.html",
-            "德島格蘭維羅酒店": "https://www.booking.com/hotel/jp/tokushima-grandvrio.zh-tw.html"
-        };
-
-        // 解析文字，自動加上「看地圖」與「查房價」按鈕
-        function formatTextWithMapLinks(text, isHotel = false, dayNumber = 1) {
+        function formatTextWithMapLinks(text) {
             if (!text) return '';
-            let processedText = text.replace('【✨ 吃好一點】', '<span class="text-amber-500 font-bold mr-1">✨ 吃好一點:</span>');
-            
-            return processedText.replace(/【(.*?)】(?:\((.*?)\))?/g, (match, placeName, trailingText) => {
-                let isBooked = placeName.includes("✅已預約");
-                let needsChange = placeName.includes("⚠️需改期") || placeName.includes("⚠️需加訂");
-                let searchQuery = placeName;
-                
-                if (isBooked) {
-                     searchQuery = placeName.replace("✅已預約:", "").trim();
-                } else if (needsChange) {
-                     searchQuery = placeName.replace(/⚠️需改期:|⚠️需加訂:/, "").trim();
-                }
-
-                // 針對特定地點自訂 Google Map 搜尋關鍵字 (解決音譯名稱找不到的問題)
-                const customMapQueries = {
-                    "卡租拉亞旅館": "旅館かずらや 徳島県三好市西祖谷山村閑定78",
-                    "屋島 望海荘": "絶景の宿 望海荘 〒761-0111 香川県高松市屋島東町1784-15",
-                    "高松東田町 住宿": "香川県高松市東田町２−６"
-                };
-                let finalMapQuery = customMapQueries[searchQuery] || searchQuery;
-
-                // 地圖按鈕 (橘色)
-                let mapBtn = `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(finalMapQuery)}" target="_blank" class="ml-1.5 inline-flex items-center gap-1 px-2 py-1 btn-map text-white rounded text-xs font-bold transition-colors shadow-sm"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path></svg>看地圖</a>`;
-                
-                // 飯店房價按鈕/已訂管理按鈕
-                let priceBtn = "";
-                let orderBtn = "";
-                
-                if (isHotel && !placeName.includes("停車場") && !placeName.includes("自理") && !placeName.includes("免費停車")) {
-                    const dates = getStayDates(dayNumber);
-                    if (isBooked) {
-                        // 嘗試從對照表抓取專屬連結，若無則降級為搜尋
-                        const specificUrl = bookedHotelUrls[searchQuery];
-                        const infoUrl = specificUrl ? specificUrl : `https://www.booking.com/searchresults.zh-tw.html?ss=${encodeURIComponent(searchQuery)}&checkin=${dates.checkin}&checkout=${dates.checkout}`;
-                        
-                        priceBtn = `<a href="${infoUrl}" target="_blank" class="ml-1.5 mt-1 sm:mt-0 inline-flex items-center gap-1 px-2 py-1 bg-teal-600 hover:bg-teal-700 text-white rounded text-xs font-bold transition-colors shadow-sm"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>飯店資訊</a>`;
-                        orderBtn = `<a href="https://secure.booking.com/mytrips.zh-tw.html?aid=304142&label=gen173nr-10CAQoggJCI3NlYXJjaF_lsI_osYbls7Yg5aWn5p6X5Yy55YWL6aOv5bqXSDBYBGjnAYgBAZgBM7gBF8gBDNgBA-gBAfgBAYgCAagCAbgC-q-SzwbAAgHSAiQwYTg4Mjk0My1lYmZiLTQzNTQtODhiMS00MjIwMzQyNWVhN2bYAgHgAgE&sid=f1a67451bad881435908936e63b4a464" target="_blank" class="ml-1.5 mt-1 sm:mt-0 inline-flex items-center gap-1 px-2 py-1 bg-[#003580] hover:bg-[#00224f] text-white rounded text-xs font-bold transition-colors shadow-sm"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>管理訂單</a>`;
-                    } else {
-                        priceBtn = `<a href="https://www.booking.com/searchresults.zh-tw.html?ss=${encodeURIComponent(searchQuery)}&checkin=${dates.checkin}&checkout=${dates.checkout}&group_adults=4&no_rooms=2" target="_blank" class="ml-1.5 mt-1 sm:mt-0 inline-flex items-center gap-1 px-2 py-1 btn-hotel text-white rounded text-xs font-bold transition-colors shadow-sm"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>Booking 查房(4人2房)</a>`;
-                        
-                        // 針對特定旅館增加官網連結
-                        if (searchQuery === "屋島 望海荘") {
-                            priceBtn += `<a href="https://bokaiso.com/" target="_blank" class="ml-1.5 mt-1 sm:mt-0 inline-flex items-center gap-1 px-2 py-1 bg-indigo-500 hover:bg-indigo-600 text-white rounded text-xs font-bold transition-colors shadow-sm"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>前往官網</a>`;
-                        }
-                    }
-                }
-                
-                // 特別處理免費停車標記
-                if (placeName === "免費停車") {
-                     return `<span class="inline-flex items-center mx-1"><span class="bg-green-100 text-green-800 border border-green-300 px-2 py-0.5 rounded text-xs font-bold">🅿️ 免費停車優先</span></span>`;
-                }
-
-                let textColor = isBooked ? "text-emerald-700 bg-emerald-50 px-1.5 rounded border border-emerald-200" : 
-                                needsChange ? "text-rose-700 bg-rose-50 px-1.5 rounded border border-rose-200" : 
-                                "text-stone-900 border-b-2 border-stone-200";
-                
-                let extraText = trailingText ? `<span class="text-xs text-stone-500 ml-1 font-normal">(${trailingText})</span>` : '';
-
-                return `<span class="inline-flex flex-wrap items-center mx-0.5 my-1 font-bold ${textColor}">${placeName}${extraText}${mapBtn}${priceBtn}${orderBtn}</span>`;
+            return text.replace(/【(.*?)】/g, (match, placeName) => {
+                return `<span class="font-bold text-stone-900 border-b-2 border-stone-200">${placeName}<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeName)}" target="_blank" class="ml-1 inline-flex items-center gap-1 px-1.5 py-0.5 btn-map text-white rounded text-[10px] transition-colors shadow-sm">地圖</a></span>`;
             });
         }
 
         function renderDayContent() {
             const data = itineraryData.find(d => d.day === activeDay);
-            const actHTML = data.activities.map(act => `<li class="flex items-start mb-4 leading-relaxed text-stone-700"><span class="mr-2 mt-1 text-teal-600">•</span><div>${formatTextWithMapLinks(act)}</div></li>`).join('');
+            const actHTML = data.activities.map(act => `<li class="flex items-start mb-3 leading-relaxed text-stone-700"><span class="mr-2 mt-1 text-teal-600">•</span><div>${formatTextWithMapLinks(act)}</div></li>`).join('');
             
-            // 動態產生相片牆 HTML
-            let galleryHTML = '';
-            if (data.attractions && data.attractions.length > 0) {
-                galleryHTML = `
-                    <div class="mt-5 grid grid-cols-2 md:grid-cols-3 gap-3">
-                        ${data.attractions.map(attr => `
-                            <div class="group relative rounded-lg overflow-hidden shadow-sm border border-stone-200 aspect-[4/3] bg-stone-100">
-                                <img src="${attr.img}" alt="${attr.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop';">
-                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-stone-900/80 to-transparent pt-6 pb-2 px-2 text-center pointer-events-none">
-                                    <span class="text-white text-xs font-bold drop-shadow-md tracking-wider">${attr.name}</span>
-                                </div>
+            let galleryHTML = `
+                <div class="mt-5 grid grid-cols-2 md:grid-cols-3 gap-3">
+                    ${data.attractions.map(attr => `
+                        <div class="group relative rounded-lg overflow-hidden shadow-sm border border-stone-200 aspect-[4/3] bg-stone-100">
+                            <img src="${attr.img}" alt="${attr.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop'">
+                            <div class="absolute bottom-0 left-0 right-0 bg-stone-900/60 p-2 text-center">
+                                <span class="text-white text-[10px] font-bold tracking-wider">${attr.name}</span>
                             </div>
-                        `).join('')}
-                    </div>
-                `;
-            }
+                        </div>
+                    `).join('')}
+                </div>
+            `;
 
             contentContainer.innerHTML = `
                 <div class="fade-in">
-                    <div class="flex flex-wrap justify-between items-end mb-6 border-b border-stone-100 pb-4">
-                        <div>
-                            <span class="text-teal-800 text-xs px-2.5 py-1 rounded-sm font-bold uppercase tracking-wider bg-teal-100">Day ${data.day} | ${data.date}</span>
-                            <h3 class="text-2xl md:text-3xl font-bold text-stone-800 mt-3">${data.title}</h3>
-                        </div>
-                        <div class="text-sm font-bold text-stone-500 bg-stone-100 px-4 py-1.5 rounded-full mt-3 lg:mt-0 shadow-sm border border-stone-200">
-                            步調: ${data.vibe}
-                        </div>
+                    <div class="mb-6 border-b border-stone-100 pb-4">
+                        <span class="text-teal-800 text-xs px-2 py-1 rounded-sm font-bold bg-teal-100">Day ${data.day} | ${data.date}</span>
+                        <h3 class="text-2xl font-bold text-stone-800 mt-3">${data.title}</h3>
+                        <p class="text-sm text-stone-500 mt-1">氛圍: ${data.vibe}</p>
                     </div>
                     
-                    <div class="space-y-6">
-                        <div class="bg-stone-50 p-5 rounded-xl border border-stone-200 shadow-sm">
-                            <h4 class="font-bold text-stone-800 mb-3 flex items-center gap-2"><span class="text-xl">🚘</span> 交通動線</h4>
-                            <p class="text-sm leading-relaxed">${formatTextWithMapLinks(data.transport)}</p>
+                    <div class="space-y-6 text-sm md:text-base">
+                        <div>
+                            <h4 class="font-bold text-stone-800 mb-2 flex items-center gap-2">🚘 交通</h4>
+                            <p>${formatTextWithMapLinks(data.transport)}</p>
                         </div>
                         
-                        <div class="px-2">
-                            <h4 class="font-bold text-stone-800 mb-4 flex items-center gap-2"><span class="text-xl">🗺️</span> 行程亮點與景點預覽</h4>
-                            <ul class="text-sm md:text-base">${actHTML}</ul>
+                        <div>
+                            <h4 class="font-bold text-stone-800 mb-2 flex items-center gap-2">🗺️ 行程亮點</h4>
+                            <ul>${actHTML}</ul>
                             ${galleryHTML}
                         </div>
                         
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-orange-50/60 p-5 rounded-xl border border-orange-200">
-                                <h4 class="font-bold text-orange-900 mb-3 flex items-center gap-2">🍱 餐飲安排</h4>
-                                <p class="text-sm leading-relaxed mb-3"><span class="font-bold text-orange-800 mr-2">午餐</span>${formatTextWithMapLinks(data.lunch)}</p>
-                                <p class="text-sm leading-relaxed"><span class="font-bold text-orange-800 mr-2">晚餐</span>${formatTextWithMapLinks(data.dinner)}</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-orange-50/50 p-4 rounded-xl border border-orange-100">
+                                <h4 class="font-bold text-orange-900 mb-2">🍱 餐飲</h4>
+                                <p><span class="font-bold text-orange-800">午:</span> ${formatTextWithMapLinks(data.lunch)}</p>
+                                <p><span class="font-bold text-orange-800">晚:</span> ${formatTextWithMapLinks(data.dinner)}</p>
                             </div>
-                            <div class="bg-blue-50/60 p-5 rounded-xl border border-blue-200">
-                                <h4 class="font-bold text-blue-900 mb-3 flex items-center gap-2">🏨 住宿與停車</h4>
-                                <p class="text-sm leading-relaxed mb-3">${formatTextWithMapLinks(data.hotel, true, data.day)}</p>
-                                <p class="text-sm leading-relaxed border-t border-blue-200/50 pt-2"><span class="font-bold text-blue-800 mr-2">停車</span>${formatTextWithMapLinks(data.parking)}</p>
+                            <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+                                <h4 class="font-bold text-blue-900 mb-2">🏨 住宿</h4>
+                                <p>${formatTextWithMapLinks(data.hotel)}</p>
+                                <p class="text-xs text-blue-800 mt-2">🅿️ ${formatTextWithMapLinks(data.parking)}</p>
                             </div>
                         </div>
                     </div>
@@ -510,115 +402,45 @@
         function renderSummaryTable() {
             const tbody = document.getElementById('summary-table-body');
             tbody.innerHTML = '';
-            
             itineraryData.forEach(data => {
-                const isBooked = data.hotel.includes("✅已預約");
-                const isHome = data.day === 11;
-                
-                let statusBadge = '';
-                let hotelName = data.hotel;
-                let todoItems = [];
-
-                // 判斷住宿與狀態
-                if (isHome) {
-                    statusBadge = '<span class="text-stone-400">🏠 結尾</span>';
-                    hotelName = '溫暖的家';
-                } else if (data.hotel.includes("⚠️需改期") || data.hotel.includes("⚠️需加訂")) {
-                    statusBadge = '<span class="bg-rose-100 text-rose-800 px-2.5 py-1 rounded-md text-xs font-bold border border-rose-200 shadow-sm">⚠️ 需修改訂單</span>';
-                    const match = data.hotel.match(/【(?:⚠️需改期|⚠️需加訂):\s*(.*?)】/);
-                    if (match) hotelName = `<span class="font-bold text-rose-800">${match[1]}</span>`;
-                    
-                    const dates = getStayDates(data.day);
-                    const bookingLink = `https://www.booking.com/searchresults.zh-tw.html?ss=${encodeURIComponent(match ? match[1] : hotelName)}&checkin=${dates.checkin}&checkout=${dates.checkout}&group_adults=4&no_rooms=2`;
-                    todoItems.push(`📝 <span class="text-rose-600 font-bold">請盡快修改/加訂日期！</span>`);
-                    todoItems.push(`🏠 <a href="${bookingLink}" target="_blank" class="text-blue-600 underline hover:text-blue-800 font-bold transition">點此前往 Booking.com 處理</a>`);
-                } else if (isBooked) {
-                    statusBadge = '<span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md text-xs font-bold border border-emerald-200">✅ 訂房完成</span>';
-                    // 擷取飯店名稱，去除標籤與金額
-                    const match = data.hotel.match(/【✅已預約:\s*(.*?)】/);
-                    if (match) hotelName = `<span class="font-bold text-emerald-800">${match[1]}</span>`;
-                } else {
-                    statusBadge = '<span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-md text-xs font-bold border border-amber-200 shadow-sm">⏳ 待訂房</span>';
-                    // 整理未訂房的名稱顯示
-                    let cleanedName = data.hotel.replace(/【|】/g, '').split(' 或 ')[0];
-                    hotelName = `<span class="text-stone-500">${cleanedName} (評估中)</span>`;
-                    
-                    // 動態產生 Booking 連結並加入代辦事項
-                    const dates = getStayDates(data.day);
-                    const bookingLink = `https://www.booking.com/searchresults.zh-tw.html?ss=${encodeURIComponent(cleanedName)}&checkin=${dates.checkin}&checkout=${dates.checkout}&group_adults=4&no_rooms=2`;
-                    todoItems.push(`🏠 <a href="${bookingLink}" target="_blank" class="text-blue-600 underline hover:text-blue-800 font-bold transition">點此搜尋並下訂雙床房x2</a>`);
-                }
-
-                // 判斷其他代訂項目 (渡輪與美術館)，並附上直接跳轉連結
-                if (data.day === 6) {
-                    todoItems.push(`🏨 <a href="https://bokaiso.com/" target="_blank" class="text-indigo-600 underline hover:text-indigo-800 font-bold transition">預約 「屋島 望海荘」</a>`);
-                }
-                if (data.day === 7) {
-                    todoItems.push(`🚢 <a href="https://yoyaku.shikokuferry.com/inquiry/" target="_blank" class="text-blue-600 underline hover:text-blue-800 font-bold transition">線上預約 汽車渡輪 (高松➔土庄)</a>`);
-                }
-                if (data.day === 8) {
-                    todoItems.push(`🚢 <a href="https://yoyaku.shikokuferry.com/inquiry/" target="_blank" class="text-blue-600 underline hover:text-blue-800 font-bold transition">線上預約 汽車渡輪 (土庄➔高松)</a>`);
-                }
-                if (data.day === 9) {
-                    todoItems.push(`🎟️ <a href="https://benesse-artsite.eventos.tokyo/web/portal/797/event/8483/module/booth/239565/176695?language=eng" target="_blank" class="text-red-600 underline hover:text-red-800 font-bold transition">預約 地中美術館門票 (需提前於官網買)</a>`);
-                }
-
-                let todoHTML = todoItems.length > 0 
-                    ? `<ul class="list-disc list-inside text-rose-600 font-medium text-xs space-y-1.5">` + todoItems.map(item => `<li>${item}</li>`).join('') + `</ul>`
-                    : `<span class="text-stone-300 text-xs">- 無 -</span>`;
-
                 const tr = document.createElement('tr');
                 tr.className = "border-b border-stone-100 hover:bg-stone-50 transition-colors";
                 tr.innerHTML = `
-                    <td class="py-3.5 px-4 font-bold text-stone-500">${data.day}</td>
-                    <td class="py-3.5 px-4">${data.date.split(' ')[0]}</td>
-                    <td class="py-3.5 px-4 font-bold text-stone-800">${data.title}</td>
-                    <td class="py-3.5 px-4">${hotelName}</td>
-                    <td class="py-3.5 px-4">${statusBadge}</td>
-                    <td class="py-3.5 px-4 bg-rose-50/30">${todoHTML}</td>
+                    <td class="py-3 px-4 font-bold text-stone-500">${data.day}</td>
+                    <td class="py-3 px-4">${data.date.split(' ')[0]}</td>
+                    <td class="py-3 px-4 font-bold text-stone-800">${data.title}</td>
+                    <td class="py-3 px-4">${data.hotel.split('(')[0].replace(/【|】|✅已預約: /g, '')}</td>
+                    <td class="py-3 px-4"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded text-xs font-bold">✅ 已訂妥</span></td>
+                    <td class="py-3 px-4 text-xs text-stone-400">確認完成</td>
                 `;
                 tbody.appendChild(tr);
             });
         }
 
-        // 產生加入 Google Calendar 的連結
         function addToCalendar() {
-            // 設定旅行日期: 2026/07/03 至 2026/07/13
-            const text = encodeURIComponent('🚗 日本岡山四國家族自駕遊');
-            const dates = '20260703T000000Z/20260714T000000Z'; // 結束日需加一天
-            const details = encodeURIComponent(`11天10夜 岡山、淡路島、四國自駕遊\n航班：去程 IT214 11:30 | 回程 IT215 15:55`);
-            const location = encodeURIComponent('日本岡山桃太郎機場');
-            const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}&details=${details}&location=${location}`;
+            const text = encodeURIComponent('🚗 日本家族自駕遊');
+            const dates = '20260703T000000Z/20260714T000000Z'; 
+            const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}`;
             window.open(url, '_blank');
         }
 
-        // 初始化
         document.addEventListener('DOMContentLoaded', () => {
             renderSummaryTable();
             renderDaySelector(); 
             renderDayContent();
             
-            // 初始化 Chart.js 圓餅圖
             const ctx = document.getElementById('budgetChart').getContext('2d');
             new Chart(ctx, {
                 type: 'doughnut', 
                 data: {
-                    labels: ['租車與油資', '交通雜費(含過路/船)', '住宿費', '餐飲費', '門票'],
+                    labels: ['租車', '交通雜費', '住宿費', '餐飲', '門票'],
                     datasets: [{ 
-                        data: [184277, 65000, 200000, 200000, 20000], 
+                        data: [184277, 65000, 256925, 200000, 20000], 
                         backgroundColor: ['#14b8a6', '#60a5fa', '#fb7185', '#818cf8', '#fbbf24'], 
-                        borderWidth: 2,
-                        borderColor: '#ffffff'
+                        borderWidth: 2
                     }]
                 },
-                options: { 
-                    responsive: true, 
-                    maintainAspectRatio: false, 
-                    plugins: { 
-                        legend: { position: 'bottom', labels: { font: { family: "sans-serif" } } }
-                    }, 
-                    cutout: '60%' 
-                }
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
             });
         });
     </script>
