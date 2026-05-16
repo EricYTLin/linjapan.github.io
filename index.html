@@ -2,447 +2,614 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2026 岡山、四國、淡路島 11天10夜 家族自駕漫遊</title>
-    
-    <!-- 社群分享預覽 (Open Graph) -->
-    <meta property="og:title" content="2026 岡山、四國、淡路島 11天10夜 家族自駕漫遊">
-    <meta property="og:description" content="專為 54 歲長輩與年輕兄妹設計的舒適自駕行程。深度停留淡路島，以放射狀慢遊四國與直島藝術。">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=1200&auto=format&fit=crop">
-    <meta property="og:type" content="website">
-
-    <!-- 手機端 Web App 全螢幕體驗 -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#292524">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馬祖四日慢活藝術之旅</title>
+    <!-- 引入 Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 引入 Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #fcfbf9;
-            color: #333d47;
+        /* 分頁按鈕的自訂樣式 */
+        .tab-btn.active {
+            background-color: #2563eb; /* bg-blue-600 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            height: 300px;
-            max-height: 400px;
+        .tab-btn:not(.active) {
+            color: #475569; /* text-slate-600 */
         }
-        .tab-btn { transition: all 0.3s ease; }
-        .fade-in { animation: fadeIn 0.4s ease-in-out; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .tab-btn:not(.active):hover {
+            background-color: #f1f5f9; /* hover:bg-slate-100 */
         }
-        /* 自訂按鈕特效 */
-        .btn-map { background-color: #f97316; } 
-        .btn-map:hover { background-color: #ea580c; }
-        .btn-hotel { background-color: #2563eb; } 
-        .btn-hotel:hover { background-color: #1d4ed8; }
     </style>
 </head>
-<body class="antialiased selection:bg-teal-200 selection:text-teal-900">
+<body class="min-h-screen bg-slate-50 text-slate-800 font-sans pb-20">
 
-    <!-- Header Section -->
-    <header class="bg-stone-800 text-stone-50 py-16 px-4 md:px-8 shadow-md relative overflow-hidden">
-        <div class="max-w-6xl mx-auto relative z-10 flex flex-col lg:flex-row justify-between items-center gap-10">
-            <div class="lg:w-2/3 text-center lg:text-left">
-                <p class="text-teal-400 font-semibold tracking-wider text-sm uppercase mb-2">🚗 家族自駕漫遊 | 2026/07/03 - 07/13</p>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">岡山、淡路島、四國<br><span class="text-stone-300">11天10夜 深度環線</span></h1>
-                <p class="text-lg text-stone-300 max-w-2xl mb-8 mx-auto lg:mx-0">
-                    專為 54 歲長輩與年輕兄妹設計的舒適自駕行程。深度停留淡路島兩晚，感受明石海峽與鳴門漩渦的震撼。
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-700 to-cyan-600 text-white pt-12 pb-8 px-6 shadow-md">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-3xl md:text-4xl font-bold mb-3 tracking-wide">馬祖四日慢活藝術之旅</h1>
+            <p class="text-blue-100 text-lg flex items-center gap-2 mb-2">
+                <i data-lucide="calendar-days" class="w-5 h-5"></i>
+                8/7 (五) ～ 8/10 (一)
+            </p>
+            <p class="text-blue-50">
+                專為您與好友規劃的雙人/雙對海島微旅行。放慢腳步，享受自然絕景、藝術人文與高質感餐飲。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 mt-6">
+        
+        <!-- Navigation Tabs -->
+        <div class="flex bg-white rounded-xl shadow-sm p-2 mb-8 overflow-x-auto">
+            <button onclick="switchTab('itinerary')" id="btn-itinerary" class="tab-btn active flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium text-lg transition-all whitespace-nowrap">
+                <i data-lucide="calendar-days" class="w-5 h-5"></i>
+                行程總覽
+            </button>
+            <button onclick="switchTab('transport')" id="btn-transport" class="tab-btn flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium text-lg transition-all whitespace-nowrap">
+                <i data-lucide="navigation" class="w-5 h-5"></i>
+                交通指南
+            </button>
+            <button onclick="switchTab('accommodation')" id="btn-accommodation" class="tab-btn flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg font-medium text-lg transition-all whitespace-nowrap">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                嚴選住宿
+            </button>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab Content: Itinerary (行程總覽)          -->
+        <!-- ========================================== -->
+        <div id="tab-itinerary" class="space-y-6">
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6 flex gap-3 items-start">
+                <i data-lucide="info" class="text-blue-600 shrink-0 mt-1 w-6 h-6"></i>
+                <p class="text-blue-900 text-lg leading-relaxed">
+                    <strong>貼心建議：</strong> 在南北竿建議直接「租賃汽車」取代機車，能遮陽避暑，攜帶相機與行李也更安全便利。東引地形起伏較大，租車或預約計程車導覽會更舒適。
                 </p>
-                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                    <a href="#summary" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">
-                        📋 行程總表
-                    </a>
-                    <a href="#route-map" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">
-                        🗺️ 完整路線
-                    </a>
-                    <a href="#itinerary" class="bg-teal-600 hover:bg-teal-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">
-                        📅 每日細節
-                    </a>
-                    <button onclick="addToCalendar()" class="bg-white text-stone-800 hover:bg-stone-100 px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2 hidden md:flex">
-                        <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/></svg>
-                        同步至 Google Calendar
-                    </button>
-                </div>
             </div>
-            <div class="lg:w-1/3 w-full max-w-md">
-                <div class="bg-stone-700/50 p-6 rounded-2xl border border-stone-600 backdrop-blur-sm shadow-xl">
-                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2 border-b border-stone-600 pb-2">✈️ 航班摘要</h3>
-                    <div class="flex justify-between items-center mb-4">
-                        <div>
-                            <div class="text-stone-400 text-xs">去程 7/3 (五)</div>
-                            <div class="text-xl font-bold text-teal-300">IT 214</div>
+
+            <!-- Day 1 -->
+            <div class="border rounded-2xl p-6 shadow-sm bg-teal-50 border-teal-200">
+                <div class="flex justify-between items-start mb-4 border-b border-black/10 pb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="bg-white/60 text-slate-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm">8/7 (五)</span>
+                            <span class="font-bold text-xl text-slate-800">Day 1</span>
                         </div>
-                        <div class="text-right">
-                            <div class="font-bold">TPE 11:30</div>
-                            <div class="text-sm text-stone-300">OKJ 15:05</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-2">啟程與北竿石厝風華</h3>
+                    </div>
+                    <span class="bg-slate-800 text-white px-4 py-2 rounded-lg font-medium shadow-md">北竿</span>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="plane" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">上午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">抵達馬祖南竿機場 ➜ 轉乘交通船至北竿</p>
                         </div>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <div class="text-stone-400 text-xs">回程 7/13 (一)</div>
-                            <div class="text-xl font-bold text-teal-300">IT 215</div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="utensils" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
                         </div>
-                        <div class="text-right">
-                            <div class="font-bold">OKJ 15:55</div>
-                            <div class="text-sm text-stone-300">TPE 17:40</div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">午餐</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">天馨園老酒風味餐 (道地馬祖老酒麵線與海鮮)</p>
+                            <a href="https://maps.google.com/?q=馬祖北竿天馨園" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="camera" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">下午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">北竿發電廠 / 橋仔五間排 (尋訪藝術策展遺跡)</p>
+                            <a href="https://maps.google.com/?q=馬祖橋仔村" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="camera" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">下午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">芹壁聚落 (漫步石頭屋，絕佳光影適合人像拍攝)</p>
+                            <a href="https://maps.google.com/?q=馬祖芹壁聚落" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="utensils" class="w-5 h-5"></i></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">晚餐</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">芹壁聚落福州風味餐 (伴隨夕陽海景)</p>
+                            <a href="https://maps.google.com/?q=馬祖芹壁聚落" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-black/10 flex items-center gap-2 text-lg font-medium text-slate-800">
+                    <i data-lucide="home" class="text-slate-600 w-6 h-6"></i>
+                    住宿：愛情海民宿 (北竿)
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="border rounded-2xl p-6 shadow-sm bg-blue-50 border-blue-200">
+                <div class="flex justify-between items-start mb-4 border-b border-black/10 pb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="bg-white/60 text-slate-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm">8/8 (六)</span>
+                            <span class="font-bold text-xl text-slate-800">Day 2</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-2">前進國之北疆，東引絕景</h3>
+                    </div>
+                    <span class="bg-slate-800 text-white px-4 py-2 rounded-lg font-medium shadow-md">東引</span>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="ship" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">上午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">08:30 北竿搭船回南竿 ➜ 09:30 轉船 ➜ 10:40 抵達東引中柱港</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="utensils" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">午餐</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">東引珍膳美福州風味餐</p>
+                            <a href="https://maps.google.com/?q=東引珍膳美餐廳" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="camera" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">下午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">東引燈塔 (歐式純白燈塔矗立於懸崖邊)</p>
+                            <a href="https://maps.google.com/?q=東引島燈塔" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="camera" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">下午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">國之北疆 (眺望中華民國領土的最北端)</p>
+                            <a href="https://maps.google.com/?q=國之北疆" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="coffee" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">下午茶</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">鹹味島合作社 (感受年輕人注入的設計活力)</p>
+                            <a href="https://maps.google.com/?q=東引鹹味島合作社" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="utensils" class="w-5 h-5"></i></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">晚餐</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">東引泰利餐廳創意料理</p>
+                            <a href="https://maps.google.com/?q=東引泰利食堂" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-black/10 flex items-center gap-2 text-lg font-medium text-slate-800">
+                    <i data-lucide="home" class="text-slate-600 w-6 h-6"></i>
+                    住宿：東湧行旅旅店 (東引)
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="border rounded-2xl p-6 shadow-sm bg-orange-50 border-orange-200">
+                <div class="flex justify-between items-start mb-4 border-b border-black/10 pb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="bg-white/60 text-slate-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm">8/9 (日)</span>
+                            <span class="font-bold text-xl text-slate-800">Day 3</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-2">南竿軍事美學與老酒文化</h3>
+                    </div>
+                    <span class="bg-slate-800 text-white px-4 py-2 rounded-lg font-medium shadow-md">南竿</span>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="ship" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">上午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">08:30 由東引搭船 ➜ 10:40 返回南竿福澳碼頭</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="utensils" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">午餐</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">南竿醉仙樓福洲風味餐</p>
+                            <a href="https://maps.google.com/?q=馬祖南竿醉仙樓" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="camera" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">下午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">梅石營區 (參觀藝術轉化的軍事營區)</p>
+                            <a href="https://maps.google.com/?q=馬祖梅石營區" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="camera" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">下午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">津沙聚落 (打開老酒玻璃屋概念空間)</p>
+                            <a href="https://maps.google.com/?q=馬祖津沙聚落" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="sunset" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">傍晚</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">鐵板沙灘 (漫步欣賞浪漫夕陽)</p>
+                            <a href="https://maps.google.com/?q=馬祖鐵板沙灘" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="utensils" class="w-5 h-5"></i></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">晚餐</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">依嬤的店 (評價極高的精緻馬祖家常菜)</p>
+                            <a href="https://maps.google.com/?q=馬祖依嬤的店" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-black/10 flex items-center gap-2 text-lg font-medium text-slate-800">
+                    <i data-lucide="home" class="text-slate-600 w-6 h-6"></i>
+                    住宿：日光春和旅宿 (南竿)
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="border rounded-2xl p-6 shadow-sm bg-amber-50 border-amber-200">
+                <div class="flex justify-between items-start mb-4 border-b border-black/10 pb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="bg-white/60 text-slate-800 px-3 py-1 rounded-full text-sm font-bold shadow-sm">8/10 (一)</span>
+                            <span class="font-bold text-xl text-slate-800">Day 4</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-2">媽祖信仰與私宅饗宴</h3>
+                    </div>
+                    <span class="bg-slate-800 text-white px-4 py-2 rounded-lg font-medium shadow-md">南竿</span>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="sunrise" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">上午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">享用日光春和精緻早餐</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="camera" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">上午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">馬港天后宮 / 媽祖巨神像 (感受島嶼風景與信仰中心)</p>
+                            <a href="https://maps.google.com/?q=馬祖境天后宮" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="utensils" class="w-5 h-5"></i></div>
+                            <div class="w-0.5 h-full bg-slate-300/50 mt-2"></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">午餐</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">林義和私宅發酵餐桌 (預約制無菜單私廚料理)</p>
+                            <a href="https://maps.google.com/?q=林義和工坊" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>地圖</a>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600"><i data-lucide="plane" class="w-5 h-5"></i></div>
+                        </div>
+                        <div class="pt-2 pb-4 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <i data-lucide="clock" class="w-4 h-4 text-slate-500"></i>
+                                <span class="font-bold text-slate-700">下午</span>
+                            </div>
+                            <p class="text-lg text-slate-800 mb-2">帶著滿滿回憶，搭乘 15:45 立榮航班 返回松山機場</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-black/10 flex items-center gap-2 text-lg font-medium text-slate-800">
+                    <i data-lucide="home" class="text-slate-600 w-6 h-6"></i>
+                    住宿：溫暖的家
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab Content: Transport (交通指南)          -->
+        <!-- ========================================== -->
+        <div id="tab-transport" class="space-y-6 hidden">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                <i data-lucide="plane" class="text-blue-600 w-6 h-6"></i> 往返台灣航班資訊
+            </h2>
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-xl mb-2 text-blue-800">去程 (8/7 五)</h3>
+                        <p class="text-lg">台北松山 ✈️ 馬祖南竿</p>
+                        <p class="text-slate-600">建議搭乘：約 09:30 出發之航班</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h3 class="font-bold text-xl mb-2 text-blue-800">回程 (8/10 一)</h3>
+                        <p class="text-lg">馬祖南竿 ✈️ 台北松山</p>
+                        <p class="text-slate-600">建議搭乘：約 15:45 出發之航班</p>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-blue-50 rounded-xl flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div>
+                        <p class="font-medium text-lg">💡 8月為旅遊旺季，請務必提早兩個月訂位。</p>
+                        <p class="text-slate-600">行李規定：手提 7KG / 託運 10KG。報到請攜帶身分證件正本。</p>
+                    </div>
+                    <a href="https://www.uniair.com.tw" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 shadow-md transition-colors whitespace-nowrap text-lg">
+                        前往立榮航空訂票 <i data-lucide="external-link" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10 mb-4 flex items-center gap-2">
+                <i data-lucide="ship" class="text-blue-600 w-6 h-6"></i> 島際交通船資訊
+            </h2>
+            <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100">
+                <div class="space-y-4 text-lg">
+                    <div class="flex items-start gap-3 pb-4 border-b border-slate-100">
+                        <div class="bg-blue-100 p-2 rounded-lg mt-1"><i data-lucide="navigation" class="text-blue-700 w-6 h-6"></i></div>
+                        <div>
+                            <h4 class="font-bold">南竿 ↔ 北竿</h4>
+                            <p class="text-slate-600">每日密集開航 (約半小時一班)，航程僅需約 15 分鐘。</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 pb-4 border-b border-slate-100">
+                        <div class="bg-blue-100 p-2 rounded-lg mt-1"><i data-lucide="ship" class="text-blue-700 w-6 h-6"></i></div>
+                        <div>
+                            <h4 class="font-bold">南竿 ↔ 東引</h4>
+                            <p class="text-slate-600">需搭乘「臺馬之星」或「新臺馬輪」，航程約 2 小時。因船班為單日/雙日輪放，需事先查詢船期。</p>
+                        </div>
+                    </div>
+                    <div class="pt-2 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p class="font-medium text-orange-700 bg-orange-50 px-4 py-2 rounded-lg">
+                            ⚠️ 建議出發前一週先上網將島際船票訂好，避免現場無座位。
+                        </p>
+                        <a href="https://www.matsue-ticket.com/" target="_blank" rel="noopener noreferrer" class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 shadow-md transition-colors whitespace-nowrap text-lg">
+                            馬祖海上交通訂位 <i data-lucide="external-link" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- Tab Content: Accommodation (嚴選住宿)      -->
+        <!-- ========================================== -->
+        <div id="tab-accommodation" class="space-y-6 hidden">
+            <p class="text-lg text-slate-600 mb-6 bg-white p-4 rounded-xl shadow-sm">
+                為確保旅途的舒適度，推薦挑選具備無敵海景且評價極高的特色旅宿。建議透過直接致電預訂，最能確保房源與溝通需求。
+            </p>
+
+            <div class="grid md:grid-cols-1 gap-6">
+                <!-- Hotel 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex flex-col md:flex-row gap-6 items-center">
+                    <div class="w-full md:w-1/3 h-48 bg-teal-100 rounded-xl flex items-center justify-center border-2 border-teal-50 text-teal-800 relative">
+                        <i data-lucide="home" class="w-16 h-16 opacity-50 mb-2"></i>
+                        <span class="absolute text-xl font-bold opacity-80 mt-16">北竿風格</span>
+                    </div>
+                    <div class="flex-1 space-y-3">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-2xl font-bold text-slate-900">愛情海民宿</h3>
+                            <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-sm font-bold">8/7 入住</span>
+                        </div>
+                        <p class="text-lg text-slate-600">📍 連江縣北竿鄉芹壁村</p>
+                        <p class="text-lg">位於絕美的芹壁聚落內，推開窗即是海景與傳統閩東石厝，非常有異國情調。</p>
+                        <div class="pt-4 flex gap-3">
+                            <a href="tel:083656668" class="bg-slate-800 text-white px-5 py-2 rounded-lg font-medium hover:bg-slate-700 transition flex items-center gap-2">
+                                📞 撥打 08-365-6668
+                            </a>
+                            <a href="https://maps.google.com/?q=馬祖北竿愛情海民宿" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>查看地圖
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex flex-col md:flex-row gap-6 items-center">
+                    <div class="w-full md:w-1/3 h-48 bg-blue-100 rounded-xl flex items-center justify-center border-2 border-blue-50 text-blue-800 relative">
+                        <i data-lucide="home" class="w-16 h-16 opacity-50 mb-2"></i>
+                        <span class="absolute text-xl font-bold opacity-80 mt-16">東引風格</span>
+                    </div>
+                    <div class="flex-1 space-y-3">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-2xl font-bold text-slate-900">東湧行旅旅店</h3>
+                            <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-sm font-bold">8/8 入住</span>
+                        </div>
+                        <p class="text-lg text-slate-600">📍 連江縣東引鄉樂華村29號</p>
+                        <p class="text-lg">位於東引熱鬧的樂華村，生活機能佳，提供旅客寬敞乾淨的休息空間。</p>
+                        <div class="pt-4 flex gap-3">
+                            <a href="tel:083677168" class="bg-slate-800 text-white px-5 py-2 rounded-lg font-medium hover:bg-slate-700 transition flex items-center gap-2">
+                                📞 撥打 08-367-7168
+                            </a>
+                            <a href="https://maps.google.com/?q=馬祖東引東湧行旅旅店" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>查看地圖
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 flex flex-col md:flex-row gap-6 items-center">
+                    <div class="w-full md:w-1/3 h-48 bg-orange-100 rounded-xl flex items-center justify-center border-2 border-orange-50 text-orange-800 relative">
+                        <i data-lucide="home" class="w-16 h-16 opacity-50 mb-2"></i>
+                        <span class="absolute text-xl font-bold opacity-80 mt-16">南竿風格</span>
+                    </div>
+                    <div class="flex-1 space-y-3">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-2xl font-bold text-slate-900">日光春和旅宿</h3>
+                            <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-sm font-bold">8/9 入住</span>
+                        </div>
+                        <p class="text-lg text-slate-600">📍 連江縣南竿鄉仁愛村1之1號</p>
+                        <p class="text-lg">頂級清水模海景精品旅宿，擁有絕佳的大片落地窗海景，提供極致放鬆的體驗。</p>
+                        <div class="pt-4 flex gap-3">
+                            <a href="tel:083626666" class="bg-slate-800 text-white px-5 py-2 rounded-lg font-medium hover:bg-slate-700 transition flex items-center gap-2">
+                                📞 撥打 08-362-6666
+                            </a>
+                            <a href="https://maps.google.com/?q=馬祖南竿日光春和旅宿" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1 mt-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full hover:bg-blue-200 transition-colors shadow-sm">
+                                <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>查看地圖
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
 
-    <main class="max-w-6xl mx-auto px-4 md:px-8 py-12 space-y-20">
-
-        <!-- 總表：行程總覽與訂房狀態 -->
-        <section id="summary" class="scroll-mt-10">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-6 gap-4">
-                <div>
-                    <h2 class="text-3xl font-bold text-stone-800 mb-2">📋 行程總覽與訂房狀態</h2>
-                    <p class="text-stone-600 text-sm">一目了然每日行程、住宿預訂情況與待辦事項。</p>
-                </div>
-                <a href="https://secure.booking.com/mytrips.zh-tw.html" target="_blank" class="bg-[#003580] hover:bg-[#00224f] text-white px-5 py-3 rounded-xl font-bold text-sm transition-all shadow-md flex items-center gap-2 flex-shrink-0">
-                    前往 Booking.com 管理訂單
-                </a>
-            </div>
-            <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse whitespace-nowrap min-w-[700px]">
-                        <thead>
-                            <tr class="bg-stone-100 text-stone-600 text-sm">
-                                <th class="py-3 px-4 font-semibold border-b border-stone-200 w-12">Day</th>
-                                <th class="py-3 px-4 font-semibold border-b border-stone-200">日期</th>
-                                <th class="py-3 px-4 font-semibold border-b border-stone-200">行程大綱</th>
-                                <th class="py-3 px-4 font-semibold border-b border-stone-200">預定住宿點</th>
-                                <th class="py-3 px-4 font-semibold border-b border-stone-200">訂房狀態</th>
-                                <th class="py-3 px-4 font-semibold border-b border-stone-200 text-rose-600">待辦事項 (確認項目)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="summary-table-body" class="text-sm">
-                            <!-- JS 動態生成 -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 每日行程細節 -->
-        <section id="itinerary" class="scroll-mt-10">
-            <div class="mb-8 text-center md:text-left">
-                <h2 class="text-3xl font-bold text-stone-800 mb-2">🗓️ 每日詳細行程詳情</h2>
-                <p class="text-stone-600 max-w-3xl text-sm">
-                    景點照片已更新為 Google Map 實景預覽。點擊按鈕可開啟地圖導航。
-                </p>
-            </div>
-            <div class="flex flex-col lg:flex-row gap-6 bg-white p-2 rounded-3xl shadow-md border border-stone-200">
-                <div class="lg:w-[28%] flex lg:flex-col overflow-x-auto hide-scrollbar border-b lg:border-b-0 lg:border-r border-stone-100 p-4 gap-2">
-                    <div id="day-selector-container" class="flex lg:flex-col w-max lg:w-full gap-2 pb-2 lg:pb-0"></div>
-                </div>
-                <div class="lg:w-[72%] p-4 lg:p-8 min-h-[550px]" id="day-content-container"></div>
-            </div>
-        </section>
-
-        <!-- 預算計算 -->
-        <section id="budget" class="scroll-mt-10 bg-white p-8 md:p-12 rounded-3xl shadow-md border border-stone-200 mb-10">
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-stone-800 mb-4">💰 總體旅費預算概算</h2>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">租車費 (TOYOTA W2+保險)</span><span class="font-bold">¥184,277</span></li>
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">交通雜費 (過路費/船票/油資)</span><span class="font-bold">¥65,000</span></li>
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">住宿費 (10晚實際結算)</span><span class="font-bold text-rose-600">TWD 53,526</span></li>
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">餐飲費 (特色餐廳+日常)</span><span class="font-bold">¥200,000</span></li>
-                        <li class="flex justify-between"><span class="text-stone-700 font-medium">門票 (姬路城/美術館等)</span><span class="font-bold">¥20,000</span></li>
-                    </ul>
-                    <div class="mt-6 p-4 bg-teal-50 rounded-xl border border-teal-100 text-center shadow-inner">
-                        <div class="text-3xl font-extrabold text-teal-700">總計約 ¥726,202 <span class="text-sm font-normal">JPY</span></div>
-                        <div class="text-sm text-teal-600 mt-1">(約合新台幣 15.1 萬元)</div>
-                    </div>
-                </div>
-                <div class="md:w-1/2 w-full"><div class="chart-container"><canvas id="budgetChart"></canvas></div></div>
-            </div>
-        </section>
     </main>
 
-    <footer class="bg-stone-900 text-stone-400 text-center py-6 text-sm">
-        &copy; 2026 岡山-四國-淡路島 家族自駕行 | Designed for Lin Family
-    </footer>
-
+    <!-- JavaScript 負責切換分頁與載入圖示 -->
     <script>
-        // 行程資料陣列 - 包含已修復的 Google Map 圖片連結
-        const itineraryData = [
-            { 
-                day: 1, date: `7/3 週五`, title: `抵達岡山，直奔姬路`, vibe: `移動/夜遊`, 
-                transport: `15:05 岡山機場 ➔ 16:00 辦理租車 ➔ 姬路市區`, 
-                activities: [`機場取車後直接往東行駛`, `傍晚抵達姬路飯店`, `晚上可在姬路車站周邊逛街`], 
-                lunch: `機上或自理`, dinner: `姬路穴子料理【一張羅】`, 
-                hotel: `【✅已預約: Besso姫路】(已付 TWD 5,979)`, parking: `【姬路車站周邊特約停車場】`, 
-                attractions: [
-                    {name: `岡山桃太郎機場`, img: `https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `姬路車站`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAF5OYmA5_SYAANwBAbONbNK004d-gQ_31wQhqen0IGeLSRcD5mnMfPYQDdu2HXPTGTFQViKZEqJzce7E2aMuh1ncWOgF06cE5stihoxB1vEqb6WM2-b7pcAtekIvwrmt_r6znCQsQ=w800-h600-k-no`}, 
-                    {name: `夜晚姬路城`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAHdkKNFC4dUGSTT47R3dLrs2KulgnPZB3pYhQBqjRywjPIPsfa5f3KwFxX4U-eqefeqxQ8fQuknvrNbgQmGCsn5pET52mP9HccraoWJ9IN2pmQHBsxUPjIRD8XblHTAu9Xon2aFIA=w800-h600-k-no`}
-                ] 
-            },
-            { 
-                day: 2, date: `7/4 週六`, title: `國寶名城，登陸淡路島`, vibe: `歷史/海景`, 
-                transport: `姬路 ➔ (跨越明石海峽大橋) ➔ 淡路島`, 
-                activities: [`上午：參觀世界遺產【姬路城】`, `下午：開車體驗【明石海峽大橋】`, `傍晚：抵達渡假勝地淡路島`], 
-                lunch: `姬路城周邊定食`, dinner: `淡路島當地居酒屋`, 
-                hotel: `【✅已預約: 淡路 NC03 中央公寓】(已付 TWD 6,226)`, parking: `飯店【免費停車】`, 
-                attractions: [
-                    {name: `姬路城天守閣`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAGCxp1YcLIP-VeO2A3jGIRp3gJrxoty9VxKfC6OsIEMFDODa2fNdWMzQK8I4Mf4NOaDEgGm9-Y_Rx75l3GcK8e0ZB4cOPSuWbsc2n7NVAA-XgfunMyr9xtujdWMTRhZqMCIeQ4ZxQ=w800-h600-k-no`}, 
-                    {name: `明石海峽大橋`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUmvJHFAKyk1sRBf9gPjFaF8JolypIfvH6xVg8QwB_wFWz5XnmWUC3NykUCUWrlJ_Ck9LMjdB19r_TpMDRNDdyOB7wedzx-I0t9pEsTkRnoBdOK566eKjV2Zxw6H_1rIDvUhR7yw=w800-h600-k-no`}, 
-                    {name: `淡路島海岸`, img: `https://images.unsplash.com/photo-1504512485720-7d83a16ee930?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            },
-            { 
-                day: 3, date: `7/5 週日`, title: `淡路島深度遊：藝術與花海`, vibe: `度假放空`, 
-                transport: `淡路島島內輕鬆自駕`, 
-                activities: [`上午：【淡路夢舞台】`, `中午：【淡路花棧敷】`, `下午：【幸福鬆餅 淡路島】`], 
-                lunch: `淡路島漢堡`, dinner: `淡路牛燒肉`, 
-                hotel: `【✅已預約: Rakuten STAY VILLA Awaji】(已付 TWD 6,543)`, parking: `飯店【免費停車】`, 
-                attractions: [
-                    {name: `淡路夢舞台`, img: `https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `淡路花棧敷`, img: `https://images.unsplash.com/photo-1460500063983-994d4c27756c?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `幸福鬆餅淡路島`, img: `https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            },
-            { 
-                day: 4, date: `7/6 週一`, title: `鳴門漩渦與德島市區`, vibe: `市區/文化`, 
-                transport: `淡路島 ➔ (經大鳴門橋) ➔ 德島市區`, 
-                activities: [`上午：【渦之道】觀賞【鳴門渦潮】`, `下午：【阿波舞會館】`, `傍晚：搭乘【眉山纜車】`], 
-                lunch: `鳴門海鮮定食`, dinner: `德島拉麵 麵王`, 
-                hotel: `【✅已預約: 德島格蘭維羅酒店】(含早餐 TWD 4,421)`, parking: `【附設停車場】`, 
-                attractions: [
-                    {name: `鳴門渦潮`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwnkzZQ3squX71f_rzaxUwBgDkMXC-yhYxCkHmZjjXpwJYc_AK7DW3avxYGPzzEFU-CkTeut57_Pm-NCEm2fzmT0ejhT1d4AkyXOsIbmv1IpRlct3CEmXyFwE21faoaRFxQuM=w800-h600-k-no`}, 
-                    {name: `阿波舞會館`, img: `https://images.unsplash.com/photo-1513407030348-c1e4ea505298?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `眉山纜車`, img: `https://images.unsplash.com/photo-1541885686001-c8cc29d784a1?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            },
-            { 
-                day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, 
-                transport: `德島市區 ➔ (車程約 2H) ➔ 祖谷/大步危`, 
-                activities: [`上午：從德島出發`, `中午：【大步危峽遊覽船】`, `下午：【祖谷蔓橋】`], 
-                lunch: `祖谷美人 蕎麥麵`, dinner: `旅館內享用和食晚餐`, 
-                hotel: `【✅已預約: 卡租拉亞旅館】(已付 TWD 11,595)`, parking: `旅館【免費停車】`, 
-                attractions: [
-                    {name: `祖谷蔓橋`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJO4EG01PFxxkaosreoFgAbdHaWUbdcaBZO1Tca-OjPieu0XDZmd1WdP-ZHbd_OXaqGkvYrkmk0sSx5yhl61ir0-a54BayHfiinLmyggfgy-L2qJJHHvJlP4Warfci8W5cTmPUiYmJbWZ1=w800-h600-k-no`}, 
-                    {name: `大步危峽遊覽船`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAENHu7e-zxEyOeB_C3mcv-oYIjq30vx92u_Met2d5M703Pxf621jSZlnXFRLTOnNL9PxFhHykfaBcWDY4BJtRbE9aP2ZTdDLnz-_PktvAegNl0QlTNWYMlGI7vMNoRGIqeD9Xh0=w800-h600-k-no`}, 
-                    {name: `祖谷溫泉`, img: `https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            },
-            { 
-                day: 6, date: `7/8 週三`, title: `揮別秘境，前進港都高松`, vibe: `市區漫遊`, 
-                transport: `祖谷 ➔ 高松市區`, 
-                activities: [`上午：前往高松`, `中午：【屋島展望台】`, `下午：【四國村】或【北濱Alley】`], 
-                lunch: `讚岐烏龍麵【わら家】`, dinner: `高松海鮮居酒屋`, 
-                hotel: `【✅已預約: 88kawaramachi 一軒家】(已付 TWD 5,850)`, parking: `【需確認周邊停車場】`, 
-                attractions: [
-                    {name: `屋島展望台`, img: `https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `四國村`, img: `https://images.unsplash.com/photo-1528360354687-839420409a6d?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `北濱Alley`, img: `https://images.unsplash.com/photo-1493606371202-6275828f90f3?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            },
-            { 
-                day: 7, date: `7/9 週四`, title: `搭乘渡輪，小豆島跳島`, vibe: `跳島/拍照`, 
-                transport: `【高松港】 ➔ (🚢 09:00發) ➔ 小豆島【土庄港】`, 
-                activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 渡輪已預約</span> 預約號：0307090403 (¥8,430)`, `【小豆島橄欖公園】`, `【天使的散步道】`], 
-                lunch: `小豆島素麵`, dinner: `當地超市採買`, 
-                hotel: `【✅已預約: オリーブ農家の家 お泊り忠左衛門 吉野】(已付 TWD 4,831)`, parking: `民宿【免費停車】`, 
-                attractions: [
-                    {name: `高松港渡輪`, img: `https://images.unsplash.com/photo-1522064115160-c3d5267d30d1?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `小豆島橄欖公園`, img: `https://images.unsplash.com/photo-1533221376856-11f874581f18?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `天使的散步道`, img: `https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            },
-            { 
-                day: 8, date: `7/10 週五`, title: `返回高松，金刀比羅宮`, vibe: `適度步行`, 
-                transport: `小豆島 ➔ (🚢 08:35發) ➔ 【高松港】 ➔ 琴平`, 
-                activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 渡輪已預約</span> 預約號：0407100301 (¥8,430)`, `下午：參拜【金刀比羅宮】`, `傍晚：返回高松市區採買`], 
-                lunch: `正宗讚岐烏龍麵`, dinner: `高松名物「骨付鳥」`, 
-                hotel: `【✅已預約: 民宿 setouchi】(已付 TWD 3,189)`, parking: `【附設停車場】`, 
-                attractions: [
-                    {name: `高松港`, img: `https://images.unsplash.com/photo-1565031491910-e57fac031c41?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `金刀比羅宮`, img: `https://images.unsplash.com/photo-1590559899731-0102b1c4e749?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `Youme Town 高松`, img: `https://images.unsplash.com/photo-1519558260268-cde7e03aeb31?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            },
-            { 
-                day: 9, date: `7/11 週六`, title: `直島藝術之旅，抵達岡山`, vibe: `藝術/跨海`, 
-                transport: `高松 ➔ 岡山【宇野港】 ➔ (客船約20分) ➔ 直島`, 
-                activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 美術館已預約</span> **10:45：地中美術館**`, `尋找草間彌生【黃南瓜與紅南瓜】`, `傍晚：返回宇野港，驅車前往岡山`], 
-                lunch: `中奧 咖啡廳`, dinner: `岡山車站周邊居酒屋`, 
-                hotel: `【✅已預約: GREEN 岡山】(已付 TWD 4,892)`, parking: `【岡山車站 停車場】`, 
-                attractions: [
-                    {name: `瀨戶大橋`, img: `https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `直島地中美術館`, img: `https://images.unsplash.com/photo-1582238479576-96b6fbcf26d4?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `草間彌生黃南瓜`, img: `https://images.unsplash.com/photo-1518908336710-4e1cf821d3d1?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            },
-            { 
-                day: 10, date: `7/12 週日`, title: `倉敷美觀與 Outlet 血拚`, vibe: `文化/血拚`, 
-                transport: `岡山市區 ➔ 倉敷 ➔ 岡山市區`, 
-                activities: [`上午：【倉敷美觀地區】漫步`, `下午：【三井 Outlet Park 倉敷】`, `傍晚：返回岡山市區`], 
-                lunch: `倉敷周邊洋食`, dinner: `【✨ 吃好一點】割烹【壽司 辻】`, 
-                hotel: `續住：【✅已預約: GREEN 岡山】`, parking: `【岡山車站 停車場】`, 
-                attractions: [
-                    {name: `倉敷美觀地區`, img: `https://images.unsplash.com/photo-1580975619379-373307612c22?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `三井 Outlet 倉敷`, img: `https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `倉敷帆布`, img: `https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            },
-            { 
-                day: 11, date: `7/13 週一`, title: `岡山名園，滿載而歸`, vibe: `市區/歸途`, 
-                transport: `岡山市區 ➔ 岡山機場 ➔ 15:55 起飛`, 
-                activities: [`上午：【岡山後樂園】散步`, `中午前：【AEON MALL 岡山】最後採買`, `15:00 機場還車`], 
-                lunch: `岡山散壽司【吾妻寿司】`, dinner: `機上餐點`, 
-                hotel: `溫暖的家`, parking: `【岡山機場 租車點】`, 
-                attractions: [
-                    {name: `岡山後樂園`, img: `https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `AEON MALL 岡山`, img: `https://images.unsplash.com/photo-1555529733-0e67056058e3?q=80&w=400&auto=format&fit=crop`}, 
-                    {name: `岡山桃太郎機場`, img: `https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=400&auto=format&fit=crop`}
-                ] 
-            }
-        ];
+        function switchTab(tabId) {
+            // 隱藏所有分頁內容
+            document.getElementById('tab-itinerary').classList.add('hidden');
+            document.getElementById('tab-transport').classList.add('hidden');
+            document.getElementById('tab-accommodation').classList.add('hidden');
 
-        let activeDay = 1;
-        const selectorContainer = document.getElementById('day-selector-container');
-        const contentContainer = document.getElementById('day-content-container');
+            // 移除所有按鈕的 active 狀態
+            document.getElementById('btn-itinerary').classList.remove('active');
+            document.getElementById('btn-transport').classList.remove('active');
+            document.getElementById('btn-accommodation').classList.remove('active');
 
-        function renderDaySelector() {
-            selectorContainer.innerHTML = '';
-            itineraryData.forEach(data => {
-                const isActive = activeDay === data.day;
-                const btn = document.createElement('button');
-                btn.className = `tab-btn flex-shrink-0 text-left px-4 py-3 rounded-xl font-bold text-sm md:text-base border ${isActive ? 'bg-stone-800 text-white border-stone-800 shadow-md scale-[1.02]' : 'bg-stone-50 text-stone-600 border-stone-200 hover:bg-stone-100'}`;
-                btn.innerHTML = `
-                    <div class="flex justify-between items-center mb-1 gap-2">
-                        <span class="block text-xs ${isActive ? 'text-stone-300' : 'text-stone-400'}">Day ${data.day}</span>
-                        <span class="text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded">✅ 已訂</span>
-                    </div>
-                    <span class="block truncate">${data.title}</span>
-                `;
-                btn.onclick = () => { activeDay = data.day; renderDaySelector(); renderDayContent(); };
-                selectorContainer.appendChild(btn);
-            });
+            // 顯示被點擊的分頁與按鈕樣式
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            document.getElementById('btn-' + tabId).classList.add('active');
         }
 
-        function formatTextWithMapLinks(text) {
-            if (!text) return '';
-            return text.replace(/【(.*?)】/g, (match, placeName) => {
-                return `<span class="font-bold text-stone-900 border-b-2 border-stone-200">${placeName}<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(placeName)}" target="_blank" class="ml-1 inline-flex items-center gap-1 px-1.5 py-0.5 btn-map text-white rounded text-[10px] transition-colors shadow-sm">地圖</a></span>`;
-            });
-        }
-
-        function renderDayContent() {
-            const data = itineraryData.find(d => d.day === activeDay);
-            const actHTML = data.activities.map(act => `<li class="flex items-start mb-3 leading-relaxed text-stone-700"><span class="mr-2 mt-1 text-teal-600">•</span><div>${formatTextWithMapLinks(act)}</div></li>`).join('');
-            
-            let galleryHTML = `
-                <div class="mt-5 grid grid-cols-2 md:grid-cols-3 gap-3">
-                    ${data.attractions.map(attr => `
-                        <div class="group relative rounded-lg overflow-hidden shadow-sm border border-stone-200 aspect-[4/3] bg-stone-100">
-                            <img src="${attr.img}" alt="${attr.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop'">
-                            <div class="absolute bottom-0 left-0 right-0 bg-stone-900/60 p-2 text-center">
-                                <span class="text-white text-[10px] font-bold tracking-wider">${attr.name}</span>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-
-            contentContainer.innerHTML = `
-                <div class="fade-in">
-                    <div class="mb-6 border-b border-stone-100 pb-4">
-                        <span class="text-teal-800 text-xs px-2 py-1 rounded-sm font-bold bg-teal-100">Day ${data.day} | ${data.date}</span>
-                        <h3 class="text-2xl font-bold text-stone-800 mt-3">${data.title}</h3>
-                        <p class="text-sm text-stone-500 mt-1">氛圍: ${data.vibe}</p>
-                    </div>
-                    
-                    <div class="space-y-6 text-sm md:text-base">
-                        <div>
-                            <h4 class="font-bold text-stone-800 mb-2 flex items-center gap-2">🚘 交通</h4>
-                            <p>${formatTextWithMapLinks(data.transport)}</p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-bold text-stone-800 mb-2 flex items-center gap-2">🗺️ 行程亮點</h4>
-                            <ul>${actHTML}</ul>
-                            ${galleryHTML}
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-orange-50/50 p-4 rounded-xl border border-orange-100">
-                                <h4 class="font-bold text-orange-900 mb-2">🍱 餐飲</h4>
-                                <p><span class="font-bold text-orange-800">午:</span> ${formatTextWithMapLinks(data.lunch)}</p>
-                                <p><span class="font-bold text-orange-800">晚:</span> ${formatTextWithMapLinks(data.dinner)}</p>
-                            </div>
-                            <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
-                                <h4 class="font-bold text-blue-900 mb-2">🏨 住宿</h4>
-                                <p>${formatTextWithMapLinks(data.hotel)}</p>
-                                <p class="text-xs text-blue-800 mt-2">🅿️ ${formatTextWithMapLinks(data.parking)}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
-        }
-
-        function renderSummaryTable() {
-            const tbody = document.getElementById('summary-table-body');
-            tbody.innerHTML = '';
-            itineraryData.forEach(data => {
-                const tr = document.createElement('tr');
-                tr.className = "border-b border-stone-100 hover:bg-stone-50 transition-colors";
-                tr.innerHTML = `
-                    <td class="py-3 px-4 font-bold text-stone-500">${data.day}</td>
-                    <td class="py-3 px-4">${data.date.split(' ')[0]}</td>
-                    <td class="py-3 px-4 font-bold text-stone-800">${data.title}</td>
-                    <td class="py-3 px-4">${data.hotel.split('(')[0].replace(/【|】|✅已預約: /g, '')}</td>
-                    <td class="py-3 px-4"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded text-xs font-bold">✅ 已訂妥</span></td>
-                    <td class="py-3 px-4 text-xs text-stone-400">確認完成</td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        function addToCalendar() {
-            const text = encodeURIComponent('🚗 日本家族自駕遊');
-            const dates = '20260703T000000Z/20260714T000000Z'; 
-            const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}`;
-            window.open(url, '_blank');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderSummaryTable();
-            renderDaySelector(); 
-            renderDayContent();
-            
-            const ctx = document.getElementById('budgetChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut', 
-                data: {
-                    labels: ['租車', '交通雜費', '住宿費', '餐飲', '門票'],
-                    datasets: [{ 
-                        data: [184277, 65000, 256925, 200000, 20000], 
-                        backgroundColor: ['#14b8a6', '#60a5fa', '#fb7185', '#818cf8', '#fbbf24'], 
-                        borderWidth: 2
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
-            });
-        });
+        // 初始化 Lucide 圖示
+        lucide.createIcons();
     </script>
 </body>
 </html>
