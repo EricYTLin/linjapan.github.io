@@ -531,6 +531,7 @@
     <!-- Firebase 雲端同步與身分切換腳本 -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        // 修正：加入了 signInWithCustomToken 以避免 ReferenceError
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
@@ -569,7 +570,7 @@
             firebaseConfig = JSON.parse(__firebase_config);
             appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
         } else {
-            // ⚠️ 在 GitHub 部署時使用您的 linjapan 專案金鑰 (請確保該字串為最新且完整)
+            // ⚠️ 在 GitHub 部署時使用您的 linjapan 專案金鑰
             firebaseConfig = {
                 apiKey: "AIzaSyBNpbq0gaY9a8MSpb-zt2SuPvUy0OMaR9U",
                 authDomain: "linjapan.firebaseapp.com",
@@ -593,6 +594,16 @@
         
         let notesData = [];
         let expensesData = [];
+
+        // 初始化：優先載入本地 LocalStorage 快取，確保畫面一開就有資料
+        try {
+            if(localStorage.getItem('local_family_notes')) {
+                notesData = JSON.parse(localStorage.getItem('local_family_notes'));
+            }
+            if(localStorage.getItem('local_family_expenses')) {
+                expensesData = JSON.parse(localStorage.getItem('local_family_expenses'));
+            }
+        } catch(e) { console.error("本地快取載入失敗", e); }
         
         const categoryMap = { car: '🚙 租車', trans: '🚢 交通', hotel: '🏨 住宿', food: '🍱 餐飲', ticket: '🎟️ 門票' };
         const budgetTotal = 715655; // AI 預估總花費基準
@@ -675,7 +686,9 @@
                     text, authorId: currentProfile.id, timestamp: Date.now()
                 });
             } else {
+                // 如果 Firebase 連線失敗，寫入本地並自動存入 LocalStorage，確保重整不遺失！
                 notesData.push({ text, authorId: currentProfile.id, timestamp: Date.now() });
+                localStorage.setItem('local_family_notes', JSON.stringify(notesData));
                 renderUI();
             }
         };
@@ -692,7 +705,9 @@
                     category: cat, amount: Number(amt), authorId: currentProfile.id, timestamp: Date.now()
                 });
             } else {
+                // 如果 Firebase 連線失敗，寫入本地並自動存入 LocalStorage，確保重整不遺失！
                 expensesData.push({ category: cat, amount: Number(amt), authorId: currentProfile.id, timestamp: Date.now() });
+                localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
                 renderUI();
             }
         };
@@ -714,7 +729,7 @@
                     }
                 } catch(e) { 
                     console.error("Firebase 登入失敗 (可能是金鑰無效)，已切換為單機模式", e); 
-                    fbUser = null; // 強制降級為本地陣列存儲
+                    fbUser = null; 
                     
                     // 提示使用者目前為單機模式
                     const chatBox = document.getElementById('chat-box');
@@ -729,16 +744,21 @@
                 if (user) {
                     fbUser = user;
                     
-                    // 設定資料庫即時監聽
+                    // 連線成功後，從資料庫下載最新資料，並隨時同步更新本地 LocalStorage
                     onSnapshot(getCollectionPath('family_notes'), (snap) => {
                         notesData = snap.docs.map(d => ({id: d.id, ...d.data()})).sort((a,b)=> a.timestamp - b.timestamp);
+                        localStorage.setItem('local_family_notes', JSON.stringify(notesData));
                         renderUI();
-                    }, (err) => console.error(err));
+                    }, (err) => console.error("監聽 family_notes 失敗:", err));
 
                     onSnapshot(getCollectionPath('family_expenses'), (snap) => {
                         expensesData = snap.docs.map(d => ({id: d.id, ...d.data()})).sort((a,b)=> a.timestamp - b.timestamp);
+                        localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
                         renderUI();
-                    }, (err) => console.error(err));
+                    }, (err) => console.error("監聽 family_expenses 失敗:", err));
+                } else {
+                    // 未登入成功或登出時，使用本地備份進行渲染
+                    renderUI();
                 }
             });
         } else {
