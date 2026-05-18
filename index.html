@@ -695,12 +695,20 @@
             }
         }
 
-        // 取得正確的資料庫路徑
+        // 取得正確的資料庫路徑 (集合 Collection)
         function getCollectionPath(collectionName) {
             if (isCanvasEnvironment) {
                 return collection(db, 'artifacts', appId, 'public', 'data', collectionName);
             }
             return collection(db, collectionName);
+        }
+
+        // 取得正確的文件路徑 (文件 Document)
+        function getDocRef(collectionName, docId) {
+            if (isCanvasEnvironment) {
+                return doc(db, 'artifacts', appId, 'public', 'data', collectionName, docId);
+            }
+            return doc(db, collectionName, docId);
         }
 
         // 發送記事
@@ -710,15 +718,19 @@
             if(!text) return;
             input.value = ''; 
             
-            if(db && fbUser) {
-                await addDoc(getCollectionPath('family_notes'), {
-                    text, authorId: currentProfile.id, timestamp: Date.now()
-                });
-            } else {
-                // 如果 Firebase 連線失敗，寫入本地並自動存入 LocalStorage，確保重整不遺失！
-                notesData.push({ text, authorId: currentProfile.id, timestamp: Date.now() });
-                localStorage.setItem('local_family_notes', JSON.stringify(notesData));
-                renderUI();
+            try {
+                if(db && fbUser) {
+                    await addDoc(getCollectionPath('family_notes'), {
+                        text, authorId: currentProfile.id, timestamp: Date.now()
+                    });
+                } else {
+                    notesData.push({ text, authorId: currentProfile.id, timestamp: Date.now() });
+                    localStorage.setItem('local_family_notes', JSON.stringify(notesData));
+                    renderUI();
+                }
+            } catch (error) {
+                console.error("留言寫入失敗:", error);
+                alert("留言失敗！請檢查您的 Firebase 資料庫規則 (Rules) 是否允許讀寫。\n錯誤訊息: " + error.message);
             }
         };
 
@@ -741,34 +753,39 @@
             btn.classList.replace('bg-amber-600', 'bg-teal-600');
             btn.classList.replace('hover:bg-amber-500', 'hover:bg-teal-500');
 
-            if (editId) {
-                // 執行更新
-                if(db && fbUser) {
-                    await updateDoc(doc(getCollectionPath('family_expenses'), editId), {
-                        category: cat, amount: Number(amt), method: method
-                    });
+            try {
+                if (editId) {
+                    // 執行更新
+                    if(db && fbUser) {
+                        await updateDoc(getDocRef('family_expenses', editId), {
+                            category: cat, amount: Number(amt), method: method
+                        });
+                    } else {
+                        const idx = expensesData.findIndex(e => e.id === editId);
+                        if (idx > -1) {
+                            expensesData[idx].category = cat;
+                            expensesData[idx].amount = Number(amt);
+                            expensesData[idx].method = method;
+                            localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
+                            renderUI();
+                        }
+                    }
                 } else {
-                    const idx = expensesData.findIndex(e => e.id === editId);
-                    if (idx > -1) {
-                        expensesData[idx].category = cat;
-                        expensesData[idx].amount = Number(amt);
-                        expensesData[idx].method = method;
+                    // 執行新增
+                    if(db && fbUser) {
+                        await addDoc(getCollectionPath('family_expenses'), {
+                            category: cat, amount: Number(amt), method: method, authorId: currentProfile.id, timestamp: Date.now()
+                        });
+                    } else {
+                        const newId = 'local_' + Date.now();
+                        expensesData.push({ id: newId, category: cat, amount: Number(amt), method: method, authorId: currentProfile.id, timestamp: Date.now() });
                         localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
                         renderUI();
                     }
                 }
-            } else {
-                // 執行新增
-                if(db && fbUser) {
-                    await addDoc(getCollectionPath('family_expenses'), {
-                        category: cat, amount: Number(amt), method: method, authorId: currentProfile.id, timestamp: Date.now()
-                    });
-                } else {
-                    const newId = 'local_' + Date.now();
-                    expensesData.push({ id: newId, category: cat, amount: Number(amt), method: method, authorId: currentProfile.id, timestamp: Date.now() });
-                    localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
-                    renderUI();
-                }
+            } catch (error) {
+                console.error("記帳寫入失敗:", error);
+                alert("儲存失敗！請檢查您的 Firebase 資料庫規則 (Rules) 是否允許讀寫。\n錯誤訊息: " + error.message);
             }
         };
 
@@ -808,13 +825,24 @@
                 return;
             }
 
-            // 執行刪除
-            if(db && fbUser) {
-                await deleteDoc(doc(getCollectionPath('family_expenses'), id));
-            } else {
-                expensesData = expensesData.filter(e => e.id !== id);
-                localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
-                renderUI();
+            try {
+                // 執行刪除
+                if(db && fbUser) {
+                    await deleteDoc(getDocRef('family_expenses', id));
+                } else {
+                    expensesData = expensesData.filter(e => e.id !== id);
+                    localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
+                    renderUI();
+                }
+            } catch (error) {
+                console.error("刪除失敗:", error);
+                alert("刪除失敗！請檢查您的 Firebase 資料庫權限。\n錯誤訊息: " + error.message);
+                
+                if (btn) {
+                    btn.dataset.confirm = 'false';
+                    btn.innerHTML = '🗑️';
+                    btn.classList.remove('text-rose-600', 'bg-rose-100', 'rounded', 'px-1');
+                }
             }
         };
 
@@ -927,7 +955,7 @@
                     
                     // 提示使用者目前為單機模式
                     const chatBox = document.getElementById('chat-box');
-                    if (chatBox) chatBox.innerHTML = '<div class="text-center text-rose-500 text-sm mt-4 font-bold">雲端連線失敗 (API Key 無效)<br>目前已切換為單機模式</div>';
+                    if (chatBox) chatBox.innerHTML = '<div class="text-center text-rose-500 text-sm mt-4 font-bold">雲端連線失敗 (API Key 或規則無效)<br>目前已切換為單機模式</div>';
                     
                     renderUI(); // 直接使用本地陣列渲染
                 }
