@@ -323,13 +323,21 @@
                             </div>
                             
                             <div class="flex flex-1 gap-2">
-                                <input type="number" id="expense-amount" class="flex-1 p-2 rounded border border-stone-200 focus:outline-none text-right" placeholder="輸入日圓 ¥">
-                                <!-- AI 拍照記帳按鈕 -->
-                                <label for="receipt-upload" class="bg-stone-100 hover:bg-stone-200 text-stone-700 px-3 py-2 rounded cursor-pointer transition-all border border-stone-300 flex items-center justify-center shadow-sm" title="AI 拍照記帳">
-                                    📷
+                                <input type="number" id="expense-amount" class="flex-1 p-2 rounded border border-stone-200 focus:outline-none text-right min-w-[80px]" placeholder="金額 ¥">
+                                
+                                <!-- AI 拍照按鈕 (開啟手機鏡頭) -->
+                                <label for="receipt-camera" class="bg-stone-100 hover:bg-stone-200 text-stone-700 px-2 sm:px-3 py-2 rounded cursor-pointer transition-all border border-stone-300 flex items-center justify-center shadow-sm text-xs sm:text-sm" title="相機拍照記帳">
+                                    📷<span class="hidden sm:inline ml-1">拍照</span>
                                 </label>
-                                <input type="file" id="receipt-upload" accept="image/*" capture="environment" style="display: none;" onchange="window.handleReceiptUpload(event)">
-                                <button id="expense-submit-btn" onclick="window.submitExpense()" class="bg-teal-600 hover:bg-teal-500 text-white px-4 py-2 rounded font-bold transition-all shadow-sm whitespace-nowrap">記一筆</button>
+                                <input type="file" id="receipt-camera" accept="image/*" capture="environment" style="display: none;" onchange="window.handleReceiptUpload(event)">
+                                
+                                <!-- AI 相簿按鈕 (從媒體庫挑選相片) -->
+                                <label for="receipt-album" class="bg-stone-100 hover:bg-stone-200 text-stone-700 px-2 sm:px-3 py-2 rounded cursor-pointer transition-all border border-stone-300 flex items-center justify-center shadow-sm text-xs sm:text-sm" title="從相簿選取記帳">
+                                    🖼️<span class="hidden sm:inline ml-1">相簿</span>
+                                </label>
+                                <input type="file" id="receipt-album" accept="image/*" style="display: none;" onchange="window.handleReceiptUpload(event)">
+                                
+                                <button id="expense-submit-btn" onclick="window.submitExpense()" class="bg-teal-600 hover:bg-teal-500 text-white px-3 sm:px-4 py-2 rounded font-bold transition-all shadow-sm whitespace-nowrap text-xs sm:text-sm">記一筆</button>
                             </div>
 
                             <!-- 已選收據預覽縮圖區 -->
@@ -912,7 +920,7 @@
             const btn = document.getElementById('expense-submit-btn');
             btn.innerText = '更新修改';
             btn.classList.replace('bg-teal-600', 'bg-amber-600');
-            btn.classList.replace('hover:bg-teal-500', 'hover:bg-amber-500');
+            btn.classList.replace('hover:bg-amber-500', 'hover:bg-amber-500');
         };
 
         // 刪除支出 (帶防呆確認)
@@ -987,7 +995,7 @@
             alert("金鑰儲存成功！現在可以在 GitHub 上完美使用 AI 拍照記帳囉。");
         };
 
-        // 🚀 核心升級功能：AI 拍照記帳 (多格式、輕量化高精準度版)
+        // 🚀 核心升級功能：AI 拍照與相簿記帳 (多格式、輕量化高精準度版)
         window.handleReceiptUpload = async function(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -1089,7 +1097,7 @@
                 const retries = 3;
                 const delays = [1000, 2000, 4000];
 
-                // 帶有自動重試的 API 呼叫
+                // 帶有自動重試的 API 呼召
                 for(let i = 0; i < retries; i++) {
                     try {
                         const response = await fetch(url, {
