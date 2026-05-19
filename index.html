@@ -325,17 +325,17 @@
                             <div class="flex flex-1 gap-2">
                                 <input type="number" id="expense-amount" class="flex-1 p-2 rounded border border-stone-200 focus:outline-none text-right min-w-[80px]" placeholder="金額 ¥">
                                 
-                                <!-- AI 拍照按鈕 (開啟手機鏡頭) -->
-                                <label for="receipt-camera" class="bg-stone-100 hover:bg-stone-200 text-stone-700 px-2 sm:px-3 py-2 rounded cursor-pointer transition-all border border-stone-300 flex items-center justify-center shadow-sm text-xs sm:text-sm" title="相機拍照記帳">
+                                <!-- 修正後之 AI 拍照按鈕 (開啟手機鏡頭) -->
+                                <button type="button" onclick="window.triggerFileInput('receipt-camera')" class="bg-stone-100 hover:bg-stone-200 text-stone-700 px-2 sm:px-3 py-2 rounded cursor-pointer transition-all border border-stone-300 flex items-center justify-center shadow-sm text-xs sm:text-sm" title="相機拍照記帳">
                                     📷<span class="hidden sm:inline ml-1">拍照</span>
-                                </label>
-                                <input type="file" id="receipt-camera" accept="image/*" capture="environment" style="display: none;" onchange="window.handleReceiptUpload(event)">
+                                </button>
+                                <input type="file" id="receipt-camera" accept="image/*" capture="environment" class="absolute w-0 h-0 opacity-0 pointer-events-none" onchange="window.handleReceiptUpload(event)">
                                 
-                                <!-- AI 相簿按鈕 (從媒體庫挑選相片) -->
-                                <label for="receipt-album" class="bg-stone-100 hover:bg-stone-200 text-stone-700 px-2 sm:px-3 py-2 rounded cursor-pointer transition-all border border-stone-300 flex items-center justify-center shadow-sm text-xs sm:text-sm" title="從相簿選取記帳">
+                                <!-- 修正後之 AI 相簿按鈕 (從媒體庫挑選相片) -->
+                                <button type="button" onclick="window.triggerFileInput('receipt-album')" class="bg-stone-100 hover:bg-stone-200 text-stone-700 px-2 sm:px-3 py-2 rounded cursor-pointer transition-all border border-stone-300 flex items-center justify-center shadow-sm text-xs sm:text-sm" title="從相簿選取記帳">
                                     🖼️<span class="hidden sm:inline ml-1">相簿</span>
-                                </label>
-                                <input type="file" id="receipt-album" accept="image/*" style="display: none;" onchange="window.handleReceiptUpload(event)">
+                                </button>
+                                <input type="file" id="receipt-album" accept="image/*" class="absolute w-0 h-0 opacity-0 pointer-events-none" onchange="window.handleReceiptUpload(event)">
                                 
                                 <button id="expense-submit-btn" onclick="window.submitExpense()" class="bg-teal-600 hover:bg-teal-500 text-white px-3 sm:px-4 py-2 rounded font-bold transition-all shadow-sm whitespace-nowrap text-xs sm:text-sm">記一筆</button>
                             </div>
@@ -408,7 +408,7 @@
             { day: 2, date: `7/4 週六`, title: `國寶名城，登陸淡路島`, vibe: `歷史/海景`, transport: `姬路 ➔ (跨越明石海峽大橋) ➔ 淡路島`, activities: [`上午：參觀世界遺產【姬路城】`, `下午：開車體驗【明石海峽大橋】`, `傍晚：抵達渡假勝地淡路島`], lunch: `姬路城周邊定食`, dinner: `淡路島當地居酒屋`, hotel: `【✅已預約: 淡路 NC03 中央公寓】(已付 TWD 6,226)`, parking: `飯店【免費停車】`, attractions: [{name: `姬路城天守閣`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAGCxp1YcLIP-VeO2A3jGIRp3gJrxoty9VxKfC6OsIEMFDODa2fNdWMzQK8I4Mf4NOaDEgGm9-Y_Rx75l3GcK8e0ZB4cOPSuWbsc2n7NVAA-XgfunMyr9xtujdWMTRhZqMCIeQ4ZxQ=w800-h600-k-no`}, {name: `明石海峽大橋`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAHUmvJHFAKyk1sRBf9gPjFaF8JolypIfvH6xVg8QwB_wFWz5XnmWUC3NykUCUWrlJ_Ck9LMjdB19r_TpMDRNDdyOB7wedzx-I0t9pEsTkRnoBdOK566eKjV2Zxw6H_1rIDvUhR7yw=w800-h600-k-no`}, {name: `淡路島海岸`, img: `https://images.unsplash.com/photo-1504512485720-7d83a16ee930?q=80&w=400&auto=format&fit=crop`}] },
             { day: 3, date: `7/5 週日`, title: `淡路島深度遊：藝術與花海`, vibe: `度假放空`, transport: `淡路島島內輕鬆自駕`, activities: [`上午：【淡路夢舞台】`, `中午：【淡路花棧敷】`, `下午：【幸福鬆餅 淡路島】`], lunch: `淡路島漢堡`, dinner: `淡路牛燒肉`, hotel: `【✅已預約: Rakuten STAY VILLA Awaji】(已付 TWD 6,543)`, parking: `飯店【免費停車】`, attractions: [{name: `淡路夢舞台`, img: `https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop`}, {name: `淡路花棧敷`, img: `https://images.unsplash.com/photo-1460500063983-994d4c27756c?q=80&w=800&auto=format&fit=crop`}, {name: `幸福鬆餅淡路島`, img: `https://images.unsplash.com/photo-1522992319-0365e5f11656?q=80&w=800&auto=format&fit=crop`}] },
             { day: 4, date: `7/6 週一`, title: `鳴門漩渦與德島市區`, vibe: `市區/文化`, transport: `淡路島 ➔ (經大鳴門橋) ➔ 德島市區`, activities: [`上午：前往【渦之道】觀賞【鳴門渦潮】`, `下午：【阿波舞會館】`, `傍晚：搭乘【眉山纜車】`], lunch: `鳴門海鮮定食`, dinner: `德島拉麵 麵王`, hotel: `【✅已預約: 德島格蘭維羅酒店】(已付 TWD 4,421)`, parking: `【附設停車場】`, attractions: [{name: `鳴門渦潮`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAHwnkzZQ3squX71f_rzaxUwBgDkMXC-yhYxCkHmZjjXpwJYc_AK7DW3avxYGPzzEFU-CkTeut57_Pm-NCEm2fzmT0ejhT1d4AkyXOsIbmv1IpRlct3CEmXyFwE21faoaRFxQuM=w800-h600-k-no`}, {name: `阿波舞會館`, img: `https://images.unsplash.com/photo-1513407030348-c1e4ea505298?q=80&w=400&auto=format&fit=crop`}, {name: `眉山纜車`, img: `https://images.unsplash.com/photo-1541885686001-c8cc29d784a1?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, transport: `德島市區 ➔ (車程約 2H) ➔ 祖谷/大步危`, activities: [`上午：從德島出發`, `中午：【大步危峽遊覽船】`, `下午：【祖谷蔓橋】`], lunch: `祖谷美人 蕎麥麵`, dinner: `旅館內享用和食晚餐`, hotel: `【✅已預約: 卡租拉亞旅館】(已付 TWD 11,595)`, parking: `旅館【免費停車】`, attractions: [{name: `祖谷蔓橋`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJO4EG01PFxxkaosreoFgAbdHaWUbdcaBZO1Tca-OjPieu0XDZmd1WdP-ZHbd_OXaqGkvYrkmk0sSx5yhl61ir0-a54BayHfiinLmyggfgy-L2qJJHHvJlP4Warfci8W5cTmPUiYmJbWZ1=w800-h600-k-no`}, {name: `大步危峽遊覽船`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAENHu7e-zxEyOeB_C3mcv-oYIjq30vx92u_Met2d5M703Pxf621jSZlnXFRLTOnNL9PxfhHykfaBcWDY4BJtRbE9aP2ZTdDLnz-_PktvAegNl0QlTNWYMlGI7vMNoRGIqeD9Xh0=w800-h600-k-no`}, {name: `祖谷溫泉`, img: `https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=400&auto=format&fit=crop`}] },
+            { day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, transport: `德島市區 ➔ (車程約 2H) ➔ 祖谷/大步危`, activities: [`上午：從德島出發`, `中午：【大步危峽遊覽船】`, `下午：【祖谷蔓橋】`], lunch: `祖谷美人 蕎麥麵`, dinner: `旅館內享用和食晚餐`, hotel: `【✅已預約: 卡租拉亞旅館】(已付 TWD 11,595)`, parking: `旅館【免費停車】`, attractions: [{name: `祖谷蔓橋`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAGJO4EG01PFxxkaosreoFgAbdHaWUbdcaBZO1Tca-OjPieu0XDZmd1WdP-ZHbd_OXaqGkvYrkmk0sSx5yhl61ir0-a54BayHfiinLmyggfgy-L2qJJHHvJlP4Warfci8W5cTmPUiYmJbWZ1=w800-h600-k-no`}, {name: `大步危峽遊覽船`, img: `https://lh3.googleusercontent.com/gps-cs-s/APNQkAENHu7e-zxEyOeB_C3mcv-oYIjq30vx92u_Met2d5M703Pxf621jSZlnXFRLTOnNL9PxFhHykfaBcWDY4BJtRbE9aP2ZTdDLnz-_PktvAegNl0QlTNWYMlGI7vMNoRGIqeD9Xh0=w800-h600-k-no`}, {name: `祖谷溫泉`, img: `https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=400&auto=format&fit=crop`}] },
             { day: 6, date: `7/8 週三`, title: `揮別秘境，前進港都高松`, vibe: `市區漫遊`, transport: `祖谷 ➔ 高松市區 ➔ 屋島山頂`, activities: [`上午：揮別山區秘境開車前往高松港都`, `下午：驅車直達屋島，前往【屋島展望台】看落日與瀨戶內海`, `傍晚：入住享有絕景、今晚重頭戲的【ホテル望海荘】享受精緻晚宴`], lunch: `讚岐烏龍麵【わら家】`, dinner: `【✨ 吃好一點】望海荘地雞壽喜燒+天然河豚唐揚饗宴`, hotel: `【✅已預約: ホテル望海荘】(一泊夕食 2室共 JPY 44,200)`, parking: `【附設停車場】`, attractions: [{name: `屋島展望台`, img: `https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?q=80&w=400&auto=format&fit=crop`}, {name: `四國村`, img: `https://images.unsplash.com/photo-1528360354687-839420409a6d?q=80&w=400&auto=format&fit=crop`}, {name: `北濱Alley`, img: `https://images.unsplash.com/photo-1493606371202-6275828f90f3?q=80&w=400&auto=format&fit=crop`}] },
             { day: 7, date: `7/9 週四`, title: `搭乘渡輪，小豆島跳島`, vibe: `跳島/拍照`, transport: `【高松港】 ➔ (🚢 09:00發) ➔ 小豆島【土庄港】`, activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 渡輪已預約</span> 預約號：0307090403 (¥8,430)`, `【小豆島橄欖公園】`, `【天使的散步道】`], lunch: `小豆島素麵`, dinner: `當地超市採買`, hotel: `【✅已預約: オリーブ農家的家 お泊り忠左衛門 吉野】(已付 TWD 4,831)`, parking: `民宿【免費停車】`, attractions: [{name: `高松港渡輪`, img: `https://images.unsplash.com/photo-1522064115160-c3d5267d30d1?q=80&w=400&auto=format&fit=crop`}, {name: `小豆島橄欖公園`, img: `https://images.unsplash.com/photo-1533221376856-11f874581f18?q=80&w=400&auto=format&fit=crop`}, {name: `天使的散步道`, img: `https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=400&auto=format&fit=crop`}] },
             { day: 8, date: `7/10 週五`, title: `返回高松，金刀比羅宮`, vibe: `適度步行`, transport: `小豆島 ➔ (🚢 08:35發) ➔ 【高松港】 ➔ 琴平`, activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 渡輪已預約</span> 預約號：0407100301 (¥8,430)`, `下午：參拜【金刀比羅宮】`, `傍晚：返回高松市區採買`], lunch: `正宗讚岐烏龍麵`, dinner: `高松名物「骨付鳥」`, hotel: `【✅已預約: 民宿 setouchi】(已付 TWD 3,189)`, parking: `【附設停車場】`, attractions: [{name: `高松港`, img: `https://images.unsplash.com/photo-1565031491910-e57fac031c41?q=80&w=400&auto=format&fit=crop`}, {name: `金刀比羅宮`, img: `https://images.unsplash.com/photo-1590559899731-0102b1c4e749?q=80&w=400&auto=format&fit=crop`}, {name: `Youme Town 高松`, img: `https://images.unsplash.com/photo-1519558260268-cde7e03aeb31?q=80&w=400&auto=format&fit=crop`}] },
@@ -631,7 +631,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, onSnapshot, addDoc, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, onSnapshot, doc, getDoc, addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // 綁定家族成員的 Google 帳號與身分
         const familyProfiles = [
@@ -920,7 +920,7 @@
             const btn = document.getElementById('expense-submit-btn');
             btn.innerText = '更新修改';
             btn.classList.replace('bg-teal-600', 'bg-amber-600');
-            btn.classList.replace('hover:bg-amber-500', 'hover:bg-amber-500');
+            btn.classList.replace('hover:bg-amber-500', 'hover:bg-teal-500');
         };
 
         // 刪除支出 (帶防呆確認)
@@ -1077,7 +1077,7 @@
                     contents: [{
                         role: "user",
                         parts: [
-                            { text: "這是一張消費收據、信用刷卡單或發票的照片。請利用 OCR 找出這張收據的「合計金額 / 領收金額 (數字，剔除單價與找零，並忽略統編等無關數字)」與推測其「費用類別」。\n費用類別必須是以下字串之一：'car' (租車或交通工具), 'trans' (車票、過路費、停車費、油資), 'hotel' (住宿飯店費用), 'food' (餐飲、超市、食物), 'ticket' (門票、購物雜支)。\n請以 JSON 格式回傳，例如：{\"amount\": 2500, \"category\": \"hotel\"}。請嚴格遵守只回傳 JSON 內容，不要添加任何 Markdown 的 ``` 語法標籤或說明文字。" },
+                            { text: "這是一張消費收據、信用刷卡單或發票的照片。請利用 OCR 找出這張收據的「合計金額 / 領收金額 (數字，剔除單價與找零，並忽略統編等無關數字)」與推測其「費用類別」。\n費用類別必須是以下字串之一：'car' (租車或交通工具), 'trans' (車票、過路費、停車費、油資), 'hotel' (住宿飯店費用), 'food' (餐飲、超市、食物), 'ticket' (門票、購物雜支)。\n請以 JSON 格式回傳，例如：{\"amount\": 2500, \"category\": \"hotel\"}。請嚴格遵守只回傳 JSON 內容，不要添加 any Markdown 的 ``` 語法標籤或說明文字。" },
                             { inlineData: { mimeType: "image/jpeg", data: base64CleanData } }
                         ]
                     }],
@@ -1148,6 +1148,14 @@
                 }, 4000);
             }
             event.target.value = ''; // 清空 file input 供下一次選取
+        };
+
+        // 解決 iOS 點擊 label 無反應之核心函式
+        window.triggerFileInput = function(inputId) {
+            const input = document.getElementById(inputId);
+            if (input) {
+                input.click();
+            }
         };
 
         // Enter 鍵快捷送出
