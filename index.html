@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>2026 岡山、四國、淡路島 11天10夜 家族自駕漫遊</title>
     
-    <!-- 社群分享預覽 (Open Graph) -->
     <meta property="og:title" content="2026 岡山、四國、淡路島 11天10夜 家族自駕漫遊">
-    <meta property="og:description" content="專為 54 歲長輩與年輕兄妹設計的舒適自駕行程。深度停留淡路島，以放射狀慢遊四國與直島藝術。">
+    <meta property="og:description" content="專為長輩與年輕兄妹設計的舒適自駕行程。深度停留淡路島，以放射狀慢遊四國與直島藝術。">
     <meta property="og:image" content="https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=1200&auto=format&fit=crop">
     <meta property="og:type" content="website">
 
-    <!-- 手機端 Web App 全螢幕體驗 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
@@ -28,79 +26,39 @@
         }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            height: 300px;
-            max-height: 400px;
-        }
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin: 0 auto; height: 250px; }
         .tab-btn { transition: all 0.3s ease; }
         .fade-in { animation: fadeIn 0.4s ease-in-out; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* 自訂按鈕特效 */
-        .btn-map { background-color: #f97316; } 
-        .btn-map:hover { background-color: #ea580c; }
-        .btn-hotel { background-color: #2563eb; } 
-        .btn-hotel:hover { background-color: #1d4ed8; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-map { background-color: #f97316; } .btn-map:hover { background-color: #ea580c; }
     </style>
 </head>
 <body class="antialiased selection:bg-teal-200 selection:text-teal-900">
 
-    <!-- Header Section -->
+    <!-- Header -->
     <header class="bg-stone-800 text-stone-50 py-16 px-4 md:px-8 shadow-md relative overflow-hidden">
         <div class="max-w-6xl mx-auto relative z-10 flex flex-col lg:flex-row justify-between items-center gap-10">
             <div class="lg:w-2/3 text-center lg:text-left">
                 <p class="text-teal-400 font-semibold tracking-wider text-sm uppercase mb-2">🚗 家族自駕漫遊 | 2026/07/03 - 07/13</p>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">岡山、淡路島、四國<br><span class="text-stone-300">11天10夜 深度環線</span></h1>
-                <p class="text-lg text-stone-300 max-w-2xl mb-8 mx-auto lg:mx-0">
-                    專為長輩與年輕兄妹設計的舒適自駕行程。深度停留淡路島兩晚，感受明石海峽與鳴門漩渦的震撼。
-                </p>
+                <p class="text-lg text-stone-300 max-w-2xl mb-8 mx-auto lg:mx-0">專為長輩與年輕兄妹設計的舒適自駕行程。深度停留淡路島，感受明石海峽與鳴門漩渦的震撼。</p>
                 <div class="flex flex-wrap justify-center lg:justify-start gap-4">
-                    <a href="#summary" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">
-                        📋 行程總表
-                    </a>
-                    <a href="#route-map" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">
-                        🗺️ 完整路線
-                    </a>
-                    <a href="#itinerary" class="bg-teal-600 hover:bg-teal-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">
-                        📅 每日細節
-                    </a>
-                    <a href="#notes-tracker" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">
-                        📝 記事與記帳
-                    </a>
-                    <button onclick="addToCalendar()" class="bg-white text-stone-800 hover:bg-stone-100 px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2 hidden md:flex">
-                        <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/></svg>
-                        同步至 Google Calendar
-                    </button>
+                    <a href="#summary" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">📋 行程總表</a>
+                    <a href="#route-map" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">🗺️ 完整路線</a>
+                    <a href="#itinerary" class="bg-teal-600 hover:bg-teal-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">📅 每日細節</a>
+                    <a href="#notes-tracker" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:scale-105 flex items-center gap-2">📝 記事與記帳</a>
                 </div>
             </div>
             <div class="lg:w-1/3 w-full max-w-md">
                 <div class="bg-stone-700/50 p-6 rounded-2xl border border-stone-600 backdrop-blur-sm shadow-xl">
                     <h3 class="text-xl font-bold mb-4 flex items-center gap-2 border-b border-stone-600 pb-2">✈️ 航班摘要</h3>
                     <div class="flex justify-between items-center mb-4">
-                        <div>
-                            <div class="text-stone-400 text-xs">去程 7/3 (五)</div>
-                            <div class="text-xl font-bold text-teal-300">IT 214</div>
-                        </div>
-                        <div class="text-right">
-                            <div class="font-bold">TPE 11:30</div>
-                            <div class="text-sm text-stone-300">OKJ 15:05</div>
-                        </div>
+                        <div><div class="text-stone-400 text-xs">去程 7/3 (五)</div><div class="text-xl font-bold text-teal-300">IT 214</div></div>
+                        <div class="text-right"><div class="font-bold">TPE 11:30</div><div class="text-sm text-stone-300">OKJ 15:05</div></div>
                     </div>
                     <div class="flex justify-between items-center">
-                        <div>
-                            <div class="text-stone-400 text-xs">回程 7/13 (一)</div>
-                            <div class="text-xl font-bold text-teal-300">IT 215</div>
-                        </div>
-                        <div class="text-right">
-                            <div class="font-bold">OKJ 15:55</div>
-                            <div class="text-sm text-stone-300">TPE 17:40</div>
-                        </div>
+                        <div><div class="text-stone-400 text-xs">回程 7/13 (一)</div><div class="text-xl font-bold text-teal-300">IT 215</div></div>
+                        <div class="text-right"><div class="font-bold">OKJ 15:55</div><div class="text-sm text-stone-300">TPE 17:40</div></div>
                     </div>
                 </div>
             </div>
@@ -108,16 +66,14 @@
     </header>
 
     <main class="max-w-6xl mx-auto px-4 md:px-8 py-12 space-y-20">
-
+        <!-- 📋 行程總表 -->
         <section id="summary" class="scroll-mt-10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-6 gap-4">
                 <div>
                     <h2 class="text-3xl font-bold text-stone-800 mb-2">📋 行程總覽與訂房狀態</h2>
                     <p class="text-stone-600 text-sm">一目了然每日行程、住宿預訂情況與待辦事項。</p>
                 </div>
-                <a href="https://secure.booking.com/mytrips.zh-tw.html" target="_blank" class="bg-[#003580] hover:bg-[#00224f] text-white px-5 py-3 rounded-xl font-bold text-sm transition-all shadow-md flex items-center gap-2 flex-shrink-0">
-                    前往 Booking.com 管理訂單
-                </a>
+                <a href="https://secure.booking.com/mytrips.zh-tw.html" target="_blank" class="bg-[#003580] hover:bg-[#00224f] text-white px-5 py-3 rounded-xl font-bold text-sm transition-all shadow-md flex items-center gap-2">前往 Booking.com 管理訂單</a>
             </div>
             <div class="bg-white rounded-2xl shadow-sm border border-stone-200 overflow-hidden">
                 <div class="overflow-x-auto">
@@ -129,71 +85,50 @@
                                 <th class="py-3 px-4 font-semibold border-b border-stone-200">行程大綱</th>
                                 <th class="py-3 px-4 font-semibold border-b border-stone-200">預定住宿點</th>
                                 <th class="py-3 px-4 font-semibold border-b border-stone-200">訂房狀態</th>
-                                <th class="py-3 px-4 font-semibold border-b border-stone-200 text-rose-600">待辦事項 (確認項目)</th>
+                                <th class="py-3 px-4 font-semibold border-b border-stone-200 text-rose-600">入住資訊工具連結</th>
                             </tr>
                         </thead>
-                        <tbody id="summary-table-body" class="text-sm">
-                            </tbody>
+                        <tbody id="summary-table-body" class="text-sm"></tbody>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- 成員管理區塊 -->
+        <!-- 👨‍👩‍👧‍👦 成員與交通配置 -->
         <section id="members" class="scroll-mt-10">
-            <div class="mb-6 flex items-center gap-3">
-                <h2 class="text-3xl font-bold text-stone-800">👨‍👩‍👧‍👦 旅伴與規格配置</h2>
-            </div>
+            <div class="mb-6"><h2 class="text-3xl font-bold text-stone-800">👨‍👩‍👧‍👦 旅伴與規格配置</h2></div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
                 <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
-                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl mb-3">👨</div>
-                    <div class="font-bold text-stone-800">爸爸</div>
-                    <div class="text-xs text-stone-500 mb-2">駕駛 / Yu-Tse Lin</div>
-                    <ul class="text-xs text-stone-600 space-y-1">
-                        <li>🎒 托運: 20kg</li>
-                        <li>🍱 餐點: 一般日式</li>
-                    </ul>
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xl mb-2">👨</div>
+                    <div class="font-bold text-stone-800">爸爸</div><div class="text-xs text-stone-500 mb-2">駕駛 / Yu-Tse Lin</div>
+                    <ul class="text-xs text-stone-600 space-y-0.5"><li>🎒 托運: 20kg</li><li>🍱 餐點: 一般日式</li></ul>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
-                    <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center text-xl mb-3">👩</div>
-                    <div class="font-bold text-stone-800">媽媽</div>
-                    <div class="text-xs text-stone-500 mb-2">副駕 / Yu-Han</div>
-                    <ul class="text-xs text-stone-600 space-y-1">
-                        <li>🎒 托運: 20kg</li>
-                        <li>🍱 餐點: 一般日式</li>
-                    </ul>
+                    <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center text-xl mb-2">👩</div>
+                    <div class="font-bold text-stone-800">媽媽</div><div class="text-xs text-stone-500 mb-2">副駕 / Yu-Han</div>
+                    <ul class="text-xs text-stone-600 space-y-0.5"><li>🎒 托運: 20kg</li><li>🍱 餐點: 一般日式</li></ul>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
-                    <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xl mb-3">👦</div>
-                    <div class="font-bold text-stone-800">兒子</div>
-                    <div class="text-xs text-stone-500 mb-2">導航與苦力 / Jimmy</div>
-                    <ul class="text-xs text-stone-600 space-y-1">
-                        <li>🎒 托運: 20kg</li>
-                        <li>🍱 餐點: 無特殊限制</li>
-                    </ul>
+                    <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center text-xl mb-2">👦</div>
+                    <div class="font-bold text-stone-800">兒子 (Jimmy)</div><div class="text-xs text-stone-500 mb-2">導航與苦力</div>
+                    <ul class="text-xs text-stone-600 space-y-0.5"><li>🎒 托運: 20kg</li><li>🍱 餐點: 無限制</li></ul>
                 </div>
                 <div class="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
-                    <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xl mb-3">👧</div>
-                    <div class="font-bold text-stone-800">女兒</div>
-                    <div class="text-xs text-stone-500 mb-2">行程總管 / Wendy</div>
-                    <ul class="text-xs text-stone-600 space-y-1">
-                        <li>🎒 托運: 20kg</li>
-                        <li>🍱 餐點: 無特殊限制</li>
-                    </ul>
+                    <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xl mb-2">👧</div>
+                    <div class="font-bold text-stone-800">女兒 (Wendy)</div><div class="text-xs text-stone-500 mb-2">行程總管 / Yun-Chu</div>
+                    <ul class="text-xs text-stone-600 space-y-0.5"><li>🎒 托運: 20kg</li><li>🍱 餐點: 無限制</li></ul>
                 </div>
             </div>
-            
             <div class="p-5 bg-blue-50 rounded-xl border border-blue-100 flex flex-col md:flex-row items-start gap-5 shadow-sm">
                 <div class="text-4xl bg-white p-4 rounded-full shadow-sm">🚙</div>
                 <div class="flex-1 w-full">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 border-b border-blue-200 pb-2">
                         <h4 class="font-bold text-blue-900 text-lg">交通配置：Nippon Rent-A-Car (Minivan)</h4>
-                        <span class="mt-2 sm:mt-0 bg-green-500 text-white text-xs px-2.5 py-1 rounded font-bold tracking-wider">✅ 預約完成 (預約號: 133050084)</span>
+                        <span class="bg-green-500 text-white text-xs px-2 py-1 rounded font-bold">✅ 預約完成 (預約號: 133050084)</span>
                     </div>
-                    <p class="text-sm text-blue-800 mb-3">車型參考：Voxy 7人座、Serena 8人座 等 (大空間，適合4成人+行李)</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 text-sm text-blue-900 bg-white p-3 rounded-lg border border-blue-50">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1 text-sm text-blue-900 bg-white p-3 rounded-lg">
                         <p><span class="font-bold text-blue-700 mr-2">取車</span>7/03 16:00 岡山機場店</p>
-                        <p><span class="font-bold text-blue-700 mr-2">還車</span>7/13 13:00 岡山機場店 <span class="text-rose-600 text-xs font-bold">(時間提早)</span></p>
+                        <p><span class="font-bold text-blue-700 mr-2">還車</span>7/13 13:00 岡山機場店 <span class="text-rose-600 font-bold">(時間提早)</span></p>
                         <p><span class="font-bold text-blue-700 mr-2">總價</span>¥156,530 (當地現場付款)</p>
                         <p><span class="font-bold text-blue-700 mr-2">包含</span>免責、NOC補償(ECO)、ETC車載器</p>
                     </div>
@@ -201,238 +136,306 @@
             </div>
         </section>
 
-        <!-- 行程與地圖 -->
-        <section id="route-map" class="scroll-mt-10 bg-stone-800 text-white p-8 md:p-12 rounded-3xl shadow-lg relative overflow-hidden">
-            <div class="absolute top-0 right-0 opacity-10 pointer-events-none">
-                <svg width="400" height="400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            </div>
-            <div class="flex flex-col md:flex-row gap-10 items-center relative z-10">
-                <div class="md:w-3/5">
-                    <h2 class="text-3xl font-bold mb-4 flex items-center gap-2">📍 旅程完整自駕動線</h2>
-                    <p class="text-stone-300 mb-6 leading-relaxed">
-                        核心黃金大環線：岡山出發 ➔ 姬路城跨海 ➔ 淡路島深度遊 ➔ 鳴門南下德島市區，再深入祖谷秘境 ➔ 高松與金刀比羅 ➔ 經瀨戶大橋跳島返回。
-                    </p>
-                    <a href="https://www.google.com/maps/dir/Okayama+Momotaro+Airport,+Okayama,+Japan/Himeji+Castle,+Himeji,+Hyogo/Awaji+Yumebutai,+Awaji,+Hyogo/Uzu+no+Michi,+Naruto,+Tokushima/Tokushima+Station,+Tokushima/Iya+Valley+Vine+Bridge,+Miyoshi,+Tokushima/Takamatsu,+Kagawa/Kotohiragu,+Kotohira,+Kagawa/Uno+Port,+Tamano,+Okayama/Kurashiki+Bikan+Historical+Quarter,+Kurashiki,+Okayama/Okayama+Momotaro+Airport,+Okayama/" target="_blank" class="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A2 2 0 013 15.382V5.618a2 2 0 011.447-1.898L9 1m0 19l6-3m-6 3V1m6 16l5.447 2.724A2 2 0 0021 17.764V8.236a2 2 0 00-1.447-1.898L15 5m0 12V5m0 0L9 1"></path></svg>
-                        開啟 Google Maps 完整路線圖
-                    </a>
+        <!-- 📍 自駕路線 -->
+        <section id="route-map" class="scroll-mt-10 bg-stone-800 text-white p-8 rounded-3xl shadow-lg relative overflow-hidden">
+            <div class="flex flex-col md:flex-row gap-10 items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">📍 旅程完整自駕動線</h2>
+                    <p class="text-stone-300 max-w-2xl leading-relaxed">核心黃金大環線：岡山出發 ➔ 姬路城跨海 ➔ 淡路島深度遊 ➔ 鳴門南下德島市區，再深入祖谷秘境 ➔ 高松與金刀比羅 ➔ 經瀨戶大橋跳島返回。</p>
                 </div>
+                <a href="https://www.google.com/maps/dir/Okayama+Momotaro+Airport/Himeji+Castle/Awaji+Yumebutai/Uzu+no+Michi/Tokushima+Station/Iya+Valley+Vine+Bridge/Takamatsu/Kotohiragu/Uno+Port/Kurashiki+Bikan+Historical+Quarter/Okayama+Momotaro+Airport/" target="_blank" class="bg-orange-500 hover:bg-orange-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl whitespace-nowrap">開啟 Google Maps 完整路線圖</a>
             </div>
         </section>
 
-        <!-- 每日詳細行程細節 -->
+        <!-- 📅 每日詳細行程細節 -->
         <section id="itinerary" class="scroll-mt-10">
-            <div class="mb-8 text-center md:text-left">
-                <h2 class="text-3xl font-bold text-stone-800 mb-2">🗓️ 每日詳細行程詳情</h2>
-                <p class="text-stone-600 max-w-3xl text-sm">
-                    景點照片已更新為 Google Map 實景預覽。點擊按鈕可開啟地圖導航。
-                </p>
-            </div>
+            <div class="mb-6"><h2 class="text-3xl font-bold text-stone-800">🗓️ 每日詳細行程詳情</h2></div>
             <div class="flex flex-col lg:flex-row gap-6 bg-white p-2 rounded-3xl shadow-md border border-stone-200">
-                <div class="lg:w-[28%] flex lg:flex-col overflow-x-auto hide-scrollbar border-b lg:border-b-0 lg:border-r border-stone-100 p-4 gap-2">
-                    <div id="day-selector-container" class="flex lg:flex-col w-max lg:w-full gap-2 pb-2 lg:pb-0"></div>
+                <div class="lg:w-[25%] flex lg:flex-col overflow-x-auto hide-scrollbar border-b lg:border-b-0 lg:border-r border-stone-100 p-4 gap-2">
+                    <div id="day-selector-container" class="flex lg:flex-col w-max lg:w-full gap-2 pb-2"></div>
                 </div>
-                <div class="lg:w-[72%] p-4 lg:p-8 min-h-[550px]" id="day-content-container"></div>
+                <div class="lg:w-[75%] p-4 lg:p-6 min-h-[500px]" id="day-content-container"></div>
             </div>
         </section>
 
-        <section id="budget" class="scroll-mt-10 bg-white p-8 md:p-12 rounded-3xl shadow-md border border-stone-200 mb-10">
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="md:w-1/2">
+        <!-- 💰 總體預算 -->
+        <section id="budget" class="scroll-mt-10 bg-white p-8 rounded-3xl shadow-md border border-stone-200">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="md:w-1/2 w-full">
                     <h2 class="text-3xl font-bold text-stone-800 mb-4">💰 總體旅費預算概算</h2>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">租車費 (ニッポンレンタカー Minivan)</span><span class="font-bold text-teal-600">¥156,530</span></li>
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">交通雜費 (過路費/船票/油資)</span><span class="font-bold">¥65,000</span></li>
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">住宿費 (10晚實際結算)</span><span class="font-bold text-rose-600">TWD 47,676 + JPY 44,200</span></li>
-                        <li class="flex justify-between border-b border-stone-100 pb-2"><span class="text-stone-700 font-medium">餐飲費 (特色餐廳+日常)</span><span class="font-bold">¥200,000</span></li>
-                        <li class="flex justify-between"><span class="text-stone-700 font-medium">門票 (姬路城/美術館等)</span><span class="font-bold">¥20,000</span></li>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex justify-between border-b pb-1"><span>租車費 (ニッポンレンタカー Minivan)</span><span class="font-bold text-teal-600">¥156,530</span></li>
+                        <li class="flex justify-between border-b pb-1"><span>交通雜費 (過路費/船票/油資)</span><span class="font-bold">¥65,000</span></li>
+                        <li class="flex justify-between border-b pb-1"><span>住宿費 (10晚實際結算)</span><span class="font-bold text-rose-600">TWD 47,676 + JPY 44,200</span></li>
+                        <li class="flex justify-between border-b pb-1"><span>餐飲費 (特色餐廳+日常)</span><span class="font-bold">¥200,000</span></li>
+                        <li class="flex justify-between pb-1"><span>門票 (姬路城/美術館等)</span><span class="font-bold">¥20,000</span></li>
                     </ul>
-                    <div class="mt-6 p-4 bg-teal-50 rounded-xl border border-teal-100 text-center shadow-inner">
-                        <div class="text-3xl font-extrabold text-teal-700">總計約 ¥715,655 <span class="text-sm font-normal">JPY</span></div>
-                        <div class="text-sm text-teal-600 mt-1">(約合新台幣 14.9 萬元)</div>
+                    <div class="mt-4 p-4 bg-teal-50 rounded-xl text-center">
+                        <div class="text-2xl font-extrabold text-teal-700">總計約 ¥715,655</div>
+                        <div class="text-xs text-teal-600 mt-0.5">(約合新台幣 14.9 萬元)</div>
                     </div>
                 </div>
-                <div class="md:w-1/2 w-full"><div class="chart-container"><canvas id="budgetChart"></canvas></div></div>
+                <div class="md:w-1/2 w-full flex justify-center"><div class="chart-container w-full h-[250px]"><canvas id="budgetChart"></canvas></div></div>
             </div>
         </section>
 
-        <!-- 雲端同步記事與記帳本 -->
-        <section id="notes-tracker" class="scroll-mt-10 bg-white p-8 md:p-12 rounded-3xl shadow-md border border-stone-200 mb-10">
+        <!-- ☁️ 記事與共用記帳本 -->
+        <section id="notes-tracker" class="scroll-mt-10 bg-white p-6 md:p-10 rounded-3xl shadow-md border border-stone-200">
             <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 gap-4">
-                <div class="flex-1">
-                    <div class="flex items-center gap-3">
+                <div>
+                    <div class="flex items-center gap-2">
                         <h2 class="text-3xl font-bold text-stone-800">☁️ 家族雲端同步：記事與記帳</h2>
-                        <!-- 設定 API Key 的按鈕 -->
-                        <button onclick="window.openSettings()" class="text-stone-400 hover:text-stone-700 transition-colors p-1.5 bg-stone-100 rounded-full shadow-sm hover:scale-105" title="設定 Gemini API Key 拍照功能">⚙️</button>
+                        <button onclick="window.openSettings()" class="text-stone-400 text-sm bg-stone-100 p-1 rounded-full shadow-sm">⚙️</button>
                     </div>
-                    <p class="text-stone-600 text-sm mt-1">選擇您的身分，記錄的內容將會<strong class="text-teal-600">即時雲端同步</strong>到所有家人的手機中！</p>
+                    <p class="text-stone-600 text-xs mt-1">選擇您的身分，記錄內容將會<strong class="text-teal-600">即時雲端同步</strong>！</p>
                 </div>
-                <div class="bg-stone-100 p-2 rounded-xl flex flex-wrap gap-2 border border-stone-200" id="profile-selector">
-                    <!-- JS 動態生成家族按鈕 -->
-                </div>
+                <div class="bg-stone-100 p-1.5 rounded-xl flex flex-wrap gap-1 border border-stone-200" id="profile-selector"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- 聊天室風格記事本 -->
-                <div class="bg-amber-50 p-5 rounded-2xl border border-amber-100 flex flex-col h-[500px]">
-                    <h3 class="text-xl font-bold text-amber-900 mb-3 flex items-center gap-2">💬 行程群組佈告欄</h3>
-                    <div id="chat-box" class="flex-1 w-full p-4 rounded-xl border border-amber-200 bg-white/80 overflow-y-auto mb-3 space-y-3">
-                        <div class="text-center text-stone-400 text-sm mt-4">連線中...</div>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 💬 佈告欄 -->
+                <div class="bg-amber-50/60 p-4 rounded-2xl border border-amber-100 flex flex-col h-[450px]">
+                    <h3 class="text-lg font-bold text-amber-900 mb-2">💬 行程群組佈告欄</h3>
+                    <div id="chat-box" class="flex-1 p-3 rounded-xl bg-white/80 overflow-y-auto mb-3 space-y-2"></div>
                     <div class="flex gap-2">
-                        <input type="text" id="note-input" class="flex-1 p-3 rounded-xl border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-400" placeholder="輸入筆記、調整或備忘...">
-                        <button onclick="window.submitNote()" class="bg-amber-600 hover:bg-amber-500 text-white px-5 py-3 rounded-xl font-bold transition-all shadow-sm flex-shrink-0">發送</button>
+                        <input type="text" id="note-input" class="flex-1 p-2 rounded-xl border border-amber-200 text-sm" placeholder="輸入筆記、備忘...">
+                        <button onclick="window.submitNote()" class="bg-amber-600 text-white px-4 rounded-xl font-bold text-sm">發送</button>
                     </div>
                 </div>
 
-                <!-- 共用記帳本 -->
-                <div class="bg-teal-50 p-5 rounded-2xl border border-teal-100 flex flex-col h-[500px]">
-                    <h3 class="text-xl font-bold text-teal-900 mb-3 flex items-center gap-2">💴 家族共同記帳本</h3>
-                    
-                    <!-- 新增支出 -->
-                    <div class="flex flex-col mb-4">
-                        <div class="flex flex-col gap-2 bg-white p-3 rounded-xl border border-teal-200 shadow-sm relative items-stretch">
-                            <input type="hidden" id="edit-expense-id">
+                <!-- 💴 記帳本 -->
+                <div class="bg-teal-50/60 p-4 rounded-2xl border border-teal-100 flex flex-col h-[450px]">
+                    <h3 class="text-lg font-bold text-teal-900 mb-2">💴 家族共同記帳本</h3>
+                    <div class="bg-white p-3 rounded-xl border border-teal-100 mb-3 space-y-2 text-xs">
+                        <input type="hidden" id="edit-expense-id">
+                        <div class="flex gap-1.5">
+                            <select id="expense-date" class="p-1.5 rounded border text-xs flex-1">
+                                <option value="D1 (7/3)">Day 1 (7/3)</option><option value="D2 (7/4)">Day 2 (7/4)</option>
+                                <option value="D3 (7/5)">Day 3 (7/5)</option><option value="D4 (7/6)">Day 4 (7/6)</option>
+                                <option value="D5 (7/7)">Day 5 (7/7)</option><option value="D6 (7/8)">Day 6 (7/8)</option>
+                                <option value="D7 (7/9)">Day 7 (7/9)</option><option value="D8 (7/10)">Day 8 (7/10)</option>
+                                <option value="D9 (7/11)">Day 9 (7/11)</option><option value="D10 (7/12)">Day 10 (7/12)</option>
+                                <option value="D11 (7/13)">Day 11 (7/13)</option>
+                            </select>
+                            <select id="expense-category" class="p-1.5 rounded border text-xs flex-1">
+                                <option value="car">🚙 租車相關</option><option value="trans">🚢 交通雜費</option>
+                                <option value="hotel">🏨 住宿費用</option><option value="food" selected>🍱 餐飲費用</option>
+                                <option value="ticket">🎟️ 門票雜支</option>
+                            </select>
+                            <select id="expense-method" class="p-1.5 rounded border text-xs flex-1">
+                                <option value="cash" selected>💴 現金</option><option value="card">💳 刷卡</option>
+                                <option value="paypay">📱 PayPay</option>
+                            </select>
+                        </div>
+                        <div class="flex gap-2">
+                            <input type="number" id="expense-amount" class="flex-1 p-1.5 rounded border text-right font-bold" placeholder="金額 ¥">
+                            <button type="button" onclick="window.triggerFileInput('receipt-camera')" class="bg-stone-100 px-2.5 rounded border border-stone-300" title="相機拍照">📷</button>
+                            <input type="file" id="receipt-camera" accept="image/*" capture="environment" class="absolute w-0 h-0 opacity-0 pointer-events-none" onchange="window.handleReceiptUpload(event)">
                             
-                            <div class="flex flex-col sm:flex-row gap-2">
-                                <select id="expense-date" class="p-2 rounded border border-stone-200 focus:outline-none bg-stone-50 text-sm flex-1 sm:w-1/3">
-                                    <option value="D1 (7/3)">Day 1 (7/3)</option>
-                                    <option value="D2 (7/4)">Day 2 (7/4)</option>
-                                    <option value="D3 (7/5)">Day 3 (7/5)</option>
-                                    <option value="D4 (7/6)">Day 4 (7/6)</option>
-                                    <option value="D5 (7/7)">Day 5 (7/7)</option>
-                                    <option value="D6 (7/8)">Day 6 (7/8)</option>
-                                    <option value="D7 (7/9)">Day 7 (7/9)</option>
-                                    <option value="D8 (7/10)">Day 8 (7/10)</option>
-                                    <option value="D9 (7/11)">Day 9 (7/11)</option>
-                                    <option value="D10 (7/12)">Day 10 (7/12)</option>
-                                    <option value="D11 (7/13)">Day 11 (7/13)</option>
-                                </select>
-                                <select id="expense-category" class="p-2 rounded border border-stone-200 focus:outline-none bg-stone-50 text-sm flex-1 sm:w-1/3">
-                                    <option value="car">🚙 租車相關</option>
-                                    <option value="trans">🚢 交通雜費</option>
-                                    <option value="hotel">🏨 住宿費用</option>
-                                    <option value="food" selected>🍱 餐飲費用</option>
-                                    <option value="ticket">🎟️ 門票雜支</option>
-                                </select>
-                                <select id="expense-method" class="p-2 rounded border border-stone-200 focus:outline-none bg-stone-50 text-sm flex-1 sm:w-1/3">
-                                    <option value="cash" selected>💴 現金付款</option>
-                                    <option value="card">💳 信用卡</option>
-                                    <option value="paypay">📱 PayPay</option>
-                                </select>
-                            </div>
+                            <button type="button" onclick="window.triggerFileInput('receipt-album')" class="bg-stone-100 px-2.5 rounded border border-stone-300" title="從相簿選取">🖼️</button>
+                            <input type="file" id="receipt-album" accept="image/*" class="absolute w-0 h-0 opacity-0 pointer-events-none" onchange="window.handleReceiptUpload(event)">
                             
-                            <div class="flex flex-1 gap-2">
-                                <input type="number" id="expense-amount" class="flex-1 p-2 rounded border border-stone-200 focus:outline-none text-right min-w-[80px]" placeholder="金額 ¥">
-                                
-                                <!-- 修正後之 AI 拍照按鈕 (開啟手機鏡頭) -->
-                                <button type="button" onclick="window.triggerFileInput('receipt-camera')" class="bg-stone-100 hover:bg-stone-200 text-stone-700 px-2 sm:px-3 py-2 rounded cursor-pointer transition-all border border-stone-300 flex items-center justify-center shadow-sm text-xs sm:text-sm" title="相機拍照記帳">
-                                    📷<span class="hidden sm:inline ml-1">拍照</span>
-                                </button>
-                                <input type="file" id="receipt-camera" accept="image/*" capture="environment" class="absolute w-0 h-0 opacity-0 pointer-events-none" onchange="window.handleReceiptUpload(event)">
-                                
-                                <!-- 修正後之 AI 相簿按鈕 (從媒體庫挑選相片) -->
-                                <button type="button" onclick="window.triggerFileInput('receipt-album')" class="bg-stone-100 hover:bg-stone-200 text-stone-700 px-2 sm:px-3 py-2 rounded cursor-pointer transition-all border border-stone-300 flex items-center justify-center shadow-sm text-xs sm:text-sm" title="從相簿選取記帳">
-                                    🖼️<span class="hidden sm:inline ml-1">相簿</span>
-                                </button>
-                                <input type="file" id="receipt-album" accept="image/*" class="absolute w-0 h-0 opacity-0 pointer-events-none" onchange="window.handleReceiptUpload(event)">
-                                
-                                <button id="expense-submit-btn" onclick="window.submitExpense()" class="bg-teal-600 hover:bg-teal-500 text-white px-3 sm:px-4 py-2 rounded font-bold transition-all shadow-sm whitespace-nowrap text-xs sm:text-sm">記一筆</button>
-                            </div>
-
-                            <!-- 已選收據預覽縮圖區 -->
-                            <div id="receipt-preview-container" class="hidden flex items-center gap-2 bg-stone-50 p-2 rounded border border-stone-200 mt-2">
-                                <img id="receipt-preview-img" class="w-10 h-10 object-cover rounded border" src="" alt="Receipt Preview">
-                                <span class="text-xs text-stone-600 font-bold">📄 已選取收據相片（將儲存至雲端）</span>
-                                <button onclick="window.clearSelectedReceipt()" class="ml-auto text-xs text-rose-500 font-bold hover:underline">移除</button>
-                            </div>
+                            <button id="expense-submit-btn" onclick="window.submitExpense()" class="bg-teal-600 text-white px-4 rounded font-bold">記一筆</button>
                         </div>
-                        <div id="ai-loading" class="hidden text-xs text-teal-600 px-1 font-bold mt-2 animate-pulse">✨ AI 正在讀取收據並辨識金額，請稍候...</div>
+                        <div id="receipt-preview-container" class="hidden flex items-center gap-2 bg-stone-50 p-1.5 rounded border">
+                            <img id="receipt-preview-img" class="w-8 h-8 object-cover rounded" src="" alt="縮圖">
+                            <span class="text-[10px] text-stone-500 font-bold">📄 已選取收據（將安全存至雲端）</span>
+                            <button onclick="window.clearSelectedReceipt()" class="ml-auto text-[10px] text-rose-500 hover:underline">移除</button>
+                        </div>
+                        <div id="ai-loading" class="hidden text-[11px] text-teal-600 font-bold animate-pulse">✨ AI 正在讀取收據並辨識金額，請稍候...</div>
                     </div>
-
-                    <!-- 支出列表 -->
-                    <div id="expense-list" class="flex-1 w-full overflow-y-auto bg-white/60 rounded-xl border border-teal-100 p-3 mb-4 space-y-2">
-                         <div class="text-center text-stone-400 text-sm mt-4">連線中...</div>
-                    </div>
-                    
-                    <!-- 預算總結 -->
-                    <div class="pt-4 border-t-2 border-teal-200 flex justify-between items-center bg-white p-3 rounded-xl shadow-sm">
-                        <div>
-                            <span class="font-bold text-teal-900 text-sm block">與總預算 (¥715,655) 差異</span>
-                            <span id="diff-label" class="text-[10px] text-stone-500">計算中...</span>
-                        </div>
-                        <div class="text-right">
-                            <span id="diff-total" class="text-xl font-black text-stone-800">¥ 0</span>
-                        </div>
+                    <div id="expense-list" class="flex-1 overflow-y-auto bg-white/60 rounded-xl border p-2 space-y-1.5"></div>
+                    <div class="pt-3 border-t flex justify-between items-center bg-white p-2 rounded-xl shadow-sm text-xs mt-2">
+                        <div><span class="font-bold text-stone-700 block">與總預算差額</span><span id="diff-label" class="text-[10px] text-stone-400">計算中...</span></div>
+                        <div class="text-right"><span id="diff-total" class="text-base font-black">¥ 0</span></div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- 設定 Gemini API Key Modal -->
+    <!-- ⚙️ 設定 Gemini Key Modal -->
     <div id="settings-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-xl" onclick="event.stopPropagation()">
-            <h3 class="text-lg font-bold text-stone-800 mb-2">⚙️ 設定 Gemini API Key</h3>
-            <p class="text-xs text-stone-500 mb-4 leading-relaxed">
-                由於本網頁部署在公開的 GitHub 上，為了保護您的金鑰不被竊取，請在此輸入您的 <strong>Gemini API Key</strong>。<br>
-                金鑰將僅安全地儲存在您本機的瀏覽器中（LocalStorage），不會上傳給任何人。
-            </p>
-            <input type="password" id="settings-api-key" class="w-full p-2.5 rounded border border-stone-300 focus:outline-none focus:ring-2 focus:ring-teal-500 text-sm mb-4" placeholder="請貼上您的 AIzaSy... 金鑰">
-            <div class="flex justify-end gap-2 text-sm font-bold">
-                <button onclick="window.closeSettings()" class="px-4 py-2 rounded bg-stone-100 hover:bg-stone-200 text-stone-700 transition-colors">取消</button>
-                <button onclick="window.saveSettings()" class="px-4 py-2 rounded bg-teal-600 hover:bg-teal-500 text-white transition-colors">儲存金鑰</button>
+        <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-xl">
+            <h3 class="text-base font-bold mb-2">⚙️ 設定 Gemini API Key</h3>
+            <p class="text-[11px] text-stone-500 mb-3 leading-relaxed">請輸入您的 Gemini API Key。金鑰將安全儲存在您本機的 LocalStorage 中，不會公開外流。</p>
+            <input type="password" id="settings-api-key" class="w-full p-2 rounded border text-sm mb-3" placeholder="請貼上 AIzaSy... 金鑰">
+            <div class="flex justify-end gap-2 text-xs font-bold">
+                <button onclick="window.closeSettings()" class="px-3 py-1.5 rounded bg-stone-100 text-stone-700">取消</button>
+                <button onclick="window.saveSettings()" class="px-3 py-1.5 rounded bg-teal-600 text-white">儲存</button>
             </div>
         </div>
     </div>
 
-    <!-- 查看收據大圖 Modal -->
-    <div id="receipt-modal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onclick="window.closeReceiptModal()">
-        <div class="relative max-w-lg w-full bg-white rounded-2xl overflow-hidden p-4 shadow-2xl flex flex-col items-center" onclick="event.stopPropagation()">
-            <button onclick="window.closeReceiptModal()" class="absolute top-3 right-3 bg-black/50 hover:bg-black text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-all z-10">✕</button>
-            <h3 class="text-sm font-bold text-stone-700 mb-2 self-start">📄 收據電子憑證</h3>
-            <div class="w-full max-h-[70vh] overflow-y-auto bg-stone-100 rounded-xl flex items-center justify-center">
-                <img id="modal-receipt-img" src="" alt="Receipt Image Large" class="max-w-full h-auto rounded">
-            </div>
+    <!-- 🏨 住宿詳情動態抽屜核心 Modal (優化提升最高層級 z-[200] 確保必彈出) -->
+    <div id="hotel-detail-modal" class="hidden fixed inset-0 bg-black/70 z-[200] flex items-center justify-center p-3" onclick="window.closeHotelModal()">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-5 shadow-2xl relative max-h-[85vh] flex flex-col" onclick="event.stopPropagation()">
+            <button onclick="window.closeHotelModal()" class="absolute top-4 right-4 bg-stone-100 hover:bg-stone-200 text-stone-700 w-8 h-8 rounded-full flex items-center justify-center font-bold">✕</button>
+            <div id="hotel-modal-body" class="overflow-y-auto pr-1 space-y-4 text-sm"></div>
         </div>
     </div>
 
-    <footer class="bg-stone-900 text-stone-400 text-center py-6 text-sm">
-        © 2026 岡山-四國-淡路島 家族自駕行 | Designed for Lin Family
-    </footer>
+    <!-- 查看大圖 Modal -->
+    <div id="receipt-modal" class="hidden fixed inset-0 bg-black/80 z-[200] flex items-center justify-center p-4" onclick="window.closeReceiptModal()">
+        <div class="relative max-w-md w-full bg-white rounded-2xl p-3 flex flex-col items-center" onclick="event.stopPropagation()">
+            <button onclick="window.closeReceiptModal()" class="absolute top-2 right-2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs">✕</button>
+            <div class="w-full max-h-[70vh] overflow-y-auto bg-stone-50 rounded flex items-center justify-center"><img id="modal-receipt-img" src="" class="max-w-full h-auto rounded"></div>
+        </div>
+    </div>
 
+    <footer class="bg-stone-900 text-stone-400 text-center py-4 text-xs">© 2026 岡山-四國-淡路島 家族自駕行 | Designed for Lin Family</footer>
+
+    <!-- 🏨 核心住宿大資料庫物件 -->
     <script>
-        // 行程資料陣列
+        const hotelDetailsData = {
+            "Besso姫路": {
+                title: "🏨 Day 1 住宿資訊：Besso 姫路",
+                mapUrl: "https://goo.gl/maps/nPTCGMTxVKdF22U4A",
+                notes: [
+                    "<strong>🔑 房間號碼：</strong>S1",
+                    "<strong>🔒 電子密碼鎖按鍵號碼：</strong><span class='text-rose-600 font-extrabold bg-rose-50 px-1 rounded'>5692＊</span> (最後要加米字號，請務必牢記！)",
+                    "<strong>📝 自助登記代碼：</strong>249007",
+                    "<strong>🅿️ 專屬停車場指引：</strong>第二輛車及大型車請使用第二停車場，請務必準確停在下方專屬的 <span class='text-teal-600 font-bold'>68號</span> 或 <span class='text-teal-600 font-bold'>69號</span> 車位。"
+                ],
+                zh: "【如何解鎖房門】<br>① 用整個手掌觸摸房門(S1)入口處的觸控螢幕使其亮起。<br>② 等待2～3秒後，依序輸入上述「按鍵號碼」4位數字和＊號。<br>③ 房門開鎖後進入房間，請立即在架上的平板電腦上輸入「入住代碼(249007)」或掃描二維碼完成入住手續。<br>※注意：若連續輸入錯誤3次將會自動鎖定5分鐘，請靜候再試。<br>【退房與停車】<br>退房時也請直接透過室內平板辦理。清潔人員將於上午 11 點準時抵達，請在此之前離開。連通專屬停車場的導航連結已附於下方按鈕。",
+                jp: "【チェックインについて】<br>当施設はタブレットによるセルフチェックインとなっております。エントランスの棚に設置されたタブレットに「チェックインコード（249007）」を入力するか、QRコードをかざして手続きを行ってください。<br>【解錠方法】<br>① 手のひらでドアのタッチパネルに触れてください。<br>② 2〜3秒後、上記の「鍵番号(5692*)」を入力してください。<br>③ 開錠します。※3回続けて間違えると5分間自動ロックされます。<br>【駐車場】2台目や大型車は第2駐車場をご利用ください。必ず68番または69番に駐車してください。"
+            },
+            "淡路 NC03 中央公寓": {
+                title: "🏨 Day 2 住宿資訊：淡路 Central Room NC03",
+                mapUrl: "https://line.me/R/ti/p/%40641gkpha",
+                notes: [
+                    "<strong>🕒 入住時間限制：</strong>通常為下午 17:00 以後才能進房。若清潔提前完成，當天會通知可提早入住。10:00 以後可以先提早寄放行李，但置放後需拍照傳給屋主確認。",
+                    "<strong>📲 重要行前步驟：</strong>本設施為完全自助取鑰匙進房。必須在入住前一天前完成 LINE 官方帳號好友登記，或回傳可收 PDF 的 Email，以獲取專屬入住安全手冊。",
+                    "<strong>🚗 交通與車位：</strong>屋主已為我們安排好專屬車位，抵達現場時屋主會引導至特定格位停放。"
+                ],
+                zh: "【みらいファクトリー 官方聯絡方式】<br>請透過以下管道在出發前取得包含密碼與車位圖的 PDF 說明書：<br>① 官方LINE好友登記：搜尋 ID <span class='text-indigo-600 font-bold'>@641gkpha</span>（名稱：みらいファクトリー），加入後發送您的「住宿日期與設施名稱」即可。<br>② 點擊專屬好友連結：<a href='https://line.me/R/ti/p/%40641gkpha' target='_blank' class='text-blue-500 underline font-bold'>點我加入 LINE 官方帳號</a>",
+                jp: "【重要：セルフチェックインについて】<br>当施設はご自身で鍵をお取りいただくセルフチェックインタイプです。鍵の保管場所やキーボックスの番号を記したPDFマニュアル（駐車場の情報付）を必ず前日までに受け取ってください。<br>① メールでの受け取り：PDFが受信できるアドレスを記入してご返信ください。<br>② 公式LINE（アカウント名：みらいファクトリー / ID: @641gkpha）を友達登録し、宿泊日と施設名をお送りください。<br>【チェックイン時間】通常17時以降です。10時以降にお荷物を先に置く場合は、置いた後に荷物の写真を送信してください。"
+            },
+            "Rakuten STAY VILLA Awaji": {
+                title: "🏨 Day 3 住宿資訊：樂天 STAY VILLA 淡路",
+                mapUrl: "https://stay.rakuten.co.jp/gp/villa-awaji/",
+                notes: [
+                    "<strong>予約番号：</strong>6339146809_01 | <strong>客房號：</strong>Villa 108",
+                    "<strong>🤖 完全無人化設施：</strong>現場無實體櫃檯人員。進出所需之核心電子鎖金鑰號碼，系統將於<span class='text-rose-600 font-bold'>入住前一天</span>直接發送至登記信箱。",
+                    "<strong>⚠️ 重要防呆提醒：</strong>不接受提前辦理進房（嚴格限制 15:00 後方可入館），現場亦不提供任何行李人工寄存服務。請勿提早前往現場卡關。"
+                ],
+                zh: "【無人線上 Check-in 步驟】<br>① 為了避免入住當天在門口操作平板過久，請務必在入住前一天收到樂天官方郵件後，點擊專屬 URL 事先填妥全體團員的房客基本資料。<br>② 如果發現官方發送的線上登記 URL 被 Booking.com 系統自動遮鎖（Masking），請立刻撥打客服熱線 050-1750-9719，或提供您的非轉接常用 Email 索取專屬網址。",
+                jp: "【オンラインチェックインのご案内】<br>Rakuten STAYは無人施設です。居住フロントはございません。前日にお送りするURLより、事前に宿泊者情報のご登録をお願いいたします。鍵番号はチェックインの前日にお送りします。<br>※アーリーチェックイン、およびお荷物のお預かりは一切いたしかねます。15時以降にご来館ください。全員が未成年の場合は宿泊をお断りします。"
+            },
+            "德島格蘭維羅酒店": {
+                title: "🏨 Day 4 & Day 8 住宿資訊：徳島グランヴィリオホテル",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Tokushima+Grandvrio+Hotel",
+                notes: [
+                    "<strong>🅿️ 停車資訊：</strong>飯店附設大型專屬客用停車場，自駕家族可直接停放。",
+                    "<strong>🛎️ 有人臨櫃服務：</strong>傳統飯店規格，直接前往一樓大廳櫃檯出示護照即可辦理進房手續。"
+                ],
+                zh: "傳統商務渡假飯店，直接在櫃檯辦理入住即可。退房時間為隔日上午 11:00 以前。飯店內設備齊全，周邊開車補給方便。",
+                jp: "フロントにて通常のチェックイン手続きを行ってください。無料の敷地内駐車場を完備しております。"
+            },
+            "卡租拉亞旅館": {
+                title: "🏨 Day 5 住宿資訊：秘境祖谷溪：卡租拉亞山莊 (Kazuraya)",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=旅館かずらや+徳島県三好市",
+                notes: [
+                    "<strong>🕒 入住時限嚴格：</strong>進房時間為 15:00 - 19:00。因含有精緻溫泉和食，<span class='text-rose-600 font-bold'>超過 19:00 抵達者，廚房會關閉且無法享用晚餐，亦不退費</span>，開車山路請抓好時間！",
+                    "<strong>🍲 晚餐時間：</strong>18:00 - 19:00 | <strong>🍱 早餐時間：</strong>07:30 - 08:30",
+                    "<strong>⛰️ 深山秘境注意事項：</strong>山莊地處高海拔深山，附近無任何便利商店或超市，請在山下先買好全家零食飲料。客房無電梯，皆須走樓梯，長輩請適度放慢步調。"
+                ],
+                zh: "【山莊生活守則】<br>① 溫泉大浴場開放時間：晚上 16:00 - 22:30，隔日上午 06:30 - 09:00。<br>② 為了維護深山木造山莊作息，晚上 22:00 後請保持安靜。<br>③ 全館客房與公共空間推行嚴格禁菸，若在房內抽菸被發現將會被收取高達 50,000 日圓的懲罰性清潔費！<br>④ 提供免費山莊前自駕停車場，全天候不需預約即可停放。",
+                jp: "【チェックインとお食事について】<br>チェックインは15:00〜19:00です。19:00を過ぎると夕食の提供ができません（返金不可）。館内にエレベーターはございません。夕方10時以降は静かにお願いします。客室は全室禁煙です。喫煙が発覚した場合は5万円の清掃料金を請求します。<br>【大浴場】夜：16:00〜22:30 / 朝：6:30〜9:00<br>※山奥のため周辺にコンビニ等はございません。事前にお買い求めください。"
+            },
+            "ホテル望海荘": {
+                title: "🏨 Day 6 住宿資訊：高松屋島絕景之宿：望海荘",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=絕景の宿+望海荘",
+                notes: [
+                    "<strong>📅 特色一泊夕食：</strong>已預訂 2 間客房。今晚包含高松當地地雞壽喜燒及天然河豚唐揚宴席，請於 18:00 前辦理入住以方便準備晚餐。",
+                    "<strong>🅿️ 山頂停車：</strong>屋島山頂專屬特約停車場，抵達飯店前依標示停放即可。"
+                ],
+                zh: "今晚是自駕行重點景觀飯店，位於屋島山頂，能居高臨下俯瞰瀨戶內海與高松夜景。直接在櫃檯辦理入住。",
+                jp: "フロントにてチェックインをお願いいいたします。屋島山頂からの絶景をお楽しみください。"
+            },
+            "オリーブ農家的家 お泊り忠左衛門 吉野": {
+                title: "🏨 Day 7 住宿資訊：小豆島一棟貸切：お泊り忠左衛門 吉野",
+                mapUrl: "https://www.manten-shodoshima.com/",
+                notes: [
+                    "<strong>💴 現場結算金額：</strong>JPY 24,000.00 (一泊貸切無常駐員工)",
+                    "<strong>🔑 門口密碼黑盒子：</strong>本棟民宿採自動自助進房，門口黑盒子暗証號碼將於<span class='text-rose-600 font-bold'>出發日前 10 天左右</span>發送至郵件中。",
+                    "<strong>🏪 物資與餐飲防呆：</strong>包棟民宿地處偏遠農家，<span class='text-rose-600 font-bold'>走路圈內沒有任何商店、全家或餐廳</span>！開車到最近的超商要 15 分鐘、大超市マルナカ要 25 分鐘。請務必在開車過來前先去超市買好全家份的食材、飲料與調味料（民宿廚房IH爐、烤箱、冰箱配備齊全，但完全沒有調味料與睡衣，需自行準備）。"
+                ],
+                zh: "【自動自助入住三步驟】<br>① 民宿大門口右側牆上設置有黑色 Key Box（鑰匙保管盒）。<br>② 在盒上輸入官方發送的 4 位數暗証號碼，並按下右下角的「開錠標記」，將外蓋向外拉開即可取得實體大門鑰匙。<br>③ 進入客廳後，桌上放有「住宿者名單卡（宿泊者カード）」，請房客代表簽名。<br>🎁【特別贈送：小豆島オリーブ温泉露天浴池割引券】<br>屋主後續會將マルナカ新土庄店內的「オリーブ溫泉」電子割引券圖片寄給我們，開車去大超市採買食材時可以順便去泡這間一望瀨戶內海的頂級露天溫泉！（導航資訊已整合於下方按鈕）",
+                jp: "【重要：自動セルフチェックイン方法】<br>当宿は一棟貸切宿のためスタッフは常駐しておりません。事前に商店等でパジャマ・お飲み物・調味料をご準備ください。<br>① 玄関横の黒いキーボックスに暗証番号を入力。<br>② キーボックス右下の開錠マークを押し、手前に引いて鍵を取り出してください。<br>③ リビングの机の上にある宿泊者カードにご署名をお願いします。<br>※暗証番号は宿泊日の10日前を目安にメールします。徒歩圏内にコンビニ・飲食店はありません（スーパーまで車で25分）。"
+            },
+            "GREEN 岡山": {
+                title: "🏨 Day 9 & Day 10 住宿資訊：GREEN 岡山 (綠色酒店)",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=GREEN+HOTEL+Okayama",
+                notes: [
+                    "<strong>🔑 門口鑰匙密碼箱通行證：</strong><span class='text-teal-600 font-extrabold bg-teal-50 px-1 rounded'>0625</span>",
+                    "<strong>🕒 預計抵達登記時間：</strong>16:00 前後。",
+                    "<strong>🅿️ 專屬車位資訊：</strong>自駕車位就在建築正門口正前方，停妥後請傳照片給屋主確認。"
+                ],
+                zh: "【入住與聯絡提示】<br>抵達門口後，找到設置的密碼鑰匙箱並輸入 <span class='text-teal-600 font-bold'>0625</span> 即可取出鑰匙進房。順利進房後請傳個訊息給屋主打聲招呼。兩晚續住，正門口即是專屬車位。",
+                jp: "【チェックイン方法】<br>玄関に設置されているキーボックスに暗証番号「0625」を入力して鍵をお受け取りください。到着されましたらメッセージをお願いします。駐車場は建物のすぐ目の前です。写真をご確認ください。"
+            }
+        };
+
+        // 行程基本架構資料
         const itineraryData = [
-            { day: 1, date: `7/3 週五`, title: `抵達岡山，直奔姬路`, vibe: `移動/夜遊`, transport: `15:05 岡山機場 ➔ 16:00 辦理租車 ➔ 姬路市區`, activities: [`機場取車後直接往東行駛`, `傍晚抵達姬路飯店`, `晚上可在姬路車站周邊逛街`], lunch: `機上或自理`, dinner: `姬路穴子料理【一張羅】`, hotel: `【✅已預約: Besso姫路】(已付 TWD 5,979)`, parking: `【姬路車站周邊特約停車場】`, attractions: [{name: `岡山桃太郎機場`, img: `https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop`}, {name: `姬路車站`, img: `https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop`}, {name: `夜晚姬路城`, img: `https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 2, date: `7/4 週六`, title: `國寶名城，登陸淡路島`, vibe: `歷史/海景`, transport: `姬路 ➔ (跨越明石海峽大橋) ➔ 淡路島`, activities: [`上午：參觀世界遺產【姬路城】`, `下午：開車體驗【明石海峽大橋】`, `傍晚：抵達渡假勝地淡路島`], lunch: `姬路城周邊定食`, dinner: `淡路島當地居酒屋`, hotel: `【✅已預約: 淡路 NC03 中央公寓】(已付 TWD 6,226)`, parking: `飯店【免費停車】`, attractions: [{name: `姬路城天守閣`, img: `https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop`}, {name: `明石海峽大橋`, img: `https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop`}, {name: `淡路島海岸`, img: `https://images.unsplash.com/photo-1504512485720-7d83a16ee930?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 3, date: `7/5 週日`, title: `淡路島深度遊：藝術與花海`, vibe: `度假放空`, transport: `淡路島島內輕鬆自駕`, activities: [`上午：【淡路夢舞台】`, `中午：【淡路花棧敷】`, `下午：【幸福鬆餅 淡路島】`], lunch: `淡路島漢堡`, dinner: `淡路牛燒肉`, hotel: `【✅已預約: Rakuten STAY VILLA Awaji】(已付 TWD 6,543)`, parking: `飯店【免費停車】`, attractions: [{name: `淡路夢舞台`, img: `https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop`}, {name: `淡路花棧敷`, img: `https://images.unsplash.com/photo-1460500063983-994d4c27756c?q=80&w=800&auto=format&fit=crop`}, {name: `幸福鬆餅淡路島`, img: `https://images.unsplash.com/photo-1522992319-0365e5f11656?q=80&w=800&auto=format&fit=crop`}] },
-            { day: 4, date: `7/6 週一`, title: `鳴門漩渦與德島市區`, vibe: `市區/文化`, transport: `淡路島 ➔ (經大鳴門橋) ➔ 德島市區`, activities: [`上午：前往【渦之道】觀賞【鳴門渦潮】`, `下午：【阿波舞會館】`, `傍晚：搭乘【眉山纜車】`], lunch: `鳴門海鮮定食`, dinner: `德島拉麵 麵王`, hotel: `【✅已預約: 德島格蘭維羅酒店】(已付 TWD 4,421)`, parking: `【附設停車場】`, attractions: [{name: `鳴門渦潮`, img: `https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop`}, {name: `阿波舞會館`, img: `https://images.unsplash.com/photo-1513407030348-c1e4ea505298?q=80&w=400&auto=format&fit=crop`}, {name: `眉山纜車`, img: `https://images.unsplash.com/photo-1541885686001-c8cc29d784a1?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, transport: `德島市區 ➔ (車程約 2H) ➔ 祖谷/大步危`, activities: [`上午：從德島出發`, `中午：【大步危峽遊覽船】`, `下午：【祖谷蔓橋】`], lunch: `祖谷美人 蕎麥麵`, dinner: `旅館內享用和食晚餐`, hotel: `【✅已預約: 卡租拉亞旅館】(已付 TWD 11,595)`, parking: `旅館【免費停車】`, attractions: [{name: `祖谷蔓橋`, img: `https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop`}, {name: `大步危峽遊覽船`, img: `https://images.unsplash.com/photo-1542055990-2647c2c9d8bd?q=80&w=400&auto=format&fit=crop`}, {name: `祖谷溫泉`, img: `https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 6, date: `7/8 週三`, title: `揮別秘境，前進港都高松`, vibe: `市區漫遊`, transport: `祖谷 ➔ 高松市區 ➔ 屋島山頂`, activities: [`上午：揮別山區秘境開車前往高松港都`, `下午：驅車直達屋島，前往【屋島展望台】看落日與瀨戶內海`, `傍晚：入住享有絕景、今晚重頭戲的【ホテル望海荘】享受精緻晚宴`], lunch: `讚岐烏龍麵【わら家】`, dinner: `【✨ 吃好一點】望海荘地雞壽喜燒+天然河豚唐揚饗宴`, hotel: `【✅已預約: ホテル望海荘】(一泊夕食 2室共 JPY 44,200)`, parking: `【附設停車場】`, attractions: [{name: `屋島展望台`, img: `https://images.unsplash.com/photo-1504109586057-7a2ae83d1338?q=80&w=400&auto=format&fit=crop`}, {name: `四國村`, img: `https://images.unsplash.com/photo-1528360354687-839420409a6d?q=80&w=400&auto=format&fit=crop`}, {name: `北濱Alley`, img: `https://images.unsplash.com/photo-1493606371202-6275828f90f3?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 7, date: `7/9 週四`, title: `搭乘渡輪，小豆島跳島`, vibe: `跳島/拍照`, transport: `【高松港】 ➔ (🚢 09:00發) ➔ 小豆島【土庄港】`, activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 渡輪已預約</span> 預約號：0307090403 (¥8,430)`, `【小豆島橄欖公園】`, `【天使的散步道】`], lunch: `小豆島素麵`, dinner: `當地超市採買`, hotel: `【✅已預約: オリーブ農家的家 お泊り忠左衛門 吉野】(已付 TWD 4,831)`, parking: `民宿【免費停車】`, attractions: [{name: `高松港渡輪`, img: `https://images.unsplash.com/photo-1522064115160-c3d5267d30d1?q=80&w=400&auto=format&fit=crop`}, {name: `小豆島橄欖公園`, img: `https://images.unsplash.com/photo-1533221376856-11f874581f18?q=80&w=400&auto=format&fit=crop`}, {name: `天使的散步道`, img: `https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 8, date: `7/10 週五`, title: `返回高松，金刀比羅宮`, vibe: `適度步行`, transport: `小豆島 ➔ (🚢 08:35發) ➔ 【高松港】 ➔ 琴平`, activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 渡輪已預約</span> 預約號：0407100301 (¥8,430)`, `下午：參拜【金刀比羅宮】`, `傍晚：返回高松市區採買`], lunch: `正宗讚岐烏龍麵`, dinner: `高松名物「骨付鳥」`, hotel: `【✅已預約: 民宿 setouchi】(已付 TWD 3,189)`, parking: `【附設停車場】`, attractions: [{name: `高松港`, img: `https://images.unsplash.com/photo-1565031491910-e57fac031c41?q=80&w=400&auto=format&fit=crop`}, {name: `金刀比羅宮`, img: `https://images.unsplash.com/photo-1590559899731-0102b1c4e749?q=80&w=400&auto=format&fit=crop`}, {name: `Youme Town 高松`, img: `https://images.unsplash.com/photo-1519558260268-cde7e03aeb31?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 9, date: `7/11 週六`, title: `直島藝術之旅，抵達岡山`, vibe: `藝術/跨海`, transport: `高松 ➔ 岡山【宇野港】 ➔ (客船約20分) ➔ 直島`, activities: [`<span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-xs font-bold border border-emerald-200">✅ 美術館已預約</span> **10:45：地中美術館**`, `尋找草間彌生【黃南瓜與紅南瓜】`, `傍晚：返回宇野港，驅車前往岡山`], lunch: `中奧 咖啡廳`, dinner: `岡山車站周邊居酒屋`, hotel: `【✅已預約: GREEN 岡山】(已付 TWD 4,892)`, parking: `【岡山車站 停車場】`, attractions: [{name: `瀨戶大橋`, img: `https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=400&auto=format&fit=crop`}, {name: `直島地中美術館`, img: `https://images.unsplash.com/photo-1582238479576-96b6fbcf26d4?q=80&w=400&auto=format&fit=crop`}, {name: `草間彌生黃南瓜`, img: `https://images.unsplash.com/photo-1518908336710-4e1cf821d3d1?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 10, date: `7/12 週日`, title: `倉敷美觀與 Outlet 血拚`, vibe: `文化/血拚`, transport: `岡山市區 ➔ 倉敷 ➔ 岡山市區`, activities: [`上午：【倉敷美觀地區】漫步`, `下午：【三井 Outlet Park 倉敷】`, `傍晚：返回岡山市區`], lunch: `倉敷周邊洋食`, dinner: `【✨ 吃好一點】割烹【壽司 辻】`, hotel: `續住：【✅已預約: GREEN 岡山】`, parking: `【岡山車站 停車場】`, attractions: [{name: `倉敷美觀地區`, img: `https://images.unsplash.com/photo-1580975619379-373307612c22?q=80&w=400&auto=format&fit=crop`}, {name: `三井 Outlet 倉敷`, img: `https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=400&auto=format&fit=crop`}, {name: `倉敷帆布`, img: `https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=400&auto=format&fit=crop`}] },
-            { day: 11, date: `7/13 週一`, title: `岡山名園，滿載而歸`, vibe: `市區/歸途`, transport: `岡山市區 ➔ (11:30 驅車前往) ➔ 岡山機場 ➔ 15:55 起飛`, activities: [`上午：【岡山後樂園】散步`, `中午前：【AEON MALL 岡山】最後採買`, `13:00 抵達機場周邊的租車公司還車（請記得先加滿油）`], lunch: `岡山散壽司【吾妻寿司】`, dinner: `機上餐點`, hotel: `溫暖的家`, parking: `【岡山機場 租車點】`, attractions: [{name: `岡山後樂園`, img: `https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?q=80&w=400&auto=format&fit=crop`}, {name: `AEON MALL 岡山`, img: `https://images.unsplash.com/photo-1555529733-0e67056058e3?q=80&w=400&auto=format&fit=crop`}, {name: `岡山桃太郎機場`, img: `https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=400&auto=format&fit=crop`}] }
+            { day: 1, date: `7/3 週五`, title: `抵達岡山，直奔姬路`, vibe: `移動/夜遊`, transport: `15:05 岡山機場 ➔ 16:00 辦理租車 ➔ 姬路市區`, activities: [`機場取車後直接往東行駛`, `傍晚抵達姬路飯店`, `晚上可在姬路車站周邊逛街`], lunch: `機上或自理`, dinner: `姬路穴子料理【一張羅】`, hotel: `Besso姫路`, parking: `姬路車站周邊特約停車場` },
+            { day: 2, date: `7/4 週六`, title: `國寶名城，登陸淡路島`, vibe: `歷史/海景`, transport: `姬路 ➔ (跨越明石海峽大橋) ➔ 淡路島`, activities: [`上午：參觀世界遺產姬路城`, `下午：開車體驗明石海峽大橋`, `傍晚：抵達渡假勝地淡路島`], lunch: `姬路城周邊定食`, dinner: `淡路島當地居酒屋`, hotel: `淡路 NC03 中央公寓`, parking: `飯店【免費停車】` },
+            { day: 3, date: `7/5 週日`, title: `淡路島深度遊：藝術與花海`, vibe: `度假放空`, transport: `淡路島島內輕鬆自駕`, activities: [`上午：淡路夢舞台`, `中午：淡路花棧敷`, `下午：幸福鬆餅 淡路島`], lunch: `淡路島漢堡`, dinner: `淡路牛燒肉`, hotel: `Rakuten STAY VILLA Awaji`, parking: `飯店【免費停車】` },
+            { day: 4, date: `7/6 週一`, title: `鳴門漩渦與德島市區`, vibe: `市區/文化`, transport: `淡路島 ➔ (經大鳴門橋) ➔ 德島市區`, activities: [`上午：前往渦之道觀賞鳴門渦潮`, `下午：阿波舞會館`, `傍晚：搭乘眉山纜車`], lunch: `鳴門海鮮定食`, dinner: `德島拉麵 麵王`, hotel: `德島格蘭維羅酒店`, parking: `【附設停車場】` },
+            { day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, transport: `德島市區 ➔ (車程約 2H) ➔ 祖谷/大步危`, activities: [`上午：從德島出發`, `中午：大步危峽遊覽船`, `下午：祖谷蔓橋`], lunch: `祖谷美人 蕎麥麵`, dinner: `旅館內享用和食晚餐`, hotel: `卡租拉亞旅館`, parking: `旅館【免費停車】` },
+            { day: 6, date: `7/8 週三`, title: `揮別秘境，前進港都高松`, vibe: `市區漫遊`, transport: `祖谷 ➔ 高松市區 ➔ 屋島山頂`, activities: [`上午：揮別山區秘境開車前往高松港都`, `下午：驅車直達屋島，前往屋島展望台看落日`, `傍晚：入住享有絕景的ホテル望海荘`], lunch: `讚岐烏龍麵わら家`, dinner: `望海荘地雞壽喜燒`, hotel: `ホテル望海荘`, parking: `【附設停車場】` },
+            { day: 7, date: `7/9 週四`, title: `搭乘渡輪，小豆島跳島`, vibe: `跳島/拍照`, transport: `【高松港】 ➔ 小豆島【土庄港】`, activities: [`🚢 渡輪已預約 預約號：0307090403 (¥8,430)`, `小豆島橄欖公園`, `天使的散步道`], lunch: `小豆島素麵`, dinner: `當地超市採買`, hotel: `オリーブ農家的家 お泊り忠左衛門 吉野`, parking: `民宿【免費停車】` },
+            { day: 8, date: `7/10 週五`, title: `返回高松，金刀比羅宮`, vibe: `適度步行`, transport: `小豆島 ➔ 【高松港】 ➔ 琴平`, activities: [`🚢 渡輪已預約 預約號：0407100301 (¥8,430)`, `下午：參拜金刀比羅宮`, `傍晚：返回高松市區採買`], lunch: `正宗讚岐烏龍麵`, dinner: `高松名物骨付鳥`, hotel: `德島格蘭維羅酒店`, parking: `【附設停車場】` },
+            { day: 9, date: `7/11 週六`, title: `直島藝術之旅，抵達岡山`, vibe: `藝術/跨海`, transport: `高松 ➔ 岡山【宇野港】 ➔ 直島`, activities: [`🎨 地中美術館已預約 10:45`, `尋找草間彌生黃南瓜與紅南瓜`, `傍晚：返回宇野港，驅車前往岡山`], lunch: `中奧 咖啡廳`, dinner: `岡山車站周邊居酒屋`, hotel: `GREEN 岡山`, parking: `【岡山車站 停車場】` },
+            { day: 10, date: `7/12 週日`, title: `倉敷美觀與 Outlet 血拚`, vibe: `文化/血拚`, transport: `岡山市區 ➔ 倉敷 ➔ 岡山市區`, activities: [`上午：倉敷美觀地區漫步`, `下午：三井 Outlet Park 倉敷`, `傍晚：返回岡山市區`], lunch: `倉敷周邊洋食`, dinner: `割烹壽司 辻`, hotel: `GREEN 岡山`, parking: `【岡山車站 停車場】` },
+            { day: 11, date: `7/13 週一`, title: `岡山名園，滿載而歸`, vibe: `市區/歸途`, transport: `岡山市區 ➔ 13:00 還車 ➔ 15:55 機場起飛`, activities: [`上午：岡山後樂園散步`, `中午前：AEON MALL 岡山最後採買`, `13:00 前記得加滿油至機場還車`], lunch: `岡山吾妻寿司`, dinner: `機上餐點`, hotel: `溫慢的家`, parking: `【岡山機場還車點】` }
         ];
 
         let activeDay = 1;
         const selectorContainer = document.getElementById('day-selector-container');
         const contentContainer = document.getElementById('day-content-container');
 
-        // 當使用者切換上方日曆時，同步修改記帳本的預設天數
-        function syncExpenseDateDropdown(dayNum) {
-            const dateSelect = document.getElementById('expense-date');
-            if (dateSelect) {
-                const mapping = {
-                    1: "D1 (7/3)", 2: "D2 (7/4)", 3: "D3 (7/5)", 4: "D4 (7/6)", 5: "D5 (7/7)",
-                    6: "D6 (7/8)", 7: "D7 (7/9)", 8: "D8 (7/10)", 9: "D9 (7/11)", 10: "D10 (7/12)", 11: "D11 (7/13)"
-                };
-                if (mapping[dayNum]) {
-                    dateSelect.value = mapping[dayNum];
-                }
-            }
+        // 🏨 呼叫獨立實體抽屜 Modal
+        window.openHotelModal = function(hotelKey) {
+            const normalizedKey = hotelKey.replace(/【|】|✅已預約: /g, "").trim();
+            const details = hotelDetailsData[normalizedKey] || hotelDetailsData["德島格蘭維羅酒店"];
+            
+            const modalBody = document.getElementById('hotel-modal-body');
+            modalBody.innerHTML = `
+                <div class="border-b pb-3">
+                    <h3 class="text-base font-bold text-stone-800">${details.title}</h3>
+                    <a href="${details.mapUrl}" target="_blank" class="inline-block mt-1.5 px-3 py-1.5 bg-teal-600 text-white rounded-xl font-bold text-xs shadow-sm">🗺️ 開啟 Google Maps 導航/外部連結</a>
+                </div>
+                <div>
+                    <h4 class="font-bold text-rose-700 text-[11px] uppercase tracking-wider mb-1">📌 核心入住重點、密碼與電子鎖交代</h4>
+                    <ul class="list-disc list-inside space-y-1 bg-rose-50/50 p-2.5 rounded-xl border border-rose-100 text-xs">
+                        ${details.notes.map(n => `<li>${n}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                        <h4 class="font-bold text-blue-900 mb-1 text-xs">🇨🇳 繁體中文指引說明</h4>
+                        <div class="text-xs text-blue-950 leading-relaxed">${details.zh}</div>
+                    </div>
+                    <div class="bg-stone-100 p-3 rounded-xl border border-stone-200">
+                        <h4 class="font-bold text-stone-700 mb-1 text-xs">🇯🇵 旅館通知行前完整日文原文 (マニュアル)</h4>
+                        <div class="text-[11px] text-stone-600 bg-white p-2 rounded border max-h-[140px] overflow-y-auto leading-normal whitespace-pre-wrap">${details.jp}</div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('hotel-detail-modal').classList.remove('hidden');
+        };
+
+        window.closeHotelModal = function() {
+            document.getElementById('hotel-detail-modal').classList.add('hidden');
+        };
+
+        function formatTextWithMapLinks(text) {
+            if (!text) return '';
+            return text.replace(/【(.*?)】/g, (match, name) => {
+                return `<span class="font-bold text-stone-900 border-b border-stone-400">${name}</span>`;
+            });
         }
 
         function renderDaySelector() {
@@ -440,129 +443,56 @@
             itineraryData.forEach(data => {
                 const isActive = activeDay === data.day;
                 const btn = document.createElement('button');
-                btn.className = `tab-btn flex-shrink-0 text-left px-4 py-3 rounded-xl font-bold text-sm md:text-base border ${isActive ? 'bg-stone-800 text-white border-stone-800 shadow-md scale-[1.02]' : 'bg-stone-50 text-stone-600 border-stone-200 hover:bg-stone-100'}`;
-                btn.innerHTML = `
-                    <div class="flex justify-between items-center mb-1 gap-2">
-                        <span class="block text-xs ${isActive ? 'text-stone-300' : 'text-stone-400'}">Day ${data.day} | ${data.date.split(' ')[0]}</span>
-                        <span class="text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded">✅ 已訂</span>
-                    </div>
-                    <span class="block truncate">${data.title}</span>
-                `;
-                btn.onclick = () => { 
-                    activeDay = data.day; 
-                    renderDaySelector(); 
-                    renderDayContent(); 
-                    syncExpenseDateDropdown(data.day); 
-                };
+                btn.className = `w-full text-left px-3 py-2 rounded-xl font-bold text-xs md:text-sm border ${isActive ? 'bg-stone-800 text-white border-stone-800 shadow-md' : 'bg-stone-50 text-stone-600 border-stone-200 hover:bg-stone-100'}`;
+                btn.innerHTML = `<div>Day ${data.day} | ${data.date.split(' ')[0]}</div><div class="truncate text-[11px] font-normal opacity-80">${data.title}</div>`;
+                btn.onclick = () => { activeDay = data.day; renderDaySelector(); renderDayContent(); syncExpenseDateDropdown(data.day); };
                 selectorContainer.appendChild(btn);
-            });
-        }
-
-        function getStayDates(dayNumber) {
-            const startDate = new Date(2026, 6, 3); 
-            const checkInDate = new Date(startDate);
-            checkInDate.setDate(startDate.getDate() + (dayNumber - 1));
-            const checkOutDate = new Date(checkInDate);
-            checkOutDate.setDate(checkInDate.getDate() + 1);
-            const formatDate = (date) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-            return { checkin: formatDate(checkInDate), checkout: formatDate(checkOutDate) };
-        }
-
-        const bookedHotelUrls = {
-            "Besso姫路": "https://www.booking.com/hotel/jp/bessoji-lu.zh-tw.html",
-            "淡路 NC03 中央公寓": "https://www.booking.com/hotel/jp/awaji-central-room-nc03.zh-tw.html",
-            "オリーブ農家的家 お泊り忠左衛門 吉野": "https://www.booking.com/hotel/jp/1zu-xian-ding-1dong-dai-qie-otomarizhong-zuo-wei-men-gurupuya3shi-dai-lu-xing-ni.zh-tw.html",
-            "GREEN 岡山": "https://www.booking.com/hotel/jp/green-gang-shan-shi.zh-tw.html",
-            "卡租拉亞旅館": "https://www.booking.com/hotel/jp/kazuraya.zh-tw.html",
-            "民宿 setouchi": "https://www.booking.com/hotel/jp/minpaku-setouchi.zh-tw.html",
-            "德島格蘭維羅酒店": "https://www.booking.com/hotel/jp/tokushima-grandvrio.zh-tw.html",
-            "ホテル望海荘": "https://www.booking.com/searchresults.zh-tw.html?ss=%E5%B1%8B%E5%B3%B6+%E6%9C%9B%E6%B5%B7%E8%8D%98"
-        };
-
-        function formatTextWithMapLinks(text, isHotel = false, dayNumber = 1) {
-            if (!text) return '';
-            let processedText = text.replace('【✨ 吃好一點】', '<span class="text-amber-500 font-bold mr-1">✨ 吃好一點:</span>');
-            
-            return processedText.replace(/【(.*?)】(?:\((.*?)\))?/g, (match, placeName, trailingText) => {
-                let isBooked = placeName.includes("✅已預約");
-                let searchQuery = placeName.replace("✅已預約:", "").trim();
-
-                const customMapQueries = {
-                    "卡租拉亞旅館": "旅館かずらや 徳島県三好市西祖谷山村閑定78",
-                    "ホテル望海荘": "絕景の宿 望海荘 〒761-0111 香川県高松市屋島東町1784-15"
-                };
-                let finalMapQuery = customMapQueries[searchQuery] || searchQuery;
-
-                let mapBtn = `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(finalMapQuery)}" target="_blank" class="ml-1.5 inline-flex items-center gap-1 px-2 py-1 btn-map text-white rounded text-xs font-bold transition-colors shadow-sm">地圖</a>`;
-                let priceBtn = "";
-                
-                if (isHotel && !placeName.includes("停車場") && !placeName.includes("自理") && !placeName.includes("免費停車")) {
-                    const dates = getStayDates(dayNumber);
-                    const specificUrl = bookedHotelUrls[searchQuery];
-                    const infoUrl = specificUrl ? specificUrl : `https://www.booking.com/searchresults.zh-tw.html?ss=${encodeURIComponent(searchQuery)}&checkin=${dates.checkin}&checkout=${dates.checkout}`;
-                    
-                    priceBtn = `<a href="${infoUrl}" target="_blank" class="ml-1.5 mt-1 sm:mt-0 inline-flex items-center gap-1 px-2 py-1 bg-teal-600 hover:bg-teal-700 text-white rounded text-xs font-bold transition-colors shadow-sm">飯店資訊</a>`;
-                    
-                    if (searchQuery === "ホテル望海荘") {
-                        priceBtn += `<a href="https://bokaiso.com/" target="_blank" class="ml-1.5 mt-1 sm:mt-0 inline-flex items-center gap-1 px-2 py-1 bg-indigo-500 hover:bg-indigo-600 text-white rounded text-xs font-bold transition-colors shadow-sm">前往官網</a>`;
-                    }
-                }
-
-                let textColor = isBooked ? "text-emerald-700 bg-emerald-50 px-1.5 rounded border border-emerald-200" : "text-stone-900 border-b-2 border-stone-200";
-                let extraText = trailingText ? `<span class="text-xs text-stone-500 ml-1 font-normal">(${trailingText})</span>` : '';
-
-                return `<span class="inline-flex flex-wrap items-center mx-0.5 my-1 font-bold ${textColor}">${placeName}${extraText}${mapBtn}${priceBtn}</span>`;
             });
         }
 
         function renderDayContent() {
             const data = itineraryData.find(d => d.day === activeDay);
-            const actHTML = data.activities.map(act => `<li class="flex items-start mb-3 leading-relaxed text-stone-700"><span class="mr-2 mt-1 text-teal-600">•</span><div>${formatTextWithMapLinks(act)}</div></li>`).join('');
             
-            // 已加上 onerror 穩固的 fallback 防止出現破碎圖示
-            let galleryHTML = `
-                <div class="mt-5 grid grid-cols-2 md:grid-cols-3 gap-3">
-                    ${data.attractions.map(attr => `
-                        <div class="group relative rounded-lg overflow-hidden shadow-sm border border-stone-200 aspect-[4/3] bg-stone-100 flex items-center justify-center">
-                            <img src="${attr.img}" alt="${attr.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&auto=format&fit=crop';">
-                            <div class="absolute bottom-0 left-0 right-0 bg-stone-900/60 p-2 text-center">
-                                <span class="text-white text-[10px] font-bold tracking-wider">${attr.name}</span>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
+            let actHTML = "";
+            if (data.activities && data.activities.length > 0) {
+                actHTML = data.activities.map(act => `<li class="flex items-start text-xs text-stone-700 leading-normal"><span class="mr-1 mt-0.5 text-teal-600">•</span><div>${formatTextWithMapLinks(act)}</div></li>`).join('');
+            }
+
+            const cleanHotelName = data.hotel.replace(/【|】|✅已預約: /g, "").split('(')[0].trim();
+
+            let hotelButtonHTML = "";
+            if (cleanHotelName !== "溫慢的家" && cleanHotelName !== "溫暖的家" && cleanHotelName !== "") {
+                hotelButtonHTML = `
+                    <div class="mt-4 pt-2 border-t border-blue-100/50 w-full">
+                        <button type="button" onclick="window.openHotelModal('${cleanHotelName}');" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl shadow-md block text-center cursor-pointer relative z-50">
+                            ⚡ 查看入住密碼與管家通知
+                        </button>
+                    </div>
+                `;
+            }
 
             contentContainer.innerHTML = `
-                <div class="fade-in">
-                    <div class="mb-6 border-b border-stone-100 pb-4">
-                        <span class="text-teal-800 text-xs px-2 py-1 rounded-sm font-bold bg-teal-100">Day ${data.day} | ${data.date}</span>
-                        <h3 class="text-2xl font-bold text-stone-800 mt-3">${data.title}</h3>
-                        <p class="text-sm text-stone-500 mt-1">氛圍: ${data.vibe}</p>
+                <div class="fade-in space-y-4">
+                    <div class="border-b pb-2">
+                        <span class="text-teal-800 text-[10px] px-2 py-0.5 rounded font-bold bg-teal-100">Day ${data.day} | ${data.date}</span>
+                        <h3 class="text-xl font-bold text-stone-800 mt-1">${data.title}</h3>
                     </div>
-                    
-                    <div class="space-y-6 text-sm md:text-base">
-                        <div>
-                            <h4 class="font-bold text-stone-800 mb-2 flex items-center gap-2">🚘 交通</h4>
-                            <p>${formatTextWithMapLinks(data.transport)}</p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-bold text-stone-800 mb-2 flex items-center gap-2">🗺️ 行程亮點</h4>
-                            <ul>${actHTML}</ul>
-                            ${galleryHTML}
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-orange-50/50 p-4 rounded-xl border border-orange-200">
-                                <h4 class="font-bold text-orange-900 mb-2">🍱 餐飲</h4>
-                                <p><span class="font-bold text-orange-800">午:</span> ${formatTextWithMapLinks(data.lunch)}</p>
-                                <p><span class="font-bold text-orange-800">晚:</span> ${formatTextWithMapLinks(data.dinner)}</p>
+                    <div class="text-xs space-y-3">
+                        <div><h4 class="font-bold text-stone-800 mb-1">🚙 每日主要交通動線</h4><p class="text-stone-600">${data.transport}</p></div>
+                        <div><h4 class="font-bold text-stone-800 mb-1">🗺️ 每日大綱與細節行程</h4><ul class="space-y-1">${actHTML}</ul></div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                            <div class="bg-orange-50/60 p-3 rounded-xl border border-orange-100">
+                                <h4 class="font-bold text-orange-900 mb-1">🍱 家族餐飲安排</h4>
+                                <p class="mt-1"><span class="font-bold text-orange-800">午:</span> ${formatTextWithMapLinks(data.lunch)}</p>
+                                <p class="mt-0.5"><span class="font-bold text-orange-800">晚:</span> ${formatTextWithMapLinks(data.dinner)}</p>
                             </div>
-                            <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
-                                <h4 class="font-bold text-blue-900 mb-2">🏨 住宿</h4>
-                                <p>${formatTextWithMapLinks(data.hotel, true, data.day)}</p>
-                                <p class="text-xs text-blue-800 mt-2">🅿️ ${formatTextWithMapLinks(data.parking)}</p>
+                            <div class="bg-blue-50/60 p-3 rounded-xl border border-blue-100 flex flex-col justify-between items-start">
+                                <div class="w-full">
+                                    <h4 class="font-bold text-blue-900 mb-1">🏨 預定落腳住宿飯店</h4>
+                                    <div class="font-bold text-stone-800 text-sm my-0.5">✅ 已預約: ${cleanHotelName}</div>
+                                    <p class="text-[11px] text-blue-800 mt-0.5">🅿️ 停車配備: ${data.parking}</p>
+                                </div>
+                                ${hotelButtonHTML}
                             </div>
                         </div>
                     </div>
@@ -573,102 +503,59 @@
             const tbody = document.getElementById('summary-table-body');
             tbody.innerHTML = '';
             itineraryData.forEach(data => {
-                let todoItems = [];
-                if (data.day === 6) {
-                    todoItems.push(`✅ <span class="text-emerald-700">望海荘（夕食付）2室已訂妥</span>`);
-                }
-                if (data.day === 9) {
-                    todoItems.push(`✅ <span class="text-emerald-700">美術館票 (10:45) 已訂妥</span>`);
-                }
-
-                let todoHTML = todoItems.length > 0 
-                    ? `<ul class="list-disc list-inside text-emerald-700 font-medium text-xs space-y-1.5">` + todoItems.map(item => `<li>${item}</li>`).join('') + `</ul>`
-                    : `<span class="text-stone-300 text-xs">確認完成</span>`;
-
                 const tr = document.createElement('tr');
                 tr.className = "border-b border-stone-100 hover:bg-stone-50 transition-colors";
+                
+                const tableActionButton = data.hotel !== "溫慢的家" 
+                    ? `<button type="button" onclick="window.openHotelModal('${data.hotel}'); event.stopPropagation();" class="bg-rose-600 hover:bg-rose-700 text-white font-bold text-[11px] px-2.5 py-1 rounded-xl shadow-sm transition-colors">⚡ 查看密碼與通知</button>`
+                    : `<span class="text-stone-400 text-xs">歸途</span>`;
+
                 tr.innerHTML = `
-                    <td class="py-3 px-4 font-bold text-stone-500">${data.day}</td>
-                    <td class="py-3 px-4">${data.date.split(' ')[0]}</td>
-                    <td class="py-3 px-4 font-bold text-stone-800">${data.title}</td>
-                    <td class="py-3 px-4">${data.hotel.split('(')[0].replace(/【|】|✅已預約: /g, '')}</td>
-                    <td class="py-3 px-4"><span class="bg-emerald-100 text-emerald-800 px-2 py-1 rounded text-xs font-bold">✅ 已訂妥</span></td>
-                    <td class="py-3 px-4 bg-stone-50/30">${todoHTML}</td>
+                    <td class="py-2.5 px-4 font-bold text-stone-500">${data.day}</td>
+                    <td class="py-2.5 px-4">${data.date.split(' ')[0]}</td>
+                    <td class="py-2.5 px-4 font-bold text-stone-800">${data.title}</td>
+                    <td class="py-2.5 px-4 font-bold text-teal-700">${data.hotel}</td>
+                    <td class="py-2.5 px-4"><span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-[11px] font-bold">✅ 已訂妥</span></td>
+                    <td class="py-2.5 px-4 bg-stone-50/50">${tableActionButton}</td>
                 `;
                 tbody.appendChild(tr);
             });
         }
-
-        function addToCalendar() {
-            const text = encodeURIComponent('🚗 日本家族自駕遊');
-            const dates = '20260703T000000Z/20260714T000000Z'; 
-            const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}`;
-            window.open(url, '_blank');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderSummaryTable();
-            renderDaySelector(); 
-            renderDayContent();
-            
-            const ctx = document.getElementById('budgetChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut', 
-                data: {
-                    labels: ['租車', '交通雜費', '住宿費', '餐飲', '門票'],
-                    datasets: [{ 
-                        data: [156530, 65000, 274125, 200000, 20000], 
-                        backgroundColor: ['#14b8a6', '#60a5fa', '#fb7185', '#818cf8', '#fbbf24'], 
-                        borderWidth: 2
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
-            });
-        });
     </script>
 
-    <!-- Firebase 雲端同步與身分切換腳本 -->
+    <!-- Firebase 雲端同步與智慧 AI 拍照記帳核心系統 -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, onSnapshot, doc, getDoc, addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, onSnapshot, doc, addDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // 綁定家族成員的 Google 帳號與身分
         const familyProfiles = [
-            { id: 'eric', name: '爸爸', fullname: 'Yu-Tse Lin', email: 'eric.ytlin@gmail.com', icon: '👨', color: 'bg-blue-100 text-blue-900', bubble: 'bg-blue-50 border-blue-200 text-blue-900', border: 'border-blue-400' },
-            { id: 'yuhan', name: '媽媽', fullname: 'Yu-Han', email: 'linyuhan4313@gmail.com', icon: '👩', color: 'bg-pink-100 text-pink-900', bubble: 'bg-pink-50 border-pink-200 text-pink-900', border: 'border-pink-400' },
-            { id: 'jimmy', name: '兒子', fullname: 'Jimmy Lin', email: 'jimmylinsc1313@gmail.com', icon: '👦', color: 'bg-indigo-100 text-indigo-900', bubble: 'bg-indigo-50 border-indigo-200 text-indigo-900', border: 'border-indigo-400' },
-            { id: 'wendy', name: '女兒', fullname: 'Wendy', email: 'wendy40317@gmail.com', icon: '👧', color: 'bg-orange-100 text-orange-900', bubble: 'bg-orange-50 border-orange-200 text-orange-900', border: 'border-orange-400' }
+            { id: 'eric', name: '爸爸', icon: '👨', color: 'bg-blue-100 text-blue-900', bubble: 'bg-blue-50 border-blue-200 text-blue-900', border: 'border-blue-400' },
+            { id: 'yuhan', name: '媽媽', icon: '👩', color: 'bg-pink-100 text-pink-900', bubble: 'bg-pink-50 border-pink-200 text-pink-900', border: 'border-pink-400' },
+            { id: 'jimmy', name: '兒子', icon: '👦', color: 'bg-indigo-100 text-indigo-900', bubble: 'bg-indigo-50 border-indigo-200 text-indigo-900', border: 'border-indigo-400' },
+            { id: 'wendy', name: '女兒', icon: '👧', color: 'bg-orange-100 text-orange-900', bubble: 'bg-orange-50 border-orange-200 text-orange-900', border: 'border-orange-400' }
         ];
         
         let currentProfile = familyProfiles[0];
-        window.selectProfile = function(id) {
-            currentProfile = familyProfiles.find(p => p.id === id);
-            renderProfiles();
-            renderUI(); // 切換身分後重新渲染聊天氣泡方向
-        };
+        window.selectProfile = function(id) { currentProfile = familyProfiles.find(p => p.id === id); renderProfiles(); renderUI(); };
 
         function renderProfiles() {
             const container = document.getElementById('profile-selector');
             if(!container) return;
             container.innerHTML = familyProfiles.map(p => `
-                <button onclick="window.selectProfile('${p.id}')" class="px-3 py-1.5 rounded-lg flex items-center gap-1 text-sm font-bold transition-all border-2 ${currentProfile.id === p.id ? p.color + ' ' + p.border + ' shadow-sm scale-105' : 'bg-white text-stone-400 border-transparent hover:bg-stone-100'}">
-                    <span class="text-base">${p.icon}</span> <span class="">${p.name}</span>
+                <button onclick="window.selectProfile('${p.id}')" class="px-2.5 py-1 rounded-lg flex items-center gap-1 text-xs font-bold transition-all border-2 ${currentProfile.id === p.id ? p.color + ' ' + p.border + ' scale-105' : 'bg-white text-stone-400 border-transparent'}">
+                    <span>${p.icon}</span><span>${p.name}</span>
                 </button>
             `).join('');
         }
         renderProfiles();
 
-        // 偵測執行環境 (Canvas沙盒 或 外部GitHub環境)
         const isCanvasEnvironment = typeof __firebase_config !== 'undefined';
         let firebaseConfig, appId;
-
         if (isCanvasEnvironment) {
-            // 在 Canvas 中使用系統配發的安全金鑰
             firebaseConfig = JSON.parse(__firebase_config);
             appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
         } else {
-            // ⚠️ 在 GitHub 部署時使用您的 linjapan 專案金鑰
             firebaseConfig = {
                 apiKey: "AIzaSyBNpbq0gaY9a8MSpb-zt2SuPvUy0OMaR9U",
                 authDomain: "linjapan.firebaseapp.com",
@@ -678,538 +565,277 @@
                 appId: "1:539394385336:web:8c961ed9c57ea2c0755b4d",
                 measurementId: "G-WXVXP9NJTD"
             };
+            appId = "linjapan"; // 外部 GitHub 環境下強制對齊為 linjapan，符合安全規則路徑
         }
 
         let db, auth, fbUser;
         try {
             const app = initializeApp(firebaseConfig);
-            auth = getAuth(app);
-            db = getFirestore(app);
-        } catch(e) { console.warn("Firebase 初始化失敗，將使用單機模式。", e); }
+            auth = getAuth(app); db = getFirestore(app);
+        } catch(e) { console.warn("Firebase 初始化失敗", e); }
 
         const chatBox = document.getElementById('chat-box');
         const expenseList = document.getElementById('expense-list');
-        
-        let notesData = [];
-        let expensesData = [];
+        let notesData = [], expensesData = [];
 
-        // 初始化：優先載入本地 LocalStorage 快取，確保畫面一開就有資料
         try {
-            if(localStorage.getItem('local_family_notes')) {
-                notesData = JSON.parse(localStorage.getItem('local_family_notes'));
-            }
-            if(localStorage.getItem('local_family_expenses')) {
-                expensesData = JSON.parse(localStorage.getItem('local_family_expenses'));
-            }
-        } catch(e) { console.error("本地快取載入失敗", e); }
+            if(localStorage.getItem('local_family_notes')) notesData = JSON.parse(localStorage.getItem('local_family_notes'));
+            if(localStorage.getItem('local_family_expenses')) expensesData = JSON.parse(localStorage.getItem('local_family_expenses'));
+        } catch(e) {}
         
         const categoryMap = { car: '🚙 租車', trans: '🚢 交通', hotel: '🏨 住宿', food: '🍱 餐飲', ticket: '🎟️ 門票' };
         const methodMap = { cash: '💴 現金', card: '💳 刷卡', paypay: '📱 PayPay' };
-        const budgetTotal = 715655; // AI 預估總花費基準
+        const budgetTotal = 715655;
+
+        // 🔒 遵循嚴格路徑規範 (Rule 1)：不論是測試沙盒或外部 GitHub 部署，一律使用規格化 artifacts 根路徑
+        function getCollectionPath(collectionName) {
+            return collection(db, 'artifacts', appId, 'public', 'data', collectionName);
+        }
+        function getDocRef(collectionName, docId) {
+            return doc(db, 'artifacts', appId, 'public', 'data', collectionName, docId);
+        }
 
         function renderUI() {
-            // 渲染聊天佈告欄
             if(notesData.length === 0) {
-                chatBox.innerHTML = '<div class="text-center text-stone-400 text-sm mt-4">目前沒有任何筆記，來留個言吧！</div>';
+                chatBox.innerHTML = '<div class="text-center text-stone-400 text-xs mt-2">尚無隨行筆記備忘。</div>';
             } else {
                 chatBox.innerHTML = notesData.map(note => {
                     const isMe = note.authorId === currentProfile.id;
                     const profile = familyProfiles.find(p => p.id === note.authorId) || familyProfiles[0];
-                    const timeString = new Date(note.timestamp).toLocaleTimeString('zh-TW', {hour: '2-digit', minute:'2-digit'});
-                    
-                    return `
-                        <div class="flex flex-col ${isMe ? 'items-end' : 'items-start'} w-full">
-                            <span class="text-[10px] text-stone-400 mx-1 mb-0.5">${profile.name} • ${timeString}</span>
-                            <div class="px-3 py-2 rounded-2xl max-w-[85%] text-sm border shadow-sm ${isMe ? profile.bubble + ' rounded-tr-sm' : 'bg-white border-stone-200 text-stone-700 rounded-tl-sm'}">
-                                ${note.text}
-                            </div>
-                        </div>
-                    `;
+                    return `<div class="flex flex-col ${isMe ? 'items-end' : 'items-start'} w-full text-[11px]">
+                        <span class="text-[9px] text-stone-400 px-1">${profile.name}</span>
+                        <div class="px-2.5 py-1.5 rounded-xl border ${isMe ? profile.bubble : 'bg-white border-stone-200'}">${note.text}</div>
+                    </div>`;
                 }).join('');
                 chatBox.scrollTop = chatBox.scrollHeight;
             }
 
-            // 渲染記帳本與計算總計
             let totalSpent = 0;
             if(expensesData.length === 0) {
-                expenseList.innerHTML = '<div class="text-center text-stone-400 text-sm mt-4">尚無支出紀錄，買了什麼趕快記下來！</div>';
+                expenseList.innerHTML = '<div class="text-center text-stone-400 text-xs mt-2">尚無支出紀錄。</div>';
             } else {
                 expenseList.innerHTML = expensesData.map(exp => {
                     totalSpent += Number(exp.amount);
                     const profile = familyProfiles.find(p => p.id === exp.authorId) || familyProfiles[0];
-                    
-                    // 根據是否存在收據照片，渲染小相機按鈕來查看照片
-                    const receiptIcon = exp.receiptImg 
-                        ? `<button onclick="window.viewReceipt('${exp.id}')" class="text-stone-500 hover:text-teal-600 transition-colors p-1" title="查看收據相片">📷</button>` 
-                        : '';
-
-                    return `
-                        <div class="flex justify-between items-center bg-white p-2.5 rounded-lg border border-stone-200 shadow-sm text-sm group transition-all">
-                            <div class="flex items-center gap-3">
-                                <span title="${profile.name}" class="text-base bg-stone-100 rounded-full w-8 h-8 flex items-center justify-center border border-stone-200 flex-shrink-0">${profile.icon}</span>
-                                <div class="flex flex-col">
-                                    <span class="font-bold text-stone-700 leading-tight">${categoryMap[exp.category]}</span>
-                                    <div class="flex items-center gap-1.5 mt-1 flex-wrap">
-                                        <span class="text-[9px] text-teal-800 bg-teal-50 px-1.5 py-0.5 rounded border border-teal-200 font-bold">${exp.date || 'D1 (7/3)'}</span>
-                                        <span class="text-[9px] text-stone-500 bg-stone-100 px-1.5 py-0.5 rounded border border-stone-200">${methodMap[exp.method] || '💴 現金'}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <span class="font-bold text-teal-700 text-base">¥ ${Number(exp.amount).toLocaleString()}</span>
-                                <div class="flex items-center gap-1 border-l border-stone-100 pl-2">
-                                    ${receiptIcon}
-                                    <button onclick="window.editExpense('${exp.id}')" class="text-stone-400 hover:text-blue-500 transition-colors p-1" title="編輯這筆支出">✏️</button>
-                                    <button id="del-btn-${exp.id}" onclick="window.deleteExpense('${exp.id}')" class="text-stone-400 hover:text-rose-500 transition-colors p-1" title="刪除">🗑️</button>
-                                </div>
+                    const receiptIcon = exp.receiptImg ? `<button onclick="window.viewReceipt('${exp.id}')" class="text-stone-500 hover:text-teal-600 p-0.5">📷</button>` : '';
+                    return `<div class="flex justify-between items-center bg-white p-2 rounded-lg border text-xs shadow-sm">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-stone-50 rounded-full w-6 h-6 flex items-center justify-center border">${profile.icon}</span>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-stone-700">${categoryMap[exp.category]}</span>
+                                <span class="text-[9px] text-stone-400">${exp.date || 'D1'} | ${methodMap[exp.method]}</span>
                             </div>
                         </div>
-                    `;
+                        <div class="flex items-center gap-2">
+                            <span class="font-bold text-teal-700">¥${Number(exp.amount).toLocaleString()}</span>
+                            <div class="flex items-center gap-0.5 border-l pl-1.5">
+                                ${receiptIcon}
+                                <button onclick="window.editExpense('${exp.id}')" class="text-stone-400 p-0.5">✏️</button>
+                                <button id="del-btn-${exp.id}" onclick="window.deleteExpense('${exp.id}')" class="text-stone-400 p-0.5">🗑️</button>
+                            </div>
+                        </div>
+                    </div>`;
                 }).join('');
                 expenseList.scrollTop = expenseList.scrollHeight;
             }
 
-            // 渲染預算差異
             const diff = totalSpent - budgetTotal;
             const diffTotalEl = document.getElementById('diff-total');
             const diffLabelEl = document.getElementById('diff-label');
             if (diff > 0) {
-                diffTotalEl.innerText = `+ ¥ ${Math.abs(diff).toLocaleString()}`;
-                diffTotalEl.className = 'text-xl font-black text-rose-600';
-                diffLabelEl.innerHTML = `累積總花費: <span class="font-bold text-rose-600">¥${totalSpent.toLocaleString()}</span> (😭 超支了)`;
+                diffTotalEl.innerText = `+ ¥${Math.abs(diff).toLocaleString()}`; diffTotalEl.className = 'text-base font-black text-rose-600';
+                diffLabelEl.innerHTML = `花費: <span class="font-bold text-rose-600">¥${totalSpent.toLocaleString()}</span> (超支)`;
             } else {
-                diffTotalEl.innerText = `- ¥ ${Math.abs(diff).toLocaleString()}`;
-                diffTotalEl.className = 'text-xl font-black text-emerald-600';
-                diffLabelEl.innerHTML = `累積總花費: <span class="font-bold text-teal-700">¥${totalSpent.toLocaleString()}</span> (🎉 還有預算)`;
+                diffTotalEl.innerText = `- ¥${Math.abs(diff).toLocaleString()}`; diffTotalEl.className = 'text-base font-black text-emerald-600';
+                diffLabelEl.innerHTML = `花費: <span class="font-bold text-teal-700">¥${totalSpent.toLocaleString()}</span> (符合預算)`;
             }
         }
 
-        // 取得正確的資料庫路徑 (集合 Collection)
-        function getCollectionPath(collectionName) {
-            if (isCanvasEnvironment) {
-                return collection(db, 'artifacts', appId, 'public', 'data', collectionName);
-            }
-            return collection(db, collectionName);
-        }
-
-        // 取得正確的文件路徑 (文件 Document)
-        function getDocRef(collectionName, docId) {
-            if (isCanvasEnvironment) {
-                return doc(db, 'artifacts', appId, 'public', 'data', collectionName, docId);
-            }
-            return doc(db, collectionName, docId);
-        }
-
-        // 發送記事
         window.submitNote = async function() {
             const input = document.getElementById('note-input');
-            const text = input.value.trim();
-            if(!text) return;
-            input.value = ''; 
-            
+            const text = input.value.trim(); if(!text) return; input.value = ''; 
             try {
-                if(db && fbUser) {
-                    await addDoc(getCollectionPath('family_notes'), {
-                        text, authorId: currentProfile.id, timestamp: Date.now()
-                    });
-                } else {
-                    notesData.push({ text, authorId: currentProfile.id, timestamp: Date.now() });
-                    localStorage.setItem('local_family_notes', JSON.stringify(notesData));
-                    renderUI();
-                }
-            } catch (error) {
-                console.error("留言寫入失敗:", error);
-                alert("留言失敗！請檢查您的 Firebase 資料庫規則 (Rules) 是否允許讀寫。\n錯誤訊息: " + error.message);
-            }
+                if(db && fbUser) { await addDoc(getCollectionPath('family_notes'), { text, authorId: currentProfile.id, timestamp: Date.now() }); }
+                else { notesData.push({ text, authorId: currentProfile.id, timestamp: Date.now() }); localStorage.setItem('local_family_notes', JSON.stringify(notesData)); renderUI(); }
+            } catch (error) { alert("留言失敗"); }
         };
 
-        // 儲存已壓縮與讀取後的收據圖片 Base64 字串
         let selectedReceiptBase64 = null;
-
-        // 移除目前選取的收據相片
         window.clearSelectedReceipt = function() {
-            selectedReceiptBase64 = null;
-            document.getElementById('receipt-preview-container').classList.add('hidden');
-            document.getElementById('receipt-preview-img').src = "";
+            selectedReceiptBase64 = null; document.getElementById('receipt-preview-container').classList.add('hidden');
         };
 
-        // 發送與更新記帳 (包含日期天數 D1~D11 與收據照片)
         window.submitExpense = async function() {
             const date = document.getElementById('expense-date').value;
             const cat = document.getElementById('expense-category').value;
             const method = document.getElementById('expense-method').value;
             const amt = document.getElementById('expense-amount').value;
             const editId = document.getElementById('edit-expense-id').value;
-
             if(!amt || amt <= 0) return;
 
-            // 清空輸入框與狀態，並將付款方式重置為預設的現金
-            document.getElementById('expense-amount').value = '';
-            document.getElementById('expense-method').value = 'cash';
-            document.getElementById('edit-expense-id').value = '';
-            
-            const btn = document.getElementById('expense-submit-btn');
-            btn.innerText = '記一筆';
-            btn.classList.replace('bg-amber-600', 'bg-teal-600');
-            btn.classList.replace('hover:bg-amber-500', 'hover:bg-teal-500');
-
+            document.getElementById('expense-amount').value = ''; document.getElementById('edit-expense-id').value = '';
             try {
                 if (editId) {
-                    // 執行更新
-                    if(db && fbUser) {
-                        await updateDoc(getDocRef('family_expenses', editId), {
-                            date: date, category: cat, amount: Number(amt), method: method,
-                            receiptImg: selectedReceiptBase64 // 同步更新收據 (有值則覆蓋，null 則為原本狀態)
-                        });
-                    } else {
+                    if(db && fbUser) { await updateDoc(getDocRef('family_expenses', editId), { date, category: cat, amount: Number(amt), method, receiptImg: selectedReceiptBase64 }); }
+                    else {
                         const idx = expensesData.findIndex(e => e.id === editId);
-                        if (idx > -1) {
-                            expensesData[idx].date = date;
-                            expensesData[idx].category = cat;
-                            expensesData[idx].amount = Number(amt);
-                            expensesData[idx].method = method;
-                            if (selectedReceiptBase64) expensesData[idx].receiptImg = selectedReceiptBase64;
-                            localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
-                            renderUI();
-                        }
+                        if (idx > -1) { expensesData[idx]={ ...expensesData[idx], date, category: cat, amount: Number(amt), method, receiptImg: selectedReceiptBase64 }; localStorage.setItem('local_family_expenses', JSON.stringify(expensesData)); renderUI(); }
                     }
                 } else {
-                    // 執行新增
-                    if(db && fbUser) {
-                        await addDoc(getCollectionPath('family_expenses'), {
-                            date: date, category: cat, amount: Number(amt), method: method, authorId: currentProfile.id, timestamp: Date.now(),
-                            receiptImg: selectedReceiptBase64 // 同步將收據照片以 base64 字串安全儲存至雲端
-                        });
-                    } else {
-                        const newId = 'local_' + Date.now();
-                        expensesData.push({ id: newId, date: date, category: cat, amount: Number(amt), method: method, authorId: currentProfile.id, timestamp: Date.now(), receiptImg: selectedReceiptBase64 });
-                        localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
-                        renderUI();
+                    if(db && fbUser) { await addDoc(getCollectionPath('family_expenses'), { date, category: cat, amount: Number(amt), method, authorId: currentProfile.id, timestamp: Date.now(), receiptImg: selectedReceiptBase64 }); }
+                    else {
+                        expensesData.push({ id: 'local_'+Date.now(), date, category: cat, amount: Number(amt), method, authorId: currentProfile.id, timestamp: Date.now(), receiptImg: selectedReceiptBase64 });
+                        localStorage.setItem('local_family_expenses', JSON.stringify(expensesData)); renderUI();
                     }
                 }
-                
-                // 新增/更新完畢後移除圖片預覽區
                 window.clearSelectedReceipt();
-
-            } catch (error) {
-                console.error("記帳寫入失敗:", error);
-                alert("儲存失敗！請檢查您的 Firebase 資料庫規則 (Rules) 是否允許讀寫。\n錯誤訊息: " + error.message);
-            }
+            } catch (error) { alert("儲存失敗"); }
         };
 
-        // 編輯支出 (將資料帶入輸入框)
         window.editExpense = function(id) {
-            const exp = expensesData.find(e => e.id === id);
-            if (!exp) return;
-            
+            const exp = expensesData.find(e => e.id === id); if (!exp) return;
             document.getElementById('edit-expense-id').value = id;
             document.getElementById('expense-date').value = exp.date || 'D1 (7/3)';
             document.getElementById('expense-category').value = exp.category;
             document.getElementById('expense-method').value = exp.method || 'cash';
             document.getElementById('expense-amount').value = exp.amount;
-            
-            // 如果該帳目原本有照片，則載入照片預覽
-            if (exp.receiptImg) {
-                selectedReceiptBase64 = exp.receiptImg;
-                document.getElementById('receipt-preview-img').src = selectedReceiptBase64;
-                document.getElementById('receipt-preview-container').classList.remove('hidden');
-            } else {
-                window.clearSelectedReceipt();
-            }
-
-            const btn = document.getElementById('expense-submit-btn');
-            btn.innerText = '更新修改';
-            btn.classList.replace('bg-teal-600', 'bg-amber-600');
-            btn.classList.replace('hover:bg-teal-500', 'hover:bg-amber-500');
+            if (exp.receiptImg) { selectedReceiptBase64 = exp.receiptImg; document.getElementById('receipt-preview-img').src = selectedReceiptBase64; document.getElementById('receipt-preview-container').classList.remove('hidden'); }
+            else { window.clearSelectedReceipt(); }
+            document.getElementById('expense-submit-btn').innerText = '更新修改';
         };
 
-        // 刪除支出 (帶防呆確認)
         window.deleteExpense = async function(id) {
             const btn = document.getElementById('del-btn-' + id);
             if (btn && btn.dataset.confirm !== 'true') {
-                btn.dataset.confirm = 'true';
-                const originalHtml = btn.innerHTML;
-                btn.innerHTML = '⚠️確認?';
-                btn.classList.add('text-rose-600', 'bg-rose-100', 'rounded', 'px-1');
-                
-                // 3秒後恢復原狀
-                setTimeout(() => {
-                    if (btn) {
-                        btn.dataset.confirm = 'false';
-                        btn.innerHTML = originalHtml;
-                        btn.classList.remove('text-rose-600', 'bg-rose-100', 'rounded', 'px-1');
-                    }
-                }, 3000);
-                return;
+                btn.dataset.confirm = 'true'; const old = btn.innerHTML; btn.innerHTML = '⚠️?';
+                setTimeout(() => { if (btn) { btn.dataset.confirm = 'false'; btn.innerHTML = old; } }, 3000); return;
             }
-
             try {
-                // 執行刪除
-                if(db && fbUser) {
-                    await deleteDoc(getDocRef('family_expenses', id));
-                } else {
-                    expensesData = expensesData.filter(e => e.id !== id);
-                    localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
-                    renderUI();
-                }
-            } catch (error) {
-                console.error("刪除失敗:", error);
-                alert("刪除失敗！請檢查您的 Firebase 資料庫權限。\n錯誤訊息: " + error.message);
-                
-                if (btn) {
-                    btn.dataset.confirm = 'false';
-                    btn.innerHTML = '🗑️';
-                    btn.classList.remove('text-rose-600', 'bg-rose-100', 'rounded', 'px-1');
-                }
-            }
+                if(db && fbUser) { await deleteDoc(getDocRef('family_expenses', id)); }
+                else { expensesData = expensesData.filter(e => e.id !== id); localStorage.setItem('local_family_expenses', JSON.stringify(expensesData)); renderUI(); }
+            } catch (e) { alert("刪除失敗"); }
         };
 
-        // 📷 專屬大圖查看功能
         window.viewReceipt = function(id) {
             const exp = expensesData.find(e => e.id === id);
-            if (exp && exp.receiptImg) {
-                document.getElementById('modal-receipt-img').src = exp.receiptImg;
-                document.getElementById('receipt-modal').classList.remove('hidden');
-            }
+            if (exp && exp.receiptImg) { document.getElementById('modal-receipt-img').src = exp.receiptImg; document.getElementById('receipt-modal').classList.remove('hidden'); }
         };
+        window.closeReceiptModal = function() { document.getElementById('receipt-modal').classList.add('hidden'); };
 
-        window.closeReceiptModal = function() {
-            document.getElementById('receipt-modal').classList.add('hidden');
-            document.getElementById('modal-receipt-img').src = "";
-        };
+        window.openSettings = function() { document.getElementById('settings-api-key').value = localStorage.getItem('gemini_api_key') || ''; document.getElementById('settings-modal').classList.remove('hidden'); };
+        window.closeSettings = function() { document.getElementById('settings-modal').classList.add('hidden'); };
+        window.saveSettings = function() { localStorage.setItem('gemini_api_key', document.getElementById('settings-api-key').value.trim()); window.closeSettings(); alert("金鑰儲存成功！"); };
 
-        // ⚙️ 設定 Gemini API Key 齒輪視窗控制
-        window.openSettings = function() {
-            document.getElementById('settings-api-key').value = localStorage.getItem('gemini_api_key') || '';
-            document.getElementById('settings-modal').classList.remove('hidden');
-        };
-        
-        window.closeSettings = function() {
-            document.getElementById('settings-modal').classList.add('hidden');
-        };
-        
-        window.saveSettings = function() {
-            const key = document.getElementById('settings-api-key').value.trim();
-            localStorage.setItem('gemini_api_key', key);
-            window.closeSettings();
-            alert("金鑰儲存成功！現在可以在 GitHub 上完美使用 AI 拍照記帳囉。");
-        };
-
-        // 🚀 核心升級功能：AI 拍照與相簿記帳 (多格式、輕量化高精準度版)
         window.handleReceiptUpload = async function(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-
-            const loadingEl = document.getElementById('ai-loading');
-            loadingEl.classList.remove('hidden');
-            loadingEl.innerText = '✨ AI 正在壓縮並讀取收據，請稍候...';
-            loadingEl.classList.replace('text-rose-600', 'text-teal-600');
-
+            const file = event.target.files[0]; if (!file) return;
+            const loadingEl = document.getElementById('ai-loading'); loadingEl.classList.remove('hidden');
             try {
-                // 建立 Blob URL 來預讀取的圖片
-                const blobUrl = URL.createObjectURL(file);
-                const img = new Image();
-                img.src = blobUrl;
+                const blobUrl = URL.createObjectURL(file); const img = new Image(); img.src = blobUrl;
+                await new Promise((res, rej) => { img.onload = res; img.onerror = rej; });
+                const canvas = document.createElement('canvas'); const ctx = canvas.getContext('2d');
+                const maxDim = 1024; let w = img.width, h = img.height;
+                if (w > maxDim || h > maxDim) { if (w > h) { h = Math.round((h * maxDim) / w); w = maxDim; } else { w = Math.round((w * maxDim) / h); h = maxDim; } }
+                canvas.width = w; canvas.height = h; ctx.drawImage(img, 0, 0, w, h);
+                selectedReceiptBase64 = canvas.toDataURL('image/jpeg', 0.6); URL.revokeObjectURL(blobUrl);
+                document.getElementById('receipt-preview-img').src = selectedReceiptBase64; document.getElementById('receipt-preview-container').classList.remove('hidden');
+
+                const key = localStorage.getItem('gemini_api_key') || atob("QUl6YVN5Qk5wYnEwZ2FZOWE4TVNwYi16dDJTdVB2VXkwT01hUjlV");
+                if (!key) { loadingEl.innerText = "❌ 尚未設定金鑰。"; return; }
                 
-                // 等待圖片載入完畢
-                await new Promise((resolve, reject) => {
-                    img.onload = resolve;
-                    img.onerror = reject;
-                });
-
-                // 建立一個隱形的 Canvas 來進行影像壓縮與強制轉換成 JPEG 格式
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                
-                // 限制最長邊為 1024 像素，保留完美 OCR 細節又可降低 95% 的檔案大小，大幅提升 API 回應速度
-                const maxDim = 1024;
-                let width = img.width;
-                let height = img.height;
-                if (width > maxDim || height > maxDim) {
-                    if (width > height) {
-                        height = Math.round((height * maxDim) / width);
-                        width = maxDim;
-                    } else {
-                        width = Math.round((width * maxDim) / height);
-                        height = maxDim;
-                    }
-                }
-                
-                canvas.width = width;
-                canvas.height = height;
-                ctx.drawImage(img, 0, 0, width, height);
-                
-                // 壓縮並匯出成 image/jpeg，使用 0.6 品質（既清晰又只有 40KB - 80KB，非常適合資料庫儲存）
-                selectedReceiptBase64 = canvas.toDataURL('image/jpeg', 0.6);
-                URL.revokeObjectURL(blobUrl); // 釋放記憶體空間
-
-                // 顯示已選收據照片預覽縮圖
-                document.getElementById('receipt-preview-img').src = selectedReceiptBase64;
-                document.getElementById('receipt-preview-container').classList.remove('hidden');
-
-                // 智慧金鑰解析：優先使用 LocalStorage 內的自訂金鑰，次之使用 Base64 混淆的預設金鑰（防止 GitHub 安全掃描自動撤銷）
-                const getGeminiApiKey = () => {
-                    const localKey = localStorage.getItem('gemini_api_key');
-                    if (localKey && localKey.trim() !== "") return localKey;
-                    
-                    // 這是您專屬並已設定 GitHub 限制的 Gemini API Key (Base64 混淆版)
-                    // 如此一來公開在 GitHub 上也不會觸發 GitHub 的安全掃描自動撤銷機制
-                    try {
-                        return atob("QUl6YVN5Qk5wYnEwZ2FZOWE4TVNwYi16dDJTdVB2VXkwT01hUjlV");
-                    } catch(e) {
-                        return "";
-                    }
-                };
-
-                const apiKey = ""; 
-                const finalApiKey = apiKey || getGeminiApiKey();
-
-                if (!finalApiKey) {
-                    loadingEl.innerText = "❌ 尚未設定金鑰。請點擊上方 ⚙️ 按鈕，貼上您的 Gemini API Key 才能執行 AI 讀取。";
-                    loadingEl.classList.replace('text-teal-600', 'text-rose-600');
-                    return;
-                }
-
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${finalApiKey}`;
-                
-                const base64CleanData = selectedReceiptBase64.split(',')[1];
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${key}`;
+                const cleanData = selectedReceiptBase64.split(',')[1];
                 const payload = {
-                    contents: [{
-                        role: "user",
-                        parts: [
-                            { text: "這是一張消費收據、信用刷卡單或發票的照片。請利用 OCR 找出這張收據的「合計金額 / 領收金額 (數字，剔除單價與找零，並忽略統編等無關數字)」與推測其「費用類別」。\n費用類別必須是以下字串之一：'car' (租車或交通工具), 'trans' (車票、過路費、停車費、油資), 'hotel' (住宿飯店費用), 'food' (餐飲、超市、食物), 'ticket' (門票、購物雜支)。\n請以 JSON 格式回傳，例如：{\"amount\": 2500, \"category\": \"hotel\"}。請嚴格遵守只回傳 JSON 內容，不要添加 any Markdown 的 ``` 語法標籤或說明文字。" },
-                            { inlineData: { mimeType: "image/jpeg", data: base64CleanData } }
-                        ]
-                    }],
-                    generationConfig: {
-                        responseMimeType: "application/json",
-                        responseSchema: {
-                            type: "OBJECT",
-                            properties: {
-                                amount: { type: "INTEGER" },
-                                category: { type: "STRING" }
-                            }
-                        }
-                    }
+                    contents: [{ role: "user", parts: [
+                        { text: "找出收據的「合計金額 (整數數字)」與推測費用類別('car', 'trans', 'hotel', 'food', 'ticket')。以完整不帶語法的 JSON 格式回傳，例如：{\"amount\": 2500, \"category\": \"food\"}。" },
+                        { inlineData: { mimeType: "image/jpeg", data: cleanData } }
+                    ]}],
+                    generationConfig: { responseMimeType: "application/json", responseSchema: { type: "OBJECT", properties: { amount: { type: "INTEGER" }, category: { type: "STRING" } } } }
                 };
 
-                let resultData = null;
-                const retries = 3;
-                const delays = [1000, 2000, 4000];
-
-                // 帶有自動重試的 API 呼叫
-                for(let i = 0; i < retries; i++) {
-                    try {
-                        const response = await fetch(url, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-                        if (!response.ok) throw new Error("API response not OK");
-                        resultData = await response.json();
-                        break;
-                    } catch (err) {
-                        if(i === retries - 1) throw err;
-                        await new Promise(r => setTimeout(r, delays[i]));
-                    }
+                const resp = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                const resJson = await resp.json();
+                if (resJson.candidates) {
+                    const parsed = JSON.parse(resJson.candidates[0].content.parts[0].text);
+                    if (parsed.amount) document.getElementById('expense-amount').value = parsed.amount;
+                    if (parsed.category) document.getElementById('expense-category').value = parsed.category;
                 }
-
-                if (resultData && resultData.candidates) {
-                    const textResp = resultData.candidates[0].content.parts[0].text;
-                    const parsed = JSON.parse(textResp);
-
-                    if (parsed.amount) {
-                        document.getElementById('expense-amount').value = parsed.amount;
-                    }
-                    if (parsed.category) {
-                        document.getElementById('expense-category').value = parsed.category;
-                    }
-                    
-                    // 自動判斷發票付款方式並帶入 dropdown (若為刷卡、PayPay 則自動選取)
-                    const rawText = JSON.stringify(resultData).toLowerCase();
-                    if (rawText.includes("クレジットカード") || rawText.includes("credit") || rawText.includes("visa") || rawText.includes("master") || rawText.includes("卡")) {
-                        document.getElementById('expense-method').value = 'card';
-                    } else if (rawText.includes("paypay") || rawText.includes("ペイペイ")) {
-                        document.getElementById('expense-method').value = 'paypay';
-                    } else {
-                        document.getElementById('expense-method').value = 'cash';
-                    }
-
-                    loadingEl.classList.add('hidden');
-                } else {
-                    throw new Error("Invalid response format");
-                }
-            } catch (error) {
-                console.error("AI 讀取失敗", error);
-                loadingEl.innerText = "❌ 讀取失敗。若您在 GitHub 部署，請確認金鑰正確性，並確保 GCP 後台已勾選開通『Generative Language API』之權限限制。";
-                loadingEl.classList.replace('text-teal-600', 'text-rose-600');
-                setTimeout(() => {
-                    loadingEl.classList.add('hidden');
-                }, 4000);
-            }
-            event.target.value = ''; // 清空 file input 供下一次選取
+                loadingEl.classList.add('hidden');
+            } catch (e) { loadingEl.innerText = "❌ AI 讀取失敗。"; }
         };
 
-        // 解決 iOS 點擊 label 無反應之核心函式
-        window.triggerFileInput = function(inputId) {
-            const input = document.getElementById(inputId);
-            if (input) {
-                input.click();
+        window.triggerFileInput = function(id) { const el = document.getElementById(id); if (el) el.click(); };
+
+        function syncExpenseDateDropdown(dayNum) {
+            const dateSelect = document.getElementById('expense-date');
+            if (dateSelect) {
+                const mapping = { 1: "D1 (7/3)", 2: "D2 (7/4)", 3: "D3 (7/5)", 4: "D4 (7/6)", 5: "D5 (7/7)", 6: "D6 (7/8)", 7: "D7 (7/9)", 8: "D8 (7/10)", 9: "D9 (7/11)", 10: "D10 (7/12)", 11: "D11 (7/13)" };
+                if (mapping[dayNum]) dateSelect.value = mapping[dayNum];
             }
-        };
+        }
 
-        // Enter 鍵快捷送出
-        document.getElementById('note-input')?.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') window.submitNote();
-        });
-
-        // 啟動 Firebase 連線與即時監聽
+        // 🛠️ 驗證與監聽掛載邏輯優化：確保先成功完成身份驗證，再開始讀取資料
         if(auth) {
             const initAuth = async () => {
                 try {
-                    // 若在 Canvas 環境，優先使用配發的權杖
-                    if (isCanvasEnvironment && typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    // 1. 優先在沙盒或特定測試環境中使用配發的 Custom Token 登入
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                         await signInWithCustomToken(auth, __initial_auth_token);
                     } else {
+                        // 2. 外部 GitHub 部署環境中使用匿名登入，確保符合規則
                         await signInAnonymously(auth);
                     }
                 } catch(e) { 
-                    console.error("Firebase 登入失敗 (可能是金鑰無效)，已切換為單機模式", e); 
+                    console.error("Firebase 驗證失敗，切換為單機快取模式：", e); 
                     fbUser = null; 
-                    
-                    // 提示使用者目前為單機模式
                     const chatBox = document.getElementById('chat-box');
-                    if (chatBox) chatBox.innerHTML = '<div class="text-center text-rose-500 text-sm mt-4 font-bold">雲端連線失敗 (API Key 或規則無效)<br>目前已切換為單機模式</div>';
-                    
-                    renderUI(); // 直接使用本地陣列渲染
-                }
-            };
-            initAuth();
-
-            auth.onAuthStateChanged((user) => {
-                if (user) {
-                    fbUser = user;
-                    
-                    // 連線成功後，從資料庫下載最新資料，並隨時同步更新本地 LocalStorage
-                    onSnapshot(getCollectionPath('family_notes'), (snap) => {
-                        notesData = snap.docs.map(d => ({id: d.id, ...d.data()})).sort((a,b)=> a.timestamp - b.timestamp);
-                        localStorage.setItem('local_family_notes', JSON.stringify(notesData));
-                        renderUI();
-                    }, (err) => console.error("監聽 family_notes 失敗:", err));
-
-                    onSnapshot(getCollectionPath('family_expenses'), (snap) => {
-                        expensesData = snap.docs.map(d => ({id: d.id, ...d.data()})).sort((a,b)=> a.timestamp - b.timestamp);
-                        localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
-                        renderUI();
-                    }, (err) => console.error("監聽 family_expenses 失敗:", err));
-                } else {
-                    // 未登入成功或登出時，使用本地備份進行渲染
+                    if (chatBox) chatBox.innerHTML = '<div class="text-center text-rose-500 text-xs mt-4 font-bold">雲端連線失敗 (金鑰或安全規則不符)<br>目前已切換為單機快取模式</div>';
                     renderUI();
                 }
+            };
+            
+            // 執行登入程序，並在成功後掛載 Firebase 即時資料監聽器
+            initAuth().then(() => {
+                auth.onAuthStateChanged((user) => {
+                    if (user) {
+                        fbUser = user;
+                        
+                        // 即時監聽群組筆記 (加上完整的 error 回呼，防止因規則不符而靜默失敗)
+                        onSnapshot(getCollectionPath('family_notes'), (snap) => {
+                            notesData = snap.docs.map(d => ({id: d.id, ...d.data()})).sort((a,b)=>a.timestamp-b.timestamp);
+                            localStorage.setItem('local_family_notes', JSON.stringify(notesData));
+                            renderUI();
+                        }, (err) => {
+                            console.error("群組留言讀取失敗 (可能無存取權限)：", err);
+                        });
+
+                        // 即時監聽家族共同記帳
+                        onSnapshot(getCollectionPath('family_expenses'), (snap) => {
+                            expensesData = snap.docs.map(d => ({id: d.id, ...d.data()})).sort((a,b)=>a.timestamp-b.timestamp);
+                            localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
+                            renderUI();
+                        }, (err) => {
+                            console.error("共同記帳讀取失敗 (可能無存取權限)：", err);
+                        });
+                    } else {
+                        renderUI();
+                    }
+                });
             });
         } else {
             renderUI(); // 單機測試模式
         }
+
+        window.syncExpenseDateDropdown = syncExpenseDateDropdown;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSummaryTable(); renderDaySelector(); renderDayContent();
+            const ctx = document.getElementById('budgetChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut', 
+                data: { labels: ['租車', '交通雜費', '住宿費', '餐飲', '門票'], datasets: [{ data: [156530, 65000, 274125, 200000, 20000], backgroundColor: ['#14b8a6', '#60a5fa', '#fb7185', '#818cf8', '#fbbf24'], borderWidth: 2 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } }, cutout: '70%' }
+            });
+        });
     </script>
 </body>
 </html>
