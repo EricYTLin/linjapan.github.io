@@ -29,10 +29,8 @@
         .chart-container { position: relative; width: 100%; max-width: 600px; margin: 0 auto; height: 250px; }
         .tab-btn { transition: all 0.3s ease; }
         .fade-in { animation: fadeIn 0.4s ease-in-out; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-map { background-color: #f97316; } .btn-map:hover { background-color: #ea580c; }
     </style>
 </head>
 <body class="antialiased selection:bg-teal-200 selection:text-teal-900">
@@ -269,7 +267,7 @@
         </div>
     </div>
 
-    <!-- 🏨 住宿與景點詳情動態抽屜核心 Modal (優化提升最高層級 z-[200] 確保必彈出) -->
+    <!-- 🏨 住宿詳情動態抽屜核心 Modal -->
     <div id="hotel-detail-modal" class="hidden fixed inset-0 bg-black/70 z-[200] flex items-center justify-center p-3" onclick="window.closeHotelModal()">
         <div class="bg-white rounded-2xl max-w-2xl w-full p-5 shadow-2xl relative max-h-[85vh] flex flex-col" onclick="event.stopPropagation()">
             <button onclick="window.closeHotelModal()" class="absolute top-4 right-4 bg-stone-100 hover:bg-stone-200 text-stone-700 w-8 h-8 rounded-full flex items-center justify-center font-bold">✕</button>
@@ -310,7 +308,7 @@
                     退房也需透過房內平板辦理。清潔人員會於上午 11 點準時抵達，請在此之前離開。<br>
                     <div class="mt-4 flex flex-col items-center bg-white p-4 rounded-xl border border-stone-200">
                         <span class="text-xs font-bold text-stone-500 mb-2 block">📲 姬路 Besso 現場平板入住掃描專用 QR Code</span>
-                        <img class="w-48 h-48 object-contain" src="image_32995f.png" alt="Besso Himeji Check-in QR Code">
+                        <img class="w-48 h-48 object-contain" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQAQMAAAC6ca9YAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAAsTAAALEwEAmpwYAAABy0lEQVR4nO2YMXKEMAxFgS9BshInoc6pE7gJSThpL0GyK/MOnIQU6VwhIeE6V0AnW6t9rI9kWZIY/mZgA9b7P/0sWZY0DDo4ODj8C86vR+N6mbeWPr3GkYfW1GZ3H7vW6qF/pZ/mP0f0z7H966mP99P8R5y3XscXpD6eY6373b9/2Wf88+7bve+O/X/MfsKph/Z6vI7H/bS/u/+y+/bH9pX9rMce2lv30/yzHvpX+mn+f4gB7fE6vvbS3vD/gP8Q/Tf6Z3t8Heu+P3zM2T/vH97Nf8R563V8QerjOda63/37l33GP+++3fvu2P/H7Cecemiux+t43E/7u/svm29/bF/Zz3rsob11P80/66F/pZ/m/wYHBweHfwUHBwcHh/8Hh38GBwcHB4f/BwcHBweH/wcHBwcHh38GBwcHB4f/BwcHBweHfwcHBwcHh38FBwcHB4f/BwcHBweHfwYHBwcHh/8HBwcHB4f/BwcHBweHfwYHBwcHh38HBwcHB4f/BwcHBweHfwUHBwcHh38FBwcHB4f/GgeHfwAHBwcHh38FBwcHB4f/hwYHBwcHh38FBwcHB4d/BgeHfwYHBwcHh38FBwcHB4f/BwcHBweHfwUHBwcHBwfFv8E8M8XAnD0gAAAAAElFTkSuQmCC" alt="Besso Himeji Check-in QR Code">
                     </div>
                 `,
                 jp: "【チェックインについて】エントランスの棚に設置されたタブレットに「チェックインコード（249007）」を入力するか、QRコードをかざして手続きを行ってください。【解錠方法】手のひらでドアのタッチパネルに触れ、2〜3秒後「5692*」を入力してください。"
@@ -332,19 +330,19 @@
                 notes: [
                     "<strong>予約番号：</strong>6339146809_01 | <strong>客房號：</strong>Villa 108",
                     "<strong>🤖 完全無人化設施：</strong>現場無實體櫃檯人員。進出所需之核心電子鎖金鑰號碼，系統將於<span class='text-rose-600 font-bold'>入住前一天</span>直接發送至登記信箱。",
-                    "<strong>⚠️ 重要防呆提醒：</strong>不接受提前辦理進房（嚴格限制 15:00 後方可入館），現場亦不提供 any 行李人工寄存服務。請勿提早前往現場卡關。"
+                    "<strong>⚠️ 重要防呆提醒：</strong>不接受提前辦理進房（嚴格限制 15:00 後方可入館），現場亦不提供任何行李人工寄存服務。請勿提早前往現場卡關。"
                 ],
                 zh: "【無人線上 Check-in 步驟】<br>① 為了避免入住當天在門口操作平板過久，請務必在入住前一天收到樂天官方郵件後，點擊專屬 URL 事先填妥全體團員的房客基本資料。<br>② 如果發現官方發送的線上登記 URL 被 Booking.com 系統自動遮鎖（Masking），請立刻撥打客服熱線 050-1750-9719，或提供您的非轉接常用 Email 索取專屬網址。",
                 jp: "【オンラインチェックインのご案内】Rakuten STAYは無人施設です。前日にお送りするURLより、事前に宿泊者情報のご登録をお願いいたします。鍵番号はチェックインの前日にお送りします。"
             },
             "德島格蘭維羅酒店": {
-                title: "🏨 Day 4 & Day 8 住宿資訊：徳島グランヴィリオホテル",
+                title: "🏨 Day 4 住宿資訊：徳島グランヴィリオホテル",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=Tokushima+Grandvrio+Hotel",
                 notes: [
                     "<strong>🅿️ 停車資訊：</strong>飯店附設大型專屬客用停車場，自駕家族可直接停放。",
                     "<strong>🛎️ 有人臨櫃服務：</strong>傳統飯店規格，直接前往一樓大廳櫃檯出示護照即可辦理進房手續。"
                 ],
-                zh: "傳統商務飯店，直接在櫃檯辦理入住即可。退房時間為隔日上午 11:00 以前。飯店內設備齊全，周邊開車補給方便。",
+                zh: "傳統商務渡假飯店，直接在櫃檯辦理入住即可。退房時間為隔日上午 11:00 以前。飯店內設備齊全，周邊開車補給方便。",
                 jp: "フロントにて通常のチェックイン手続きを行ってください。無料の敷地内駐車場を完備しております。"
             },
             "卡租拉亞旅館": {
@@ -353,7 +351,7 @@
                 notes: [
                     "<strong>🕒 入住時限嚴格：</strong>進房時間為 15:00 - 19:00。因含有精緻溫泉和食，<span class='text-rose-600 font-bold'>超過 19:00 抵達者，廚房會關閉且無法享用晚餐，亦不退費</span>，開車山路請抓好時間！",
                     "<strong>🍲 晚餐時間：</strong>18:00 - 19:00 | <strong>🍱 早餐時間：</strong>07:30 - 08:30",
-                    "<strong>⛰️ 秘境注意事項：</strong>山莊地處高海拔深山，附近無任何便利商店 or 超市，請在山下先買好全家零食飲料。客房無電梯，皆須走樓梯，長輩請慢行。"
+                    "<strong>⛰️ 深山秘境注意事項：</strong>山莊地處高海拔深山，附近無任何便利商店 or 超市，請在山下先買好全家零食飲料。客房無電梯，皆須走樓梯，長輩請適度放慢步調。"
                 ],
                 zh: "【山莊生活守則】<br>① 溫泉大浴場開放時間：晚上 16:00 - 22:30，隔日上午 06:30 - 09:00。<br>② 為了維護深山木造山莊作息，晚上 22:00 後請保持安靜。<br>③ 全館客房與公共空間嚴格禁菸，若在房內抽菸被發現將會被收取高達 50,000 日圓的懲罰性清潔費！<br>④ 提供免費山莊前自駕停車場，全天候不需預約即可停放。",
                 jp: "【チェックインとお食事について】チェックインは15:00〜19:00です。19:00を過ぎると夕食の提供ができません（返金不可）。館内にエレベーターはございません。夕方10時以降は静かにお願いします。客室は全室禁煙です。"
@@ -362,8 +360,8 @@
                 title: "🏨 Day 6 住宿資訊：高松屋島絕景之宿：望海荘",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=絕景の宿+望海荘",
                 notes: [
-                    "<strong>📅 2026/07/08 JTB 訂房記錄：</strong>已一括刷卡結清兩間精緻客房（共 JPY 44,200）。",
-                    "<strong>🍲 晚餐特別提醒：</strong>兩間客房均不含隔日早餐，僅含當晚特製『橄欖地雞壽計燒 + 幻之讚岐天然河豚唐揚宴席』晚餐。請務必在 18:00 前辦理 Check-in，以便廚房準備晚餐！",
+                    "<strong>📅 2026/07/08 JTB 訂房記錄：</strong>已一括刷卡結清兩間精緻客房（共 ¥44,200）。",
+                    "<strong>🍲 晚餐特別提醒：</strong>兩間客房均不含隔日早餐，僅含當晚特製『橄欖地雞壽喜燒 + 幻之讚岐天然河豚唐揚宴席』晚餐。請務必在 18:00 前辦理 Check-in，以便廚房準備晚餐！",
                     "<strong>🔑 房型配置與床型調整：</strong>訂單 ② 為 Premium Corner View 全景皇家房（視野極佳，符合面海需求）；訂單 ① 為特別室。Check-in 時，可直接與櫃檯人員 (TEL: 087-841-9111) 確認床型分配 (如夫妻大床、小孩兩張單人床的配置)。"
                 ],
                 zh: `
@@ -437,11 +435,24 @@
                 title: "🏨 Day 7 住宿資訊：小豆島一棟貸切：お泊り忠左衛門 吉野",
                 mapUrl: "https://www.manten-shodoshima.com/",
                 notes: [
+                    "<strong>💴 現場結算金額：</strong>JPY 24,000.00 (一泊貸切無常駐員工)",
                     "<strong>🔑 門口密碼黑盒子：</strong>本棟民宿採自動自助進房，門口黑盒子暗証號碼將於<span class='text-rose-600 font-bold'>出發日前 10 天左右</span>發送至郵件中。",
                     "<strong>🏪 物資與餐飲防呆：</strong>包棟民宿地處偏遠農家，<span class='text-rose-600 font-bold'>走路圈內沒有任何商店、全家或餐廳</span>！開車到最近的超商要 15 分鐘、大超市マルナカ要 25 分鐘。請務必在開車過來前先去超市買好全家份的食材、飲料與調味料（民宿廚房IH爐、烤箱、冰箱配備齊全，但完全沒有調味料與睡衣，需自行準備）。"
                 ],
                 zh: "【自動自助入住三步驟】<br>① 民宿大門口右側牆上設置有黑色 Key Box（鑰匙保管盒）。<br>② 在盒上輸入官方發送的 4 位數暗証號碼，並按下右下角的「開錠標記」，將外蓋向外拉開即可取得實體大門鑰匙。<br>③ 進入客廳後，桌上放有「住宿者名單卡（宿泊者カード）」，請房客代表簽名。<br>🎁【特別贈送：小豆島オリーブ温泉露天浴池割引券】<br>屋主後續會將マルナカ新土庄店內的「オリーブ溫泉」電子割引券圖片寄給我們，開車去大超市採買食材時可以順便去泡這間一望瀨戶內海的頂級露天溫泉！（導航資訊已整合於下方按鈕）",
                 jp: "【重要：自動セルフチェックイン方法】当宿は一棟貸切宿のためスタッフは常駐しておりません。事前に商店等でパジャマ・お飲み物・調味料をご準備ください。"
+            },
+            "民宿 setouchi": {
+                title: "🏨 Day 8 住宿資訊：民宿 setouchi",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=香川県高松市築地町16-7",
+                notes: [
+                    "<strong>📞 聯絡電話：</strong>+81 80 6394 4263",
+                    "<strong>📝 確認碼：</strong><span class='text-teal-600 font-extrabold bg-teal-50 px-1 rounded'>6080536560</span>",
+                    "<strong>🔑 PIN 碼：</strong><span class='text-rose-600 font-extrabold bg-rose-50 px-1 rounded'>8405</span>",
+                    "<strong>📍 地址：</strong>香川縣, 高松, 築地町16-7, 日本"
+                ],
+                zh: "抵達現場後，請依照屋主指示使用確認碼或 PIN 碼辦理入住。如有問題可隨時撥打上述聯絡電話聯繫屋主。",
+                jp: "チェックインの際は、提供された確認コード（6080536560）と暗証番号（8405）をご利用ください。ご不明な点がございましたら、+81 80 6394 4263 までご連絡ください。"
             },
             "GREEN 岡山": {
                 title: "🏨 Day 9 & Day 10 住宿資訊：GREEN 岡山 (綠色酒店)",
@@ -451,228 +462,31 @@
                     "<strong>🕒 預計抵達登記時間：</strong>16:00 前後。",
                     "<strong>🅿️ 專屬車位資訊：</strong>自駕車位就在建築正門口正前方，停妥後請傳照片給屋主確認。"
                 ],
-                zh: "【入住與聯絡提示】<br>抵達門口後，找到設置 of 密碼鑰匙箱並輸入 <span class='text-teal-600 font-bold'>0625</span> 即可取出鑰匙進房。順利進房後請傳個訊息給屋主打聲招呼。兩晚續住，正門口即是專屬車位。",
+                zh: "【入住與聯絡提示】<br>抵達門口後，找到設置的密碼鑰匙箱並輸入 <span class='text-teal-600 font-bold'>0625</span> 即可取出鑰匙進房。順利進房後請傳個訊息給屋主打聲招呼。兩晚續住，正門口即是專屬車位。",
                 jp: "【チェックイン方法】玄関に設置されているキーボックスに暗証番号「0625」を入力して鍵をお受け取りください。到着されましたらメッセージをお願いします。"
             }
         };
 
-        const attractionDetailsData = {
-            "岡山機場": {
-                title: "✈️ 岡山桃太郎機場 (Okayama Airport - OKJ)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=Okayama+Momotaro+Airport",
-                intro: "岡山的空中門戶。自駕取車與還車的重要節點。機場旁步行 3 分鐘即有 NIPPON Rent-A-Car 營業所。",
-                play: "取車時請準備好：台灣駕照、日文譯本、Eric 的護照以及國際信用卡。",
-                tips: "回程還車時必須將油箱完全加滿，並出示機場旁加油站（ENEOS）的滿油收費發票供站員查驗。"
-            },
-            "一張羅": {
-                title: "🍱 姬路必吃星鰻料理：一張羅 (Ichigora)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=穴子料理+一張羅+姫路",
-                intro: "姬路當地極具代表性的星鰻（穴子魚）頂級名店，提供刺身、烤星鰻、鰻魚飯等各式傳統作法。",
-                play: "星鰻刺身在日本非常罕見，口感彈牙鮮美，推薦嘗試！",
-                tips: "晚餐時段容易客滿，建議提早由 Jimmy 協助排隊或提前電話預約。停車可停在姬路車站周邊特約停車場。"
-            },
-            "姬路城": {
-                title: "🏯 國寶姬路城 (Himeji Castle - 白鷺城)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=Himeji+Castle",
-                intro: "日本首批登錄的世界文化遺產，因極具視覺震撼的純白泥牆與如白鷺展翅般的優美屋頂造型，被美譽為「白鷺城」。",
-                play: "登天守閣需脫鞋改穿備用塑膠袋裝鞋。天守閣內的樓梯極其陡峭（近 65 度斜角木梯），長輩上下時請務必慢行！預留時間 2-3 小時。",
-                tips: "🚗 停車：停在『大手門前公營停車場』最近。天守閣陡峭，長輩切勿勉強。"
-            },
-            "明石海峽大橋": {
-                title: "🌉 震撼明石海峽大橋 (Akashi Kaikyo Bridge)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=明石海峽大橋",
-                intro: "世界上跨距第二長的雙層懸索吊橋，橫跨明石海峽，連接本州神戶市與四國入口淡路島。",
-                play: "在橋頭的『舞子海上散步道』或淡路島端的『淡路 SA 服務區』是拍攝整座大橋鋼骨結構與壯麗海景的絕佳視角。",
-                tips: "開車跨橋時風力較大，副駕媽媽請協助看緊導航。過路費將於 ETC 內直接扣除。"
-            },
-            "淡路夢舞台": {
-                title: "🏛️ 清水模美學殿堂：淡路夢舞台",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=Awaji+Yumebutai",
-                intro: "安藤忠雄大師的代表作，將受損的採石場改建為與大自然共生的清水模巨型藝術園區，包含百段苑等。",
-                play: "建議從頂部的「百段苑」順階梯往下漫步，清水模階梯與百格花圃的交錯極具視覺美感。長輩若膝蓋不適可搭乘電梯直達上方觀景台，再慢慢平路散步。",
-                tips: "🎫 門票：園區公共步道免費（部分展館另計）。🚗 停車：可直接停在『淡路夢舞台地下收費停車場』，環境寬敞好停。"
-            },
-            "淡路花棧敷": {
-                title: "🌸 瀨戶海天一色：淡路花棧敷 (Hana Sajiki)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=あわじ花さじき",
-                intro: "淡路島南方丘陵頂端的地毯式花海公園。四季盛開著油菜花、向日葵、大波斯菊，能將緩坡花海與瀨戶內海一同框入鏡頭。",
-                play: "園區內坡度平緩，設有防滑木棧道，極其適合長輩散步。入口處設有農特產市集，可以買到最新鮮的淡路島洋蔥與牛奶冰淇淋！",
-                tips: "🎫 門票：入園免費！🚗 停車: 入園前需繳納公營停車費約 200 日圓，車位非常多。"
-            },
-            "幸福鬆餅 淡路島": {
-                title: "🥞 幸福鬆餅 淡路島店 (A Happy Pancake Awaji)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=幸せのパンケーキ+淡路島",
-                intro: "全日本最知名的海景舒芙蕾鬆餅店。臨海而建，設有標誌性的『幸福之鐘』、『極光天梯』與『透明鞦韆』等拍照打卡點。",
-                play: "因為不接受當天現場排預約，Jimmy 和 Wendy 需提前上網卡位預約海景玻璃屋雅座！下午茶點一份香蕉巧克力或淡路島限定水果鬆餅，全家看海放空極為享受。",
-                tips: "🚗 停車：提供極大的免費專屬第一、第二停車場，自駕前來極為容易。"
-            },
-            "大鳴門橋渦之道": {
-                title: "🌀 鳴門大橋渦之道 (Uzu no Michi)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=大鳴門橋渦の道",
-                intro: "利用大鳴門橋橋桁空間（車道下方）建設的 450 公尺海上觀步道，地板每隔數公尺便設有透明強化玻璃防護窗。",
-                play: "站在 45 公尺高的海面上向下直視驚濤駭浪的漩渦。步道兩側有鐵絲網擋風，海風極強，建議幫爸爸媽媽攜帶一件薄外套防風防寒。",
-                tips: "🎫 門票：成人 510 日圓。🚗 停車：停在『鳴門公園第一停車場』再步行前往。建議出發前由 Wendy 先用手機查詢當天『大潮與漩渦最盛時刻表』以防撲空！"
-            },
-            "阿波舞會館": {
-                title: "💃 德島文化靈魂：阿波舞會館 (Awaodori Kaikan)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=阿波おどり会館",
-                intro: "展示德島傳承 400 年、舉國聞名的傳統舞蹈『阿波舞』主題展館，每天有專門舞團在此進行現場公演與教學互動。",
-                play: "購票進場觀賞 25 分鐘的現場阿波舞演出。表演後半段主持人會邀請全場觀眾上台一起跳，全家人一起上台共舞並拍照留念，是絕佳的家族回憶！",
-                tips: "🎫 門票：看舞蹈表演大人約 800 日圓。🚗 停車：會館地下及周邊設有收費停車格，車位較少，若客滿可使用周邊市立停車場。"
-            },
-            "眉山纜車": {
-                title: "🚠 眉山纜車 (Bizan Ropeway)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=眉山ロープウェイ",
-                intro: "位於德島市中心的登山索道，纜車起點就在阿波舞會館的 5 樓，約 6 分鐘即可登頂，是飽覽德島全市景觀與夜景的首選。",
-                play: "看完阿波舞表演後直接上 5 樓搭乘纜車登頂。山頂展望台視野遼闊，落日時分更可遠眺吉野川流域與大鳴門橋，景緻極美。",
-                tips: "🎫 票價：來回票約 1,030 日圓。搭乘時請幫媽媽安排靠窗位置，視野最好。"
-            },
-            "大步危峽遊覽船": {
-                title: "🚢 祖谷秘境：大步危峽遊覽船",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=大歩危峡観光遊覧船",
-                intro: "乘坐平穩的日式小木船，航行在經過兩億年急流沖刷而成的 V 字形砂岩峽谷中。溪水呈現祖母綠色，清澈見底。",
-                play: "船伕會一邊搖槳一邊進行幽默的日文導覽（提供多國語言說明板）。船隻行進極度平穩、完全不顛簸，長輩坐起來非常舒適安全。秋天漫山紅葉、夏天翠綠峽谷皆是一絕。",
-                tips: "🎫 門票：大人 1,500 日圓。🚗 停車：遊覽船乘船處（大步危馨香大步危道之驛/大步危LAX）提供極大且完全免費的停車場。"
-            },
-            "祖谷蔓橋": {
-                title: "🌉 日本三大奇橋：祖谷蔓橋 (Kazurabashi)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=祖谷のかずら橋",
-                intro: "日本三大奇橋之一。由奇異的藤蔓樹枝編織而成的藤蔓吊橋，橫跨深谷急流上空，每走一步木板便嘎吱作響、驚險無比。",
-                play: "橋面木板間隙較大（約有10公分鏤空），可直接看見下方溪流。長輩若懼高不建議勉強走，可在橋頭溪谷旁拍照；年輕的兄妹則可以大膽走過去體驗古人逃亡時的智慧！",
-                tips: "🎫 門票：過橋費大人 550 日圓。🚗 停車：可將 Minivan 停在「藤蔓橋夢舞台大停車場」，收費約 500 日圓，設有寬敞洗手間與土產市集。"
-            },
-            "祖谷美人": {
-                title: "蕎 溪谷景觀餐廳：祖谷美人 (Iya Bijin)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=祖谷美人+徳島県",
-                intro: "建於萬丈溪谷懸崖邊的景觀蕎麥麵餐廳。提供現磨、口感扎實的傳統「祖谷蕎麥麵」與鹽烤香魚料理。",
-                play: "餐廳露台外即是絕美深邃山谷。建議選擇臨窗或戶外木棧平台雅座。用餐人數多，開車經過時若發現客滿，可由 Jimmy 先下車登記。附設免費自駕停車場。",
-                tips: "無特定門票，餐飲消費依菜單計價。附設寬敞自駕停車場。"
-            },
-            "讚岐烏龍麵わら家": {
-                title: "🥢 四國村人氣烏龍麵：わら家 (Waraya)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=わら家+高松",
-                intro: "位於屋島山腳下、四國村入口旁的茅草古民家烏龍麵店，以巨大的木盆「釜揚烏龍麵（招牌名物）」聞名全日本。",
-                play: "烏龍麵口感極富彈性（Q彈有勁）。全家四人建議直接點選一盆 4-5 人份的超大『家族盆烏龍（家族うどん）』，淋上特製高湯，搭配蔥花、芝麻與現磨薑泥，香氣逼人！",
-                tips: "停車場與四國村共用，寬敞且完全免費。"
-            },
-            "屋島展望台": {
-                title: "⛰️ 屋島山頂獅子之靈巖展望台 (Yashima)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=獅子の霊巌+屋島",
-                intro: "位於香川高松火山熔岩台地屋島山頂的古戰場遺址，是俯瞰瀨戶內海群島、女木島、男木島與高松港都落日的日本第一絕景地。",
-                play: "全家沿著平緩的展望步道散步到「獅子之靈巖」。在步道旁可以買到一疊 200 日圓的小陶片（かわらけ投げ），用力將小陶片朝著海面扔出去，傳說能除厄招福、心想事成！",
-                tips: "🚗 停車：沿著屋島專屬收費車道開上山頂，設有大型停車場（收費約 300 日圓）。山頂風大，請務必幫爸爸準備帽子遮風。"
-            },
-            "小豆島橄欖公園": {
-                title: "🌿 魔女宅急便飛天掃帚：小豆島橄欖公園",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=小豆島オリーブ公園",
-                intro: "因小豆島溫和的氣候極似地中海而成功種植橄欖的綠色公園，園內最著名的地標是白色『希臘風車』。",
-                play: "先到服務中心免費借用「魔女宅急便基琪的飛天掃帚」，然後全家一起到白色希臘風車草皮前，一邊往上跳一邊拍照，拍出在藍天大海中飛翔的魔幻奇蹟照！長輩不跳也沒關係，拿著掃帚擺姿勢照樣非常可愛。",
-                tips: "🎫 門票：入園免費！🚗 停車：自駕車位非常寬敞好停。公園內還有特製的綠色橄欖冰淇淋與橄欖油伴手禮，大受媽媽喜愛。"
-            },
-            "天使的散步道": {
-                title: "🏖️ 每日兩次潮退奇蹟：天使的散步道 (Angel Road)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=エンジェルロード",
-                intro: "小豆島前島連接中余島之間的沙灘步道。每日僅在退潮的前後 3 小時浮現出來，其意境極美。",
-                play: "傳說與心愛的人手牽手走過這條沙灘步道，天使就會降臨並實現願望。步道頂部設有「約束之展望台」，建議牽著長輩慢慢走上去敲響幸福之鐘，向下俯瞰整條浮現的白沙步道，視野與心境極為開闊。",
-                tips: "🎫 門票：免費。🚗 停車：入口旁設有專屬免費停車場。請務必提前讓 Wendy 在手機上比對當天的『天使步道退潮時刻表』，精準抓好退潮時間。"
-            },
-            "金刀比羅宮": {
-                title: "⛩️ 日本一生必參拜一次：金刀比羅宮 (Kotohiragu)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=金刀比羅宮",
-                intro: "日本最著名的守護神與航海保護神，因前往御本宮需要攀登多達 785 階（奧社為 1,368 階）石階，被稱為日本最難攀登的神社。",
-                play: "參拜石階是一大挑戰！在入口商店街可以免費租借竹製竹杖（資生堂神椿咖啡或參道兩旁）。長輩切勿勉強！建議爸爸媽媽攀登至 365 階大門口或 500 階的『資生堂神椿 (Kamitsubaki)』網美咖啡廳休息，點一份聖代看綠意，年輕兄妹則可以一口氣登上 785 階御本宮參拜與求黃金護身符。",
-                tips: "🚗 停車：琴平參道山腳下有非常多收費停車場（一次約 500-800 日圓）。建議早上或傍晚氣溫涼爽時前往攀爬。"
-            },
-            "地中美術館": {
-                title: "🎨 清水模地底藝術殿堂：地中美術館 (Chichu Art Museum)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=地中美術館",
-                intro: "安藤忠雄大師將整座美術館完全埋入地下的曠世巨作，利用自然採光將莫內的《睡蓮》、詹姆斯·泰瑞爾等殿堂級藝術品完美呈現。",
-                play: "全館採預約制。入場時需換穿特製室內拖鞋。在無人工照明的白牆展間裡看莫內的睡蓮，隨著天光變化，美感震撼。館內的 Chichu Cafe 有一望無際的無敵海景陽台，適合點瓶直島限定汽水看海休息。",
-                tips: "🎫 門票：必須提前至少一個月在線預約時段（Lin 氏家族已預定 10:45 入場！千萬別遲到）。🚗 停車：直島嚴禁遊客開車進入景區，需將 Minivan 停在宇野港停車場（坐客輪過海），島內一律使用接駁巴士。"
-            },
-            "倉敷美觀地區": {
-                title: "🛶 垂柳古運河與白壁大正浪漫：倉敷美觀地區",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=倉敷美観地区",
-                intro: "江戶時代作為幕府直轄「天領」而繁榮的物資集散港口，至今仍完整保留了垂柳依依的古運河、白壁黑瓦的江戶土藏群與日洋折衷的大正風建築。",
-                play: "極力推薦全家自費體驗「倉敷川遊船（川舟乗船）」，戴上竹笠斗笠、坐在扁舟上由船伕搖槳，看著兩岸白壁與垂柳慢慢流逝，意境極美。漫步在石板街上，媽媽可以大買著名的『倉敷帆布包』，年輕兄妹則可以買杯特色倉敷牛仔藍冰淇淋拍照打卡！",
-                tips: "🎫 門票：街區散步免費。🚗 停車：周邊有大型的市立收費停車場（如美觀地區東停車場），Minivan 非常好停。遊船每人約 500 日圓，需一早前往乘船處預購船票。"
-            },
-            "三井 Outlet Park 倉敷": {
-                title: "🛍️ 血拼購物中心：三井 Outlet Park 倉敷",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=三井アウトレットパーク+倉敷",
-                intro: "岡山地區規模最大、品牌最齊全的三井連鎖暢貨中心，緊鄰倉敷車站，與 Ario 倉敷購物中心相連，逛街採購與美食補給極其方便。",
-                play: "這裡的戶外運動品牌（Nike, Adidas, Mont-bell）及日系服飾常有驚人折扣，適合年輕兄妹大肆血拚。園區內綠意盎然、動線平緩且寬敞，設有非常多休息長椅與大型美食街，媽媽如果逛累了可以隨時坐下來喝杯咖啡、吃點章魚燒休息。",
-                tips: "🚗 停車：提供極大的 Outlet 專屬收費停車場（消費折抵可折免停車費），Minivan 自駕前來完全無卡關問題。"
-            },
-            "岡山後樂園": {
-                title: "🏮 日本三大名園之一：岡山後樂園 (Korakuen)",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=岡山後楽園",
-                intro: "日本三大名園之一。建於江戶時代（約有 300 年歷史）的迴遊林泉式庭園。獲得米其林三星評鑑，與隔河相望的岡山城借景，視覺上寬敞、優雅大氣。",
-                play: "帶長輩漫步在綠草如茵的大草皮步道上。登上庭園中央的「唯心山」可以俯瞰整座名園水池、茶室與唯美橋樑的借景佈局，長輩拍照非常好看。走累了可以在庭園內的茶屋「福田茶屋」停下腳步，品嚐招牌宇治抹茶與吉備糰子甜點，享受江戶藩主的奢華氛圍。",
-                tips: "🎫 門票：大人 410 日圓。🚗 停車：設有專屬的『岡山後樂園觀光巴士與自駕收費停車場』，車位非常多，過橋即是後樂園入口。"
-            }
-        };
-    </script>
+        // 行程基本架構資料 - 💡 已加上標記 【景點、餐廳與地標】 供地圖導航解析
+        const itineraryData = [
+            { day: 1, date: `7/3 週五`, title: `抵達岡山，直奔姬路`, vibe: `移動/夜遊`, transport: `15:05 【岡山機場】 ➔ 16:00 辦理租車 ➔ 【姬路市區】`, activities: [`【岡山機場】取車後直接往東行駛`, `傍晚抵達【Besso姬路】`, `晚上可在【姬路車站】周邊商圈與地下街逛街`], lunch: `機上或自理`, dinner: `姬路必吃穴子料理【一張羅】`, hotel: `Besso姫路`, parking: `【姬路車站周邊特約停車場】` },
+            { day: 2, date: `7/4 週六`, title: `國寶名城，登陸淡路島`, vibe: `歷史/海景`, transport: `姬路 ➔ (跨越明石海峽) ➔ 淡路島`, activities: [`上午：深度登頂參觀世界文化遺產【姬路城】`, `下午：開車跨越明升起降震撼的【明石海峽大橋】`, `傍晚：進入海島度假地，朝聖【淡路島大觀覽車】`], lunch: `【姬路城】周邊特產定食`, dinner: `淡路島當地美味居酒屋`, hotel: `淡路 NC03 中央公寓`, parking: `飯店【免費停車】` },
+            { day: 3, date: `7/5 週日`, title: `淡路島深度遊：藝術與花海`, vibe: `度假放空`, transport: `淡路島島內輕鬆自駕`, activities: [`上午：參觀安藤忠雄大師巨作【淡路夢舞台】`, `中午：開車慢遊超美花海【淡路花棧敷】`, `下午：朝聖海景第一排【幸福鬆餅 淡路島】`], lunch: `淡路島特產【淡路島漢堡】`, dinner: `在地極品極上【淡路牛燒肉】`, hotel: `Rakuten STAY VILLA Awaji`, parking: `飯店【免費停車】` },
+            { day: 4, date: `7/6 週一`, title: `鳴門漩渦與德島市區`, vibe: `市區/文化`, transport: `淡路島 ➔ (經大鳴門橋) ➔ 德島市區`, activities: [`上午：前往【大鳴門橋渦之道】觀賞世界三大【鳴門渦潮】`, `下午：參觀體驗傳統舞祭【阿波舞會館】`, `傍晚：搭乘【眉山纜車】欣賞德島璀璨夜景`], lunch: `【鳴門海鮮】新鮮在地定食`, dinner: `德島濃厚拉麵【麵王】`, hotel: `德島格蘭維羅酒店`, parking: `【附設停車場】` },
+            { day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, transport: `德島市區 ➔ (開車約 2H) ➔ 祖谷山區`, activities: [`上午：沿著絕美溪谷由德島市區出發`, `中午：搭乘刺激好玩的【大步危峽遊覽船】`, `下午：挑戰走過驚險的藤蔓吊橋【祖谷蔓橋】`], lunch: `景觀餐廳【祖谷美人】蕎麥麵`, dinner: `山莊溫泉內享用【Kazuraya特製和食】晚餐`, hotel: `卡租拉亞旅館`, parking: `旅館【免費停車】` },
+            { day: 6, date: `7/8 週三`, title: `揮別秘境，前進港都高松`, vibe: `市區漫遊`, transport: `祖谷 ➔ 高松市區 ➔ 屋島山頂`, activities: [`上午：揮別山區秘境開車前往高松港都`, `下午：驅車直達屋島，前往【屋島展望台】看壯麗落日`, `傍晚：入住享有瀨戶內海絕景的【ホテル望海荘】`], lunch: `四國村入口人氣【讚岐烏龍麵わら家】`, dinner: `望海荘主廚特製【地雞壽喜燒+天然河豚宴席】`, hotel: `ホテル望海荘`, parking: `【附設停車場】` },
+            { day: 7, date: `7/9 週四`, title: `搭乘渡輪，小豆島跳島`, vibe: `跳島/拍照`, transport: `【高松港】 ➔ 【土庄港】小豆島渡輪自駕上船`, activities: [`🚢 渡輪已預約 預約號：0307090403 (¥8,430)`, `打卡魔女宅急便飛天掃帚【小豆島橄欖公園】`, `浪漫散步與退潮限定【天使的散步道】`], lunch: `在地風味【小豆島素麵】`, dinner: `前往在地大超市【マルナカ新土庄店】採買食材自炊`, hotel: `オリーブ農家的家 お泊り忠左衛門 吉野`, parking: `民宿【免費停車】` },
+            { day: 8, date: `7/10 週五`, title: `返回高松，金刀比羅宮`, vibe: `適度步行`, transport: `小豆島 ➔ 【高松港】 ➔ 琴平地區`, activities: [`🚢 渡輪已預約 預約號：0407100301 (¥8,430)`, `下午：挑戰攀登參拜日本第一難爬的【金刀比羅宮】`, `傍晚：返回高松市區，於市區商業街採買`], lunch: `琴平百年老店【讚岐烏龍麵】`, dinner: `高松特色名物【骨付鳥】排隊名店`, hotel: `民宿 setouchi`, parking: `【周邊停車場自理】` },
+            { day: 9, date: `7/11 週六`, title: `直島藝術之旅，抵達岡山`, vibe: `藝術/跨海`, transport: `高松 ➔ 岡山【宇野港】 ➔ 【直島】`, activities: [`🎨 【地中美術館】已預約 **10:45** 門票`, `直島港口尋找草間彌生【黃南瓜與紅南瓜】`, `傍晚：返回【宇野港】，驅車前往岡山市區`], lunch: `直島人氣老屋古民家【中奧】咖啡廳`, dinner: `【岡山車站】周邊特色居酒屋`, hotel: `GREEN 岡山`, parking: `【岡山車站 停車場】` },
+            { day: 10, date: `7/12 週日`, title: `倉敷美觀與 Outlet 血拚`, vibe: `文化/血拚`, transport: `岡山市區 ➔ 倉敷美觀 ➔ 岡山市區`, activities: [`上午：漫步詩情畫意的古老運河街【倉敷美觀地區】`, `下午：暢快血拚【三井 Outlet Park 倉敷】`, `傍晚：返回岡山車站，在 AEON 進行最後採購`], lunch: `倉敷運河旁人氣洋食`, dinner: `精緻日本料理割烹【壽司 辻】`, hotel: `GREEN 岡山`, parking: `【岡山車站 停車場】` },
+            { day: 11, date: `7/13 週一`, title: `岡山名園，滿載而歸`, vibe: `市區/歸途`, transport: `岡山市區 ➔ 13:00 還車 ➔ 15:55 機場起飛`, activities: [`上午：漫步日本三大名園之一【岡山後樂園】`, `中午前：前往【AEON MALL 岡山】補貨藥妝伴手禮`, `13:00 準時前往機場旁租車店還車（需加滿油）`], lunch: `岡山名產吾妻壽司【吾妻寿司】`, dinner: `機上享用或自理`, hotel: `溫慢的家`, parking: `【岡山機場還車點】` }
+        ];
 
-    <!-- 每日行程與主頁 UI 互動常規 JS 區塊 (確保與 Firebase 異步線程隔離，防卡死) -->
-    <script>
         let activeDay = 1;
+        const selectorContainer = document.getElementById('day-selector-container');
+        const contentContainer = document.getElementById('day-content-container');
 
-        // 🧠 地圖與攻略按鈕智慧替換機制 (formatTextWithMapLinks) - 帶安全 Error Boundary 健全防護
-        function formatTextWithMapLinks(text) {
-            if (!text) return '';
-            try {
-                return String(text).replace(/【(.*?)】/g, (match, name) => {
-                    const cleanName = name.replace(/✅已預約: /g, "").trim();
-                    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanName)}`;
-                    
-                    // 1. 生成地圖導航按鈕
-                    let buttons = `<a href="${mapUrl}" target="_blank" class="ml-1 px-1.5 py-0.5 bg-orange-500 hover:bg-orange-600 text-white rounded text-[10px] font-bold shadow-sm transition-all whitespace-nowrap" title="地圖導航">🗺️ 地圖</a>`;
-                    
-                    // 2. 如果景點資料庫存在，生成攻略按鈕
-                    if (attractionDetailsData && attractionDetailsData[cleanName]) {
-                        buttons += `<button type="button" onclick="window.openAttractionModal('${cleanName}'); event.stopPropagation();" class="ml-1 px-1.5 py-0.5 bg-teal-600 hover:bg-teal-700 text-white rounded text-[10px] font-bold shadow-sm transition-all whitespace-nowrap" title="查看景點攻略">💡 攻略</button>`;
-                    }
-                    
-                    return `<span class="inline-flex items-center gap-0.5 font-extrabold text-stone-900 border-b border-stone-300 mr-1 flex-wrap">${name}${buttons}</span>`;
-                });
-            } catch (e) {
-                console.error("formatTextWithMapLinks 執行異常", e);
-                return text;
-            }
-        }
-
-        // 行程與飯店按鈕在 iPhone 上無誤彈出的核心安全函數
-        window.openAttractionModal = function(name) {
-            const details = attractionDetailsData[name];
-            if (!details) return;
-            
-            const modalBody = document.getElementById('hotel-modal-body');
-            modalBody.innerHTML = `
-                <div class="border-b pb-3">
-                    <span class="text-teal-800 text-[10px] px-2 py-0.5 rounded font-bold bg-teal-100 mb-2 inline-block">💡 景點/餐廳深度攻略</span>
-                    <h3 class="text-lg font-bold text-stone-800 mt-1">${details.title}</h3>
-                    <a href="${details.mapUrl}" target="_blank" class="inline-block mt-2 px-3 py-1.5 bg-teal-600 text-white rounded-xl font-bold text-xs shadow-sm">🗺️ 開啟 Google 地圖導航</a>
-                </div>
-                <div class="space-y-3">
-                    <div class="bg-stone-50 p-3 rounded-xl border border-stone-200">
-                        <h4 class="font-bold text-stone-800 mb-1 text-xs">📝 簡單介紹</h4>
-                        <p class="text-xs text-stone-600 leading-relaxed">${details.intro}</p>
-                    </div>
-                    <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
-                        <h4 class="font-bold text-blue-900 mb-1 text-xs">✨ 推薦如何玩</h4>
-                        <p class="text-xs text-blue-950 leading-relaxed">${details.play}</p>
-                    </div>
-                    <div class="bg-orange-50/50 p-3 rounded-xl border border-orange-100">
-                        <h4 class="font-bold text-orange-950 mb-1 text-xs">📌 門票、交通與停車注意事項</h4>
-                        <p class="text-xs text-orange-900 leading-relaxed">${details.tips}</p>
-                    </div>
-                </div>
-            `;
-            document.getElementById('hotel-detail-modal').classList.remove('hidden');
-        };
-
-        // 🏨 呼叫獨立實體抽屜 Modal (高層級 z-200 必顯示)
+        // 🏨 呼叫獨立實體抽屜 Modal
         window.openHotelModal = function(hotelKey) {
             const normalizedKey = hotelKey.replace(/【|】|✅已預約: /g, "").trim();
             const details = hotelDetailsData[normalizedKey] || hotelDetailsData["德島格蘭維羅酒店"];
@@ -681,7 +495,7 @@
             modalBody.innerHTML = `
                 <div class="border-b pb-3">
                     <h3 class="text-base font-bold text-stone-800">${details.title}</h3>
-                    <a href="${details.mapUrl}" target="_blank" class="inline-block mt-1.5 px-3 py-1.5 bg-teal-600 text-white rounded-xl font-bold text-xs shadow-sm">🗺️ 開啟 Google Maps 導航/官網連結</a>
+                    <a href="${details.mapUrl}" target="_blank" class="inline-block mt-1.5 px-3 py-1.5 bg-teal-600 text-white rounded-xl font-bold text-xs shadow-sm">🗺️ 開啟 Google Maps 導航/外部連結</a>
                 </div>
                 <div>
                     <h4 class="font-bold text-rose-700 text-[11px] uppercase tracking-wider mb-1">📌 核心入住重點、密碼與電子鎖交代</h4>
@@ -707,99 +521,78 @@
             document.getElementById('hotel-detail-modal').classList.add('hidden');
         };
 
-        // 行程基本架構資料
-        const itineraryData = [
-            { day: 1, date: `7/3 週五`, title: `抵達岡山，直奔姬路`, vibe: `移動/夜遊`, transport: `15:05 岡山機場 ➔ 16:00 辦理租車 ➔ 姬路市區`, activities: [`機場取車後直接往東行駛`, `傍晚抵達姬路飯店`, `晚上可在【姬路城】周邊夜遊`], lunch: `機上或自理`, dinner: `姬路必吃星鰻料理【一張羅】`, hotel: `Besso姫路`, parking: `姬路車站周邊特約停車場` },
-            { day: 2, date: `7/4 週六`, title: `國寶名城，登陸淡路島`, vibe: `歷史/海景`, transport: `姬路 ➔ (跨越【明石海峽大橋】) ➔ 淡路島`, activities: [`上午：參觀世界遺產【姬路城】`, `下午：開車體驗【明石海峽大橋】`, `傍晚：抵達渡假勝地淡路島`], lunch: `姬路城周邊定食`, dinner: `淡路島當地居酒屋`, hotel: `淡路 NC03 中央公寓`, parking: `飯店【免費停車】` },
-            { day: 3, date: `7/5 週日`, title: `淡路島深度遊：藝術與花海`, vibe: `度假放空`, transport: `淡路島島內輕鬆自駕`, activities: [`上午：清水模建築殿堂【淡路夢舞台】`, `中午：看海丘陵花毯【淡路花棧敷】`, `下午：海景打卡聖地【幸福鬆餅 淡路島】`], lunch: `淡路島漢堡`, dinner: `淡路牛燒肉`, hotel: `Rakuten STAY VILLA Awaji`, parking: `飯店【免費停車】` },
-            { day: 4, date: `7/6 週一`, title: `鳴門漩渦與德島市區`, vibe: `市區/文化`, transport: `淡路島 ➔ (經大鳴門橋) ➔ 德島市區`, activities: [`上午：前往【大鳴門橋渦之道】觀賞鳴門漩渦`, `下午：欣賞四國民俗【阿波舞會館】`, `傍晚：搭乘【眉山纜車】看全景夜景`], lunch: `鳴門海鮮定食`, dinner: `德島拉麵 麵王`, hotel: `德島格蘭維羅酒店`, parking: `【附設停車場】` },
-            { day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, transport: `德島市區 ➔ (車程約 2H) ➔ 祖谷/大步危`, activities: [`上午：從德島出發`, `中午：搭乘平穩的【大步危峽遊覽船】`, `下午：挑戰日本奇橋【祖谷蔓橋】`], lunch: `懸崖景觀餐廳【祖谷美人】`, dinner: `旅館內享用和食晚餐`, hotel: `卡租拉亞旅館`, parking: `旅館【免費停車】` },
-            { day: 6, date: `7/8 週三`, title: `揮別秘境，前進港都高松`, vibe: `市區漫遊`, transport: `祖谷 ➔ 高松市區 ➔ 屋島山頂`, activities: [`上午：揮別山區秘境開車前往高松港都`, `下午：驅車直達屋島，前往【屋島展望台】看落日`, `傍晚：入住享有絕景的【ホテル望海荘】`], lunch: `四國名物巨大木盆麵【讚岐烏龍麵わら家】`, dinner: `【✨ 吃好一點】望海荘地雞壽喜燒`, hotel: `ホテル望海荘`, parking: `【附設停車場】` },
-            { day: 7, date: `7/9 週四`, title: `搭乘渡輪，小豆島跳島`, vibe: `跳島/拍照`, transport: `【高松港】 ➔ 小豆島【土庄港】`, activities: [`🚢 渡輪已預約 預約號：0307090403 (¥8,430)`, `尋找白色希臘風車【小豆島橄欖公園】`, `牽手散步漫遊【天使的散步道】`], lunch: `小豆島素麵`, dinner: `當地超市採買自炊`, hotel: `オリーブ農家的家 お泊り忠左衛門 吉野`, parking: `民宿【免費停車】` },
-            { day: 8, date: `7/10 週五`, title: `返回高松，金刀比羅宮`, vibe: `適度步行`, transport: `小豆島 ➔ 【高松港】 ➔ 琴平`, activities: [`🚢 渡輪已預約 預約號：0407100301 (¥8,430)`, `下午：一生必參拜一次【金刀比羅宮】`, `傍晚：返回高松市區`], lunch: `正宗讚岐烏龍麵`, dinner: `高松名物骨付鳥`, hotel: `德島格蘭維羅酒店`, parking: `【附設停車場】` },
-            { day: 9, date: `7/11 週六`, title: `直島藝術之旅，抵達岡山`, vibe: `藝術/跨海`, transport: `高松 ➔ 岡山【宇野港】 ➔ 直島`, activities: [`🎨 清水模地底美學【地中美術館】已預約 10:45`, `尋找草間彌生黃南瓜與紅南瓜`, `傍晚：返回宇野港，驅車前往岡山`], lunch: `中奧 咖啡廳`, dinner: `岡山車站周邊居酒屋`, hotel: `GREEN 岡山`, parking: `【岡山車站 停車場】` },
-            { day: 10, date: `7/12 週日`, title: `倉敷美觀與 Outlet 血拚`, vibe: `文化/血拚`, transport: `岡山市區 ➔ 倉敷 ➔ 岡山市區`, activities: [`上午：漫步垂柳運河【倉敷美觀地區】`, `下午：好逛好買的【三井 Outlet Park 倉敷】`, `傍晚：返回岡山市區`], lunch: `倉敷周邊洋食`, dinner: `【✨ 慶功宴吃好一點】割烹壽司 辻`, hotel: `GREEN 岡山`, parking: `【岡山車站 停車場】` },
-            { day: 11, date: `7/13 週一`, title: `岡山名園，滿載而歸`, vibe: `市區/歸途`, transport: `岡山市區 ➔ 13:00 還車 ➔ 15:55 京都機場起飛`, activities: [`上午：日本三大名園之一【岡山後樂園】散步`, `中午前：【AEON MALL 岡山】最後採買`, `13:00 前記得加滿油，往【岡山機場】還車`], lunch: `百年散壽司老店【吾妻寿司】`, dinner: `機上餐點`, hotel: `溫慢的家`, parking: `【岡山機場還車點】` }
-        ];
+        // 🗺️ 核心地圖導航自動解析渲染機制
+        function formatTextWithMapLinks(text) {
+            if (!text) return '';
+            return text.replace(/【(.*?)】/g, (match, name) => {
+                const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name)}`;
+                return `<span class="inline-flex items-center gap-1 font-extrabold text-stone-900 border-b border-stone-300 mr-1">${name}<a href="${mapUrl}" target="_blank" class="ml-1 px-1.5 py-0.5 bg-orange-500 hover:bg-orange-600 text-white rounded text-[10px] font-bold shadow-sm transition-all" title="查看 Google 地圖導航">🗺️ 地圖</a></span>`;
+            });
+        }
 
-        // 智慧渲染 Day Selector 頂部小日曆分頁 (健全安全防護)
         function renderDaySelector() {
-            const container = document.getElementById('day-selector-container');
-            if (!container) return;
-            container.innerHTML = '';
+            selectorContainer.innerHTML = '';
             itineraryData.forEach(data => {
                 const isActive = activeDay === data.day;
                 const btn = document.createElement('button');
                 btn.className = `w-full text-left px-3 py-2 rounded-xl font-bold text-xs md:text-sm border ${isActive ? 'bg-stone-800 text-white border-stone-800 shadow-md' : 'bg-stone-50 text-stone-600 border-stone-200 hover:bg-stone-100'}`;
                 btn.innerHTML = `<div>Day ${data.day} | ${data.date.split(' ')[0]}</div><div class="truncate text-[11px] font-normal opacity-80">${data.title}</div>`;
-                btn.onclick = () => { activeDay = data.day; renderDaySelector(); renderDayContent(); if(window.syncExpenseDateDropdown) window.syncExpenseDateDropdown(data.day); };
-                container.appendChild(btn);
+                btn.onclick = () => { activeDay = data.day; renderDaySelector(); renderDayContent(); syncExpenseDateDropdown(data.day); };
+                selectorContainer.appendChild(btn);
             });
         }
 
-        // 智慧渲染 Day Content 詳細看板 (獨立安全層級，徹底根治空白 bug)
         function renderDayContent() {
-            try {
-                const data = itineraryData.find(d => d.day === activeDay);
-                if (!data) return;
+            const data = itineraryData.find(d => d.day === activeDay);
+            
+            let actHTML = "";
+            if (data.activities && data.activities.length > 0) {
+                actHTML = data.activities.map(act => `<li class="flex items-start text-xs text-stone-700 leading-normal"><span class="mr-1 mt-0.5 text-teal-600">•</span><div>${formatTextWithMapLinks(act)}</div></li>`).join('');
+            }
 
-                const container = document.getElementById('day-content-container');
-                if (!container) return;
-                
-                let actHTML = "";
-                if (data.activities && data.activities.length > 0) {
-                    actHTML = data.activities.map(act => `<li class="flex items-start text-xs text-stone-700 leading-normal"><span class="mr-1 mt-0.5 text-teal-600">•</span><div>${formatTextWithMapLinks(act)}</div></li>`).join('');
-                }
+            const cleanHotelName = data.hotel.replace(/【|】|✅已預約: /g, "").split('(')[0].trim();
 
-                const cleanHotelName = data.hotel.replace(/【|】|✅已預約: /g, "").split('(')[0].trim();
+            let hotelButtonHTML = "";
+            if (cleanHotelName !== "溫慢的家" && cleanHotelName !== "溫暖的家" && cleanHotelName !== "") {
+                hotelButtonHTML = `
+                    <div class="mt-4 pt-2 border-t border-blue-100/50 w-full">
+                        <button type="button" onclick="window.openHotelModal('${cleanHotelName}');" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl shadow-md block text-center cursor-pointer relative z-50">
+                            ⚡ 查看入住密碼與管家通知
+                        </button>
+                    </div>
+                `;
+            }
 
-                // 確保靜態按鈕百分之百不被取代、iPhone 上絕對聽話呈現
-                let hotelButtonHTML = "";
-                if (cleanHotelName !== "溫慢的家" && cleanHotelName !== "溫暖的家" && cleanHotelName !== "") {
-                    hotelButtonHTML = `
-                        <div class="mt-4 pt-2 border-t border-blue-100/50 w-full">
-                            <button type="button" onclick="window.openHotelModal('${cleanHotelName}');" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 rounded-xl shadow-md block text-center cursor-pointer relative z-50">
-                                ⚡ 查看入住密碼與管家通知
-                            </button>
-                        </div>
-                    `;
-                }
-
-                container.innerHTML = `
-                    <div class="fade-in space-y-4">
-                        <div class="border-b pb-2">
-                            <span class="text-teal-800 text-[10px] px-2 py-0.5 rounded font-bold bg-teal-100">Day ${data.day} | ${data.date}</span>
-                            <h3 class="text-xl font-bold text-stone-800 mt-1">${data.title}</h3>
-                        </div>
-                        <div class="text-xs space-y-3">
-                            <div><h4 class="font-bold text-stone-800 mb-1">🚙 每日主要交通動線</h4><p class="text-stone-600">${formatTextWithMapLinks(data.transport)}</p></div>
-                            <div><h4 class="font-bold text-stone-800 mb-1">🗺️ 每日大綱與細節行程</h4><ul class="space-y-1">${actHTML}</ul></div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
-                                <div class="bg-orange-50/60 p-3 rounded-xl border border-orange-100">
-                                    <h4 class="font-bold text-orange-900 mb-1">🍱 家族餐飲安排</h4>
-                                    <p class="mt-1"><span class="font-bold text-orange-800">午:</span> ${formatTextWithMapLinks(data.lunch)}</p>
-                                    <p class="mt-0.5"><span class="font-bold text-orange-800">晚:</span> ${formatTextWithMapLinks(data.dinner)}</p>
+            contentContainer.innerHTML = `
+                <div class="fade-in space-y-4">
+                    <div class="border-b pb-2">
+                        <span class="text-teal-800 text-[10px] px-2 py-0.5 rounded font-bold bg-teal-100">Day ${data.day} | ${data.date}</span>
+                        <h3 class="text-xl font-bold text-stone-800 mt-1">${data.title}</h3>
+                    </div>
+                    <div class="text-xs space-y-3">
+                        <div><h4 class="font-bold text-stone-800 mb-1">🚙 每日主要交通動線</h4><p class="text-stone-600">${formatTextWithMapLinks(data.transport)}</p></div>
+                        <div><h4 class="font-bold text-stone-800 mb-1">🗺️ 每日大綱與細節行程</h4><ul class="space-y-1">${actHTML}</ul></div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                            <div class="bg-orange-50/60 p-3 rounded-xl border border-orange-100">
+                                <h4 class="font-bold text-orange-900 mb-1">🍱 家族餐飲安排</h4>
+                                <p class="mt-1"><span class="font-bold text-orange-800">午:</span> ${formatTextWithMapLinks(data.lunch)}</p>
+                                <p class="mt-0.5"><span class="font-bold text-orange-800">晚:</span> ${formatTextWithMapLinks(data.dinner)}</p>
+                            </div>
+                            <div class="bg-blue-50/60 p-3 rounded-xl border border-blue-100 flex flex-col justify-between items-start">
+                                <div class="w-full">
+                                    <h4 class="font-bold text-blue-900 mb-1">🏨 預定落腳住宿飯店</h4>
+                                    <div class="font-bold text-stone-800 text-sm my-0.5">✅ 已預約: ${cleanHotelName}</div>
+                                    <p class="text-[11px] text-blue-800 mt-0.5">🅿️ 停車配備: ${formatTextWithMapLinks(data.parking)}</p>
                                 </div>
-                                <div class="bg-blue-50/60 p-3 rounded-xl border border-blue-100 flex flex-col justify-between items-start">
-                                    <div class="w-full">
-                                        <h4 class="font-bold text-blue-900 mb-1">🏨 預定落腳住宿飯店</h4>
-                                        <div class="font-bold text-stone-800 text-sm my-0.5">✅ 已預約: ${cleanHotelName}</div>
-                                        <p class="text-[11px] text-blue-800 mt-0.5">🅿️ 停車配備: ${formatTextWithMapLinks(data.parking)}</p>
-                                    </div>
-                                    ${hotelButtonHTML}
-                                </div>
+                                ${hotelButtonHTML}
                             </div>
                         </div>
-                    </div>`;
-            } catch (e) {
-                console.error("renderDayContent 渲染異常", e);
-            }
+                    </div>
+                </div>`;
         }
 
-        // 智慧渲染 Summary Table 每日對照表格
         function renderSummaryTable() {
             const tbody = document.getElementById('summary-table-body');
-            if(!tbody) return;
             tbody.innerHTML = '';
             itineraryData.forEach(data => {
                 const tr = document.createElement('tr');
@@ -820,21 +613,6 @@
                 tbody.appendChild(tr);
             });
         }
-
-        // 確保在最安全的時間點渲染 UI (常規 DOM 載入，絕對不被 Firebase 卡死)
-        document.addEventListener('DOMContentLoaded', () => {
-            renderSummaryTable();
-            renderDaySelector();
-            renderDayContent();
-
-            // 繪製圓餅預算圖
-            const ctx = document.getElementById('budgetChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut', 
-                data: { labels: ['租車', '交通雜費', '住宿費', '餐飲', '門票'], datasets: [{ data: [156530, 65000, 274125, 200000, 20000], backgroundColor: ['#14b8a6', '#60a5fa', '#fb7185', '#818cf8', '#fbbf24'], borderWidth: 2 }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } }, cutout: '70%' }
-            });
-        });
     </script>
 
     <!-- Firebase 雲端同步與智慧 AI 拍照記帳核心系統 -->
@@ -1087,51 +865,68 @@
             }
         }
 
-        // 🛠️ 驗證與監聽掛載邏輯優化：徹底移除最外層 await，改用非同步 Promise 鏈，完美解決 iPhone 白屏問題！
         if(auth) {
             const initAuth = async () => {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    await signInWithCustomToken(auth, __initial_auth_token);
-                } else {
-                    await signInAnonymously(auth);
+                try {
+                    // 1. 優先在沙盒或特定測試環境中使用配發的 Custom Token 登入
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        // 2. 外部 GitHub 部署環境中使用匿名登入，確保符合規則
+                        await signInAnonymously(auth);
+                    }
+                } catch(e) { 
+                    console.error("Firebase 驗證失敗，切換為單機快取模式：", e); 
+                    fbUser = null; 
+                    const chatBox = document.getElementById('chat-box');
+                    if (chatBox) chatBox.innerHTML = '<div class="text-center text-rose-500 text-xs mt-4 font-bold">雲端連線失敗 (金鑰或安全規則不符)<br>目前已切換為單機快取模式</div>';
+                    renderUI();
                 }
             };
             
+            // 執行登入程序，並在成功後掛載 Firebase 即時資料監聽器
             initAuth().then(() => {
                 auth.onAuthStateChanged((user) => {
                     if (user) {
                         fbUser = user;
+                        
+                        // 即時監聽群組筆記 (加上完整的 error 回呼，防止因規則不符而靜默失敗)
                         onSnapshot(getCollectionPath('family_notes'), (snap) => {
                             notesData = snap.docs.map(d => ({id: d.id, ...d.data()})).sort((a,b)=>a.timestamp-b.timestamp);
                             localStorage.setItem('local_family_notes', JSON.stringify(notesData));
                             renderUI();
                         }, (err) => {
-                            console.error("群組留言讀取失敗：", err);
+                            console.error("群組留言讀取失敗 (可能無存取權限)：", err);
                         });
 
+                        // 即時監聽家族共同記帳
                         onSnapshot(getCollectionPath('family_expenses'), (snap) => {
                             expensesData = snap.docs.map(d => ({id: d.id, ...d.data()})).sort((a,b)=>a.timestamp-b.timestamp);
                             localStorage.setItem('local_family_expenses', JSON.stringify(expensesData));
                             renderUI();
                         }, (err) => {
-                            console.error("共同記帳讀取失敗：", err);
+                            console.error("共同記帳讀取失敗 (可能無存取權限)：", err);
                         });
                     } else {
                         renderUI();
                     }
                 });
-            }).catch((err) => {
-                console.error("Firebase 驗證失敗，切換為單機快取模式：", err); 
-                fbUser = null; 
-                const chatBox = document.getElementById('chat-box');
-                if (chatBox) chatBox.innerHTML = '<div class="text-center text-rose-500 text-xs mt-4 font-bold">雲端連線失敗 (金鑰或安全規則不符)<br>目前已切換為單機快取模式</div>';
-                renderUI();
             });
         } else {
-            renderUI();
+            renderUI(); // 單機測試模式
         }
 
         window.syncExpenseDateDropdown = syncExpenseDateDropdown;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSummaryTable(); renderDaySelector(); renderDayContent();
+            const ctx = document.getElementById('budgetChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut', 
+                data: { labels: ['租車', '交通雜費', '住宿費', '餐飲', '門票'], datasets: [{ data: [156530, 65000, 274125, 200000, 20000], backgroundColor: ['#14b8a6', '#60a5fa', '#fb7185', '#818cf8', '#fbbf24'], borderWidth: 2 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 10 } } } }, cutout: '70%' }
+            });
+        });
     </script>
 </body>
 </html>
