@@ -267,7 +267,7 @@
         </div>
     </div>
 
-    <!-- 🏨 住宿詳情動態抽屜核心 Modal -->
+    <!-- 🏨 住宿詳情動態抽屜核心 Modal (優化提升最高層級 z-[200] 確保必彈出) -->
     <div id="hotel-detail-modal" class="hidden fixed inset-0 bg-black/70 z-[200] flex items-center justify-center p-3" onclick="window.closeHotelModal()">
         <div class="bg-white rounded-2xl max-w-2xl w-full p-5 shadow-2xl relative max-h-[85vh] flex flex-col" onclick="event.stopPropagation()">
             <button onclick="window.closeHotelModal()" class="absolute top-4 right-4 bg-stone-100 hover:bg-stone-200 text-stone-700 w-8 h-8 rounded-full flex items-center justify-center font-bold">✕</button>
@@ -336,7 +336,7 @@
                 jp: "【オンラインチェックインのご案内】Rakuten STAYは無人施設です。前日にお送りするURLより、事前に宿泊者情報のご登録をお願いいたします。鍵番号はチェックインの前日にお送りします。"
             },
             "德島格蘭維羅酒店": {
-                title: "🏨 Day 4 住宿資訊：徳島グランヴィリオホテル",
+                title: "🏨 Day 4 & Day 8 住宿資訊：徳島グランヴィリオホテル",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=Tokushima+Grandvrio+Hotel",
                 notes: [
                     "<strong>🅿️ 停車資訊：</strong>飯店附設大型專屬客用停車場，自駕家族可直接停放。",
@@ -442,18 +442,6 @@
                 zh: "【自動自助入住三步驟】<br>① 民宿大門口右側牆上設置有黑色 Key Box（鑰匙保管盒）。<br>② 在盒上輸入官方發送的 4 位數暗証號碼，並按下右下角的「開錠標記」，將外蓋向外拉開即可取得實體大門鑰匙。<br>③ 進入客廳後，桌上放有「住宿者名單卡（宿泊者カード）」，請房客代表簽名。<br>🎁【特別贈送：小豆島オリーブ温泉露天浴池割引券】<br>屋主後續會將マルナカ新土庄店內的「オリーブ溫泉」電子割引券圖片寄給我們，開車去大超市採買食材時可以順便去泡這間一望瀨戶內海的頂級露天溫泉！（導航資訊已整合於下方按鈕）",
                 jp: "【重要：自動セルフチェックイン方法】当宿は一棟貸切宿のためスタッフは常駐しておりません。事前に商店等でパジャマ・お飲み物・調味料をご準備ください。"
             },
-            "民宿 setouchi": {
-                title: "🏨 Day 8 住宿資訊：民宿 setouchi",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=香川県高松市築地町16-7",
-                notes: [
-                    "<strong>📞 聯絡電話：</strong>+81 80 6394 4263",
-                    "<strong>📝 確認碼：</strong><span class='text-teal-600 font-extrabold bg-teal-50 px-1 rounded'>6080536560</span>",
-                    "<strong>🔑 PIN 碼：</strong><span class='text-rose-600 font-extrabold bg-rose-50 px-1 rounded'>8405</span>",
-                    "<strong>📍 地址：</strong>香川縣, 高松, 築地町16-7, 日本"
-                ],
-                zh: "抵達現場後，請依照屋主指示使用確認碼或 PIN 碼辦理入住。如有問題可隨時撥打上述聯絡電話聯繫屋主。",
-                jp: "チェックインの際は、提供された確認コード（6080536560）と暗証番号（8405）をご利用ください。ご不明な点がございましたら、+81 80 6394 4263 までご連絡ください。"
-            },
             "GREEN 岡山": {
                 title: "🏨 Day 9 & Day 10 住宿資訊：GREEN 岡山 (綠色酒店)",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=GREEN+HOTEL+Okayama",
@@ -476,7 +464,7 @@
             { day: 5, date: `7/7 週二`, title: `深入四國秘境，大步危與祖谷`, vibe: `秘境/溫泉`, transport: `德島市區 ➔ (開車約 2H) ➔ 祖谷山區`, activities: [`上午：沿著絕美溪谷由德島市區出發`, `中午：搭乘刺激好玩的【大步危峽遊覽船】`, `下午：挑戰走過驚險的藤蔓吊橋【祖谷蔓橋】`], lunch: `景觀餐廳【祖谷美人】蕎麥麵`, dinner: `山莊溫泉內享用【Kazuraya特製和食】晚餐`, hotel: `卡租拉亞旅館`, parking: `旅館【免費停車】` },
             { day: 6, date: `7/8 週三`, title: `揮別秘境，前進港都高松`, vibe: `市區漫遊`, transport: `祖谷 ➔ 高松市區 ➔ 屋島山頂`, activities: [`上午：揮別山區秘境開車前往高松港都`, `下午：驅車直達屋島，前往【屋島展望台】看壯麗落日`, `傍晚：入住享有瀨戶內海絕景的【ホテル望海荘】`], lunch: `四國村入口人氣【讚岐烏龍麵わら家】`, dinner: `望海荘主廚特製【地雞壽喜燒+天然河豚宴席】`, hotel: `ホテル望海荘`, parking: `【附設停車場】` },
             { day: 7, date: `7/9 週四`, title: `搭乘渡輪，小豆島跳島`, vibe: `跳島/拍照`, transport: `【高松港】 ➔ 【土庄港】小豆島渡輪自駕上船`, activities: [`🚢 渡輪已預約 預約號：0307090403 (¥8,430)`, `打卡魔女宅急便飛天掃帚【小豆島橄欖公園】`, `浪漫散步與退潮限定【天使的散步道】`], lunch: `在地風味【小豆島素麵】`, dinner: `前往在地大超市【マルナカ新土庄店】採買食材自炊`, hotel: `オリーブ農家的家 お泊り忠左衛門 吉野`, parking: `民宿【免費停車】` },
-            { day: 8, date: `7/10 週五`, title: `返回高松，金刀比羅宮`, vibe: `適度步行`, transport: `小豆島 ➔ 【高松港】 ➔ 琴平地區`, activities: [`🚢 渡輪已預約 預約號：0407100301 (¥8,430)`, `下午：挑戰攀登參拜日本第一難爬的【金刀比羅宮】`, `傍晚：返回高松市區，於市區商業街採買`], lunch: `琴平百年老店【讚岐烏龍麵】`, dinner: `高松特色名物【骨付鳥】排隊名店`, hotel: `民宿 setouchi`, parking: `【周邊停車場自理】` },
+            { day: 8, date: `7/10 週五`, title: `返回高松，金刀比羅宮`, vibe: `適度步行`, transport: `小豆島 ➔ 【高松港】 ➔ 琴平地區`, activities: [`🚢 渡輪已預約 預約號：0407100301 (¥8,430)`, `下午：挑戰攀登參拜日本第一難爬的【金刀比羅宮】`, `傍晚：返回高松市區，於市區商業街採買`], lunch: `琴平百年老店【讚岐烏龍麵】`, dinner: `高松特色名物【骨付鳥】排隊名店`, hotel: `德島格蘭維羅酒店`, parking: `【附設停車場】` },
             { day: 9, date: `7/11 週六`, title: `直島藝術之旅，抵達岡山`, vibe: `藝術/跨海`, transport: `高松 ➔ 岡山【宇野港】 ➔ 【直島】`, activities: [`🎨 【地中美術館】已預約 **10:45** 門票`, `直島港口尋找草間彌生【黃南瓜與紅南瓜】`, `傍晚：返回【宇野港】，驅車前往岡山市區`], lunch: `直島人氣老屋古民家【中奧】咖啡廳`, dinner: `【岡山車站】周邊特色居酒屋`, hotel: `GREEN 岡山`, parking: `【岡山車站 停車場】` },
             { day: 10, date: `7/12 週日`, title: `倉敷美觀與 Outlet 血拚`, vibe: `文化/血拚`, transport: `岡山市區 ➔ 倉敷美觀 ➔ 岡山市區`, activities: [`上午：漫步詩情畫意的古老運河街【倉敷美觀地區】`, `下午：暢快血拚【三井 Outlet Park 倉敷】`, `傍晚：返回岡山車站，在 AEON 進行最後採購`], lunch: `倉敷運河旁人氣洋食`, dinner: `精緻日本料理割烹【壽司 辻】`, hotel: `GREEN 岡山`, parking: `【岡山車站 停車場】` },
             { day: 11, date: `7/13 週一`, title: `岡山名園，滿載而歸`, vibe: `市區/歸途`, transport: `岡山市區 ➔ 13:00 還車 ➔ 15:55 機場起飛`, activities: [`上午：漫步日本三大名園之一【岡山後樂園】`, `中午前：前往【AEON MALL 岡山】補貨藥妝伴手禮`, `13:00 準時前往機場旁租車店還車（需加滿油）`], lunch: `岡山名產吾妻壽司【吾妻寿司】`, dinner: `機上享用或自理`, hotel: `溫慢的家`, parking: `【岡山機場還車點】` }
@@ -521,7 +509,7 @@
             document.getElementById('hotel-detail-modal').classList.add('hidden');
         };
 
-        // 🗺️ 核心地圖導航自動解析渲染機制
+        // 🗺️ 核心地圖導航自動解析渲染機制 - 100% 正確處理與加上地圖導航小標籤
         function formatTextWithMapLinks(text) {
             if (!text) return '';
             return text.replace(/【(.*?)】/g, (match, name) => {
@@ -865,6 +853,7 @@
             }
         }
 
+        // 🛠️ 驗證與監聽掛載邏輯優化：確保先成功完成身份驗證，再開始讀取資料
         if(auth) {
             const initAuth = async () => {
                 try {
